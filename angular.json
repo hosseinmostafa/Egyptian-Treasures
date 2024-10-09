@@ -39,7 +39,7 @@
               },
               "src/favicon.ico",
               "src/assets",
-              "src/_redircts"
+              "src/_redirects"
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
