@@ -3,28 +3,45 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './component/home/home.component';
-import { AboutComponent } from './component/about/about.component';
-import { ContactComponent } from './component/contact/contact.component';
-import { PagNotFoundComponent } from './component/pag-not-found/pag-not-found.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { AddProductComponent } from './Component/add-product/add-product.component';
+import { FooterComponent } from './Component/footer/footer.component';
+import { HeaderComponent } from './Component/header/header.component';
+import { HomeComponent } from './Component/home/home.component';
+import { NotFondComponent } from './Component/not-fond/not-fond.component';
+import { PaymentComponent } from './Component/payment/payment.component';
+import { ProductDetailsComponent } from './Component/product-details/product-details.component';
+import { ProductsComponent } from './Component/products/products.component';
+import { SginInSignUpComponent } from './Component/sgin-in-sign-up/sgin-in-sign-up.component';
+import { UsersComponent } from './Component/users/users.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AddProductComponent,
+    FooterComponent,
+    HeaderComponent,
     HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    PagNotFoundComponent,
-    NavbarComponent
+    NotFondComponent,
+    PaymentComponent,
+    ProductDetailsComponent,
+    ProductsComponent,
+    SginInSignUpComponent,
+    UsersComponent,
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

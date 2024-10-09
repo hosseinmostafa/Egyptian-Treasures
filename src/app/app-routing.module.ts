@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './component/home/home.component';
-import { AboutComponent } from './component/about/about.component';
-import { PagNotFoundComponent } from './component/pag-not-found/pag-not-found.component';
-import { ContactComponent } from './component/contact/contact.component';
+import { HomeComponent } from './Component/home/home.component';
+import { SginInSignUpComponent } from './Component/sgin-in-sign-up/sgin-in-sign-up.component';
+import { PaymentComponent } from './Component/payment/payment.component';
+import { AddProductComponent } from './Component/add-product/add-product.component';
+import { ProductDetailsComponent } from './Component/product-details/product-details.component';
+import { UsersComponent } from './Component/users/users.component';
+import { ProductsComponent } from './Component/products/products.component';
+import { NotFondComponent } from './Component/not-fond/not-fond.component';
 
 const routes: Routes = [
+  { path: "", component: HomeComponent},
   { path: "home", component: HomeComponent},
-  { path: "about", component: AboutComponent},
-  { path: "contact", component: ContactComponent},
-  { path: "", redirectTo: "home", pathMatch: "full"},
-  { path: "**", component: PagNotFoundComponent}
+  { path: "sgin-in-sign-up", component: SginInSignUpComponent },
+  { path: "payment", component: PaymentComponent },
+  { path: "add-prouduct", component: AddProductComponent },
+  { path: "product/:id", component: ProductDetailsComponent },
+  { path: "users", component: UsersComponent },
+  { path: "products", component: ProductsComponent },
+  { path: "**", component: NotFondComponent },
 ];
 
 @NgModule({
