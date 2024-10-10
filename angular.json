@@ -69,6 +69,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+      "proxyConfig": "src/proxy.conf.json"
+    },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -86,6 +89,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+              
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -106,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c2a3c4d1-9386-4550-833a-a7e0111110c0"
   }
 }

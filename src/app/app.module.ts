@@ -16,6 +16,7 @@ import { SginInSignUpComponent } from './Component/sgin-in-sign-up/sgin-in-sign-
 import { UsersComponent } from './Component/users/users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { AdminComponent } from './component/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     SginInSignUpComponent,
     UsersComponent,
     AppComponent,
+    AdminComponent,
 
   ],
   imports: [

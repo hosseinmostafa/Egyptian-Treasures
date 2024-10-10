@@ -1,0 +1,46 @@
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products" id="productToEdit">
+                <th scope="row">{{product.id}}</th>
+                <td><img class="img-fluid" [src]="product.image" alt="product image"></td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+                    <button class="btn btn-primary" (click)="editProduct(product)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Edit Product Form (hidden until a product is being edited) -->
+    <div *ngIf="selectedProduct">
+        <h3>Edit Product</h3>
+        <form (ngSubmit)="updateProduct()">
+            <div class="form-group">
+                <label for="productName">Name</label>
+                <input type="text" id="productName" class="form-control" [(ngModel)]="selectedProduct.name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Price</label>
+                <input type="number" id="productPrice" class="form-control" [(ngModel)]="selectedProduct.price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Image URL</label>
+                <input type="text" id="productImage" class="form-control" [(ngModel)]="selectedProduct.image" name="image" required>
+            </div>
+            <button type="submit" class="btn btn-success">Update Product</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+        </form>
+    </div>
+</div>

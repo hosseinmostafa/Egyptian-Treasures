@@ -1,15 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, throwError } from 'rxjs';
-import { Iproduct } from '../Component/interfaces/Iproduct';
+// import { Iproduct } from '../interfaces/Iproduct';
+import { Iproduct } from '../../app/component/interfaces/Iproduct';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  private apiUrl = './data/products.json';
+  // private apiUrl = './data/products.json';
+  private apiUrl = environment.firebaseConfig.databaseURL 
 
+//  private apiUrl ='./api';
   constructor(private http: HttpClient) { }
   getProducts(): Observable<Iproduct[]> {
     return this.http.get<Iproduct[]>(this.apiUrl).pipe(
@@ -34,5 +38,12 @@ export class ProductService {
         return throwError(() => err.message || 'product not found');
       })
     )
+  }
+  deleteProduct(productId: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${productId}.json`);
+  }
+
+  updateProduct(product: Iproduct): Observable<Iproduct> {
+    return this.http.put<Iproduct>(`${this.apiUrl}/${product.id}.json`, product);
   }
 }

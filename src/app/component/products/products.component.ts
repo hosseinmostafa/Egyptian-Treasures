@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Iproduct } from '../interfaces/Iproduct';
+// import { Iproduct } from '../interfaces/Iproduct';
+import { Iproduct } from '../../component/interfaces/Iproduct';
 import { ProductService } from '../../Services/product.service';
 import { Router } from '@angular/router';
 
@@ -65,7 +66,7 @@ export class ProductsComponent implements OnInit {
         ? product.price <= this.filterPrice
         : true;
       const matchesDate = this.filterDate
-        ? this.checkDateCondition(product.date)
+        ? this.checkDateCondition(product.date!)
         : true;
 
       return matchesCategory && matchesPrice && matchesDate;
