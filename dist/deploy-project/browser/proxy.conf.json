@@ -1,8 +1,0 @@
-{
-                    "/api": {
-                      "target": "https://egyption-treasure-89099-default-rtdb.firebaseio.com",
-                      "secure": false,
-                      "changeOrigin": true,
-                      "logLevel": "debug"
-                    }
-                  }
