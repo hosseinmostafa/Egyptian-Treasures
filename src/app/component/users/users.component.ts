@@ -20,4 +20,6 @@ export class UsersComponent implements OnInit, OnDestroy {
     this.navbarService.display()
     this.footerServes.displayFooter()
   }
+  
+
 }

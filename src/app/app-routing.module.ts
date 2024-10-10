@@ -8,6 +8,7 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { UsersComponent } from './component/users/users.component';
 import { ProductsComponent } from './component/products/products.component';
 import { NotFondComponent } from './component/not-fond/not-fond.component';
+import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "product/:id", component: ProductDetailsComponent },
   { path: "users", component: UsersComponent },
   { path: "products", component: ProductsComponent },
+  { path: "edit-profile", component: EditProfileComponent},
   { path: "**", component: NotFondComponent },
 ];
 
