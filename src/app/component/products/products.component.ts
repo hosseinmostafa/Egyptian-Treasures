@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { Router } from '@angular/router';
 import { Iproduct } from '../interfaces/Iproduct';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -11,10 +12,7 @@ import { Iproduct } from '../interfaces/Iproduct';
 })
 export class ProductsComponent implements OnInit {
   cartCount: number = 0;
-  addToCart(product: Iproduct) {
-    this.cartCount++;
-    window.localStorage.setItem('Iproduct', JSON.stringify(product));
-  }
+  
   goToCart() {
     this.router.navigate(['/cart'])
   }
@@ -28,8 +26,12 @@ export class ProductsComponent implements OnInit {
   filterPrice: number | null = null;
   filterDate: string = ''; // To hold the selected date
 
-  constructor(private productService: ProductService, private router: Router) { }
-
+  constructor(private productService: ProductService, private router: Router,private cartService:CartService) { }
+    addToCart(product: Iproduct) {
+    this.cartCount++;
+    // window.localStorage.setItem('Iproduct', JSON.stringify(product));
+    this.cartService.addToCart(product);
+  }
   ngOnInit(): void {
     this.productService.getProducts().subscribe({
       next: (data) => {
