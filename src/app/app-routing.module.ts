@@ -9,25 +9,39 @@ import { UsersComponent } from './component/users/users.component';
 import { ProductsComponent } from './component/products/products.component';
 import { NotFondComponent } from './component/not-fond/not-fond.component';
 
+
+
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+import { CartComponent } from './component/cart/cart.component';
+
+
 
 
 import { AuthGuard } from './auth.guard'; 
+
+
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent },
   { path: "sgin-in-sign-up", component: SginInSignUpComponent },
-  { path: "payment", component: PaymentComponent, canActivate: [AuthGuard] }, 
-  { path: "add-prouduct", component: AddProductComponent, canActivate: [AuthGuard] }, 
+  { path: "payment", component: PaymentComponent },
+  { path: "add-prouduct", component: AddProductComponent },
   { path: "product/:id", component: ProductDetailsComponent },
   { path: "users", component: UsersComponent },
   { path: "products", component: ProductsComponent },
+
 
   { path: "edit-profile", component: EditProfileComponent},
   { path: "**", component: NotFondComponent },
   { path: "", component: NotFondComponent },
   
+
+  { path: "cart", component: CartComponent },
+
+  { path: "edit-profile", component: EditProfileComponent},
+  { path: "**", component: NotFondComponent },
+
 ];
 
 

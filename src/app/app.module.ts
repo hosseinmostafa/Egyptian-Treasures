@@ -17,6 +17,7 @@ import { UsersComponent } from './component/users/users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+import { CartComponent } from './component/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EditProfileComponent } from './component/edit-profile/edit-profile.comp
     UsersComponent,
     AppComponent,
     EditProfileComponent,
+    CartComponent,
 
   ],
   imports: [
