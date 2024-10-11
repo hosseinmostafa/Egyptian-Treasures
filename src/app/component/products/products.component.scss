@@ -25,9 +25,12 @@
 }
 
 .section1 {
-    margin: 0 auto
+    margin: 0 auto;
+    min-width: 100%;
 }
-
+.section{
+    min-width: 100%;
+}
 .btn-shoping-card,
 .filtering {
     color: #000;
