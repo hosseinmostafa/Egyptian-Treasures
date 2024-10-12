@@ -11,6 +11,11 @@ import { CartService } from '../../Services/cart.service';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent implements OnInit {
+clearFilter() {
+  this.filterCategory = '';
+  this.filterPrice = null;
+  this.applyFilters();
+}
   cartCount: number = 0;
   
   goToCart() {
