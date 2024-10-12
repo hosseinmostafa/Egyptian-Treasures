@@ -19,11 +19,12 @@ import { CartComponent } from './component/cart/cart.component';
 
 
 
-import { AuthGuard } from './auth.guard';
 import { DashHomeComponent } from './component/dashboard/dash-home/dash-home.component';
 import { ProductListComponent } from './component/dashboard/product-list/product-list.component';
 import { UserAddComponent } from './component/dashboard/user-add/user-add.component';
 import { EditProductComponent } from './component/dashboard/edit-product/edit-product.component';
+import { authChildGuard, authGuardGuard } from './guards/guards/auth.guard';
+
 
 
 
@@ -32,8 +33,16 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "sgin-in-sign-up", component: SginInSignUpComponent },
   { path: "payment", component: PaymentComponent },
-  { path: "add-prouduct", component: AddProductComponent },
+  { path: "add-prouduct", component: AddProductComponent ,  canActivate: [authGuardGuard] },
   { path: "product/:id", component: ProductDetailsComponent },
+  {
+    path: 'Users',
+    canActivateChild: [authChildGuard],
+    children: [
+      { path: 'add-product', component: AddProductComponent },
+      { path: 'cart', component: CartComponent }
+    ]
+  },
   { path: "users", component: UsersComponent },
   {path:"cart",component:CartComponent},
   { path: "products", component: ProductsComponent },
@@ -45,7 +54,7 @@ const routes: Routes = [
   { path: "user-add", component: UserAddComponent },
   { path: "edit-product", component: EditProductComponent },
 
-  
+
 
 
 
@@ -54,9 +63,12 @@ const routes: Routes = [
   { path: "", component: NotFondComponent },
 
 
-  { path: "cart", component: CartComponent },
+  { path: "cart", component: CartComponent, canActivate: [authGuardGuard] },
 
   { path: "edit-profile", component: EditProfileComponent},
+
+
+
   { path: "**", component: NotFondComponent },
 
 ];
