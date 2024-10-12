@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: "payment", component: PaymentComponent },
   { path: "add-prouduct", component: AddProductComponent ,  canActivate: [AuthGuard] },
   { path: "product/:id", component: ProductDetailsComponent },
+<<<<<<< HEAD
   { 
     path: 'Users', 
     canActivateChild: [authChildGuard],  
@@ -36,6 +37,10 @@ const routes: Routes = [
       { path: 'cart', component: CartComponent }
     ]
   },
+=======
+  { path: "users", component: UsersComponent },
+  {path:"cart",component:CartComponent},
+>>>>>>> origin/main
   { path: "products", component: ProductsComponent },
 
 

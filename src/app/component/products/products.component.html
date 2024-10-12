@@ -22,7 +22,7 @@
         <div *ngIf="isFilterVisible" class="filter-form">
             <div class="card card-body">
                 <h5>Filter Options</h5>
-                <form (submit)="applyFilters()">
+                <form >
                     <div class="mb-3">
                         <label for="category" class="form-label">Category Name:</label>
                         <input type="text" id="category" [(ngModel)]="filterCategory" name="category"
@@ -32,11 +32,9 @@
                         <label for="price" class="form-label">Max Price ($):</label>
                         <input type="number" id="price" [(ngModel)]="filterPrice" name="price" class="form-control" />
                     </div>
-                    <!-- <div class="mb-3">
-            <label for="date" class="form-label">Date:</label>
-            <input type="date" id="date" [(ngModel)]="filterDate" name="date" class="form-control" />
-          </div> -->
-                    <button type="submit" class="btn btn-primary">Apply Filters</button>
+                
+                    <button type="submit" class="btn btn-primary" (click)="applyFilters()">Apply Filters</button>
+                    <button type="submit" class="btn btn-primary mx-5" (click)="clearFilter()">clear Filter</button>
                 </form>
             </div>
         </div>
