@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
-import { SginInSignUpComponent } from './component/sgin-in-sign-up/sgin-in-sign-up.component';
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
@@ -31,7 +32,8 @@ import { authChildGuard, authGuardGuard } from './guards/guards/auth.guard';
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent },
-  { path: "sgin-in-sign-up", component: SginInSignUpComponent },
+  { path: "login", component: LoginComponent },
+  { path: "signup", component: SignupComponent },
   { path: "payment", component: PaymentComponent },
   { path: "add-prouduct", component: AddProductComponent ,  canActivate: [authGuardGuard] },
   { path: "product/:id", component: ProductDetailsComponent },

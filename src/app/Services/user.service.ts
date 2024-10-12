@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { USERModul } from '../component/sgin-in-sign-up/UserModule';
+import { USERModul } from '../component/signup/UserModule';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,5 @@ export class UserService {
   updateUser(user: USERModul) {
     return this.http.put<any>(this.baseURL, user);
   }
-  
+
 }

@@ -12,7 +12,8 @@ import { NotFondComponent } from './component/not-fond/not-fond.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { ProductsComponent } from './component/products/products.component';
-import { SginInSignUpComponent } from './component/sgin-in-sign-up/sgin-in-sign-up.component';
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
 import { UsersComponent } from './component/users/users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -33,7 +34,8 @@ import { EditProductComponent } from './component/dashboard/edit-product/edit-pr
     PaymentComponent,
     ProductDetailsComponent,
     ProductsComponent,
-    SginInSignUpComponent,
+    LoginComponent,
+    SignupComponent,
     UsersComponent,
     AppComponent,
     EditProfileComponent,
