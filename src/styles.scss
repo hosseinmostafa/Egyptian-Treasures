@@ -2,9 +2,18 @@
 :root {
 
     //Color background all page
-    --color-gradient: linear-gradient(-45deg, #AC8968, #EEE2DC, #D4A95A);
+    --color-gradient: linear-gradient(-45deg, #ac8968da, #eee2dccb, #d4a95acb);
 
 
+
+    --c-dark: #212529;
+    --c-brand: #4e57d4;
+    --c-brand-light: #6970dd;
+    --c-brand-rgb: rgb(78, 87, 212);
+    --c-body: #727272;
+    --font-base: "ClashDisplay", sas-serif;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    --transition: all 0.7s ease;
 
     // pymant color
     /* This color palletes from Tailwind CSS */
