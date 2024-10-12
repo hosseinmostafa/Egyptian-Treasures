@@ -18,6 +18,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { CartComponent } from './component/cart/cart.component';
+import { DashHomeComponent } from './component/dashboard/dash-home/dash-home.component';
+import { ProductListComponent } from './component/dashboard/product-list/product-list.component';
+import { UserAddComponent } from './component/dashboard/user-add/user-add.component';
+import { EditProductComponent } from './component/dashboard/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { CartComponent } from './component/cart/cart.component';
     AppComponent,
     EditProfileComponent,
     CartComponent,
+    DashHomeComponent,
+    ProductListComponent,
+    UserAddComponent,
+    EditProductComponent,
 
   ],
   imports: [

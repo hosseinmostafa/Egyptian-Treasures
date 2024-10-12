@@ -11,13 +11,19 @@ import { NotFondComponent } from './component/not-fond/not-fond.component';
 
 
 
+
+
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { CartComponent } from './component/cart/cart.component';
 
 
 
 
-import { AuthGuard } from './auth.guard'; 
+import { AuthGuard } from './auth.guard';
+import { DashHomeComponent } from './component/dashboard/dash-home/dash-home.component';
+import { ProductListComponent } from './component/dashboard/product-list/product-list.component';
+import { UserAddComponent } from './component/dashboard/user-add/user-add.component';
+import { EditProductComponent } from './component/dashboard/edit-product/edit-product.component';
 
 
 
@@ -33,10 +39,20 @@ const routes: Routes = [
   { path: "products", component: ProductsComponent },
 
 
+
+  { path: "dash-bode", component: DashHomeComponent },
+  { path: "product-list", component: ProductListComponent },
+  { path: "user-add", component: UserAddComponent },
+  { path: "edit-product", component: EditProductComponent },
+
+  
+
+
+
   { path: "edit-profile", component: EditProfileComponent},
   { path: "**", component: NotFondComponent },
   { path: "", component: NotFondComponent },
-  
+
 
   { path: "cart", component: CartComponent },
 
