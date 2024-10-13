@@ -23,6 +23,9 @@ import { DashHomeComponent } from './component/dashboard/dash-home/dash-home.com
 import { ProductListComponent } from './component/dashboard/product-list/product-list.component';
 import { UserAddComponent } from './component/dashboard/user-add/user-add.component';
 import { EditProductComponent } from './component/dashboard/edit-product/edit-product.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+import { ProductHomeComponent } from './component/product-home/product-home.component';
+import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { EditProductComponent } from './component/dashboard/edit-product/edit-pr
     ProductListComponent,
     UserAddComponent,
     EditProductComponent,
+    AboutUsComponent,
+    ProductHomeComponent,
+    PrivacyPolicyComponent,
 
   ],
   imports: [

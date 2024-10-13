@@ -1,30 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, throwError } from 'rxjs';
 import { Iproduct } from '../component/interfaces/Iproduct';
-
-
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
-
-  private apiUrl = './data/products.json';
-  // private apiUrl = 'https://egyption-treasure-89099-default-rtdb.firebaseio.com/Products.json';
+export class HomeService {
+  private apiUrlHome = './data/home.json';
 
   constructor(private http: HttpClient) { }
-  getProducts(): Observable<Iproduct[]> {
-    return this.http.get<Iproduct[]>(this.apiUrl).pipe(
+
+
+  getHome(): Observable<Iproduct[]> {
+    return this.http.get<Iproduct[]>(this.apiUrlHome).pipe(
       catchError((err) => {
         return throwError(() => err.message || 'server error');
       })
     );
   }
-  getOneProduct(id: string): Observable<Iproduct | undefined> {
 
-
-    return this.getProducts().pipe(
+  getOneProductHome(id: string): Observable<Iproduct | undefined> {
+    return this.getHome().pipe(
       map((products: Iproduct[]) => {
         const oneProduct = products.find((product) => product.id === id)
         if (!oneProduct) {
@@ -33,7 +30,6 @@ export class ProductService {
         return oneProduct
       }),
       catchError((err) => {
-
         return throwError(() => err.message || 'product not found');
       })
     )

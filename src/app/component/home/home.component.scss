@@ -61,6 +61,30 @@ img {
     overflow: hidden;
 }
 
+.btn-get-start {
+    background-color: #b8a398;
+    color: white;
+    padding: 10px 24px;
+    transition: .4s !important;
+}
+
+.btn-get-start:hover {
+    background-color: #e7d6cc;
+    color: black;
+}
+
+.btn-get-Products {
+    background-color: #f0e3dc;
+    color: black;
+    transition: .4s !important;
+    padding: 10px 24px;
+}
+.btn-get-Products:hover {
+    background-color: #b8a398;
+    color: white;
+}
+
+
 .image-zoom-warpper {
     overflow: hidden;
     position: relative;
@@ -275,4 +299,13 @@ img {
 #contact .form-control:focus {
     border: none;
     border-color: var(--c-brand);
+}
+
+
+.img-dad{
+    width: 90px !important;
+}
+.img-dad2{
+    width: 90px !important;
+    // height: 70px;
 }

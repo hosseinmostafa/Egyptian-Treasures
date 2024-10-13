@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import * as AOS from 'aos';
+import { Iproduct } from '../interfaces/Iproduct';
+import { ProductService } from '../../Services/product.service';
+import { HomeService } from '../../Services/home.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +12,10 @@ import * as AOS from 'aos';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  products: Iproduct[] = [];
+  filteredProducts: Iproduct[] = [];
+  errMsg: string | null = null;
+  constructor(private router: Router, private homeServes: HomeService) { }
 
   ngOnInit(): void {
     AOS.init({
@@ -20,6 +27,21 @@ export class HomeComponent implements OnInit {
       mirror: false, // whether elements should animate out while scrolling past them
       anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
     });
+
+    this.homeServes.getHome().subscribe({
+      next: (data) => {
+        this.products = data;
+        this.filteredProducts = data;
+      },
+      error: (err) => {
+        this.errMsg = err;
+      },
+    });
+  }
+
+
+  goToProductDetails(id: string) {
+    this.router.navigate(['/product', id])
   }
 
 }
