@@ -1,15 +1,22 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 import { USERModul } from '../signup/UserModule';
 import Swal from 'sweetalert2'
 
+=======
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NavbarService } from '../../Services/navbar.service';
+import { FooterService } from '../../Services/footer.service';
+>>>>>>> 650d8cfe6a9d50114fc5295b1980b0e1c0d8e683
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+<<<<<<< HEAD
 export class LoginComponent {
   email : string = '';
   password : string = '';
@@ -17,7 +24,21 @@ export class LoginComponent {
 
   constructor( private router : Router , private userService : UserService){}
 
+=======
+export class LoginComponent implements OnInit, OnDestroy {
+>>>>>>> 650d8cfe6a9d50114fc5295b1980b0e1c0d8e683
 
+  constructor(private navbarService: NavbarService, private footerServes: FooterService) { }
+
+  ngOnInit(): void {
+    // this.navbarService.hideNavbar()
+    this.footerServes.hideFooter()
+  }
+
+  ngOnDestroy(): void {
+    // this.navbarService.display()
+    this.footerServes.displayFooter()
+  }
   // Add this method to fix the error
   onLogin() {
 

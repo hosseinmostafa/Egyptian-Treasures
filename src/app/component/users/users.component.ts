@@ -9,15 +9,15 @@ import { FooterService } from '../../Services/footer.service';
 })
 export class UsersComponent implements OnInit, OnDestroy {
 
-  constructor(private navbarService: NavbarService, private footerServes: FooterService) { }
+  constructor( private footerServes: FooterService) { }
 
   ngOnInit(): void {
-    this.navbarService.hideNavbar()
+
     this.footerServes.hideFooter()
   }
 
   ngOnDestroy(): void {
-    this.navbarService.display()
+
     this.footerServes.displayFooter()
   }
   

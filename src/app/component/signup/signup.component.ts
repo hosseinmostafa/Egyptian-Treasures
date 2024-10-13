@@ -1,14 +1,21 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { USERModul } from './UserModule';
 import { UserService } from '../../Services/user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+=======
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { FooterService } from '../../Services/footer.service';
+>>>>>>> 650d8cfe6a9d50114fc5295b1980b0e1c0d8e683
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
+<<<<<<< HEAD
 export class SignupComponent {
   usermodel = new USERModul("", "", "", "", false);
 
@@ -49,7 +56,21 @@ export class SignupComponent {
 
     return true; // إذا كان كل شيء صحيحًا
   }
+=======
+export class SignupComponent implements OnInit, OnDestroy {
+>>>>>>> 650d8cfe6a9d50114fc5295b1980b0e1c0d8e683
 
+  constructor(private footerServes: FooterService) { }
+
+  ngOnInit(): void {
+    // this.navbarService.hideNavbar()
+    this.footerServes.hideFooter()
+  }
+
+  ngOnDestroy(): void {
+    // this.navbarService.display()
+    this.footerServes.displayFooter()
+  }
   onSubmit() {
     // التحقق من صحة البيانات قبل تقديمها
     if (this.validateForm()) {
