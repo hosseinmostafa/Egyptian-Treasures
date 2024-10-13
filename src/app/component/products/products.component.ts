@@ -41,6 +41,7 @@ clearFilter() {
     this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data;
+        console.log(this.products);
         this.filteredProducts = data;
       },
       error: (err) => {

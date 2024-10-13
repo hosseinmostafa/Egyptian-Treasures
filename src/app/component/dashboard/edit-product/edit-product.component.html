@@ -1,35 +1,51 @@
-<div class=" container">
-  <div class="container text-center my-5">
-    <h1>Edit Product</h1>
-  </div>
+<div class="container">
+  <h1>Edit Product</h1>
 
-  <div class="container col-md-7">
-    <div class="row">
-      <table class="table table-bordered table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td><img [src]="product.image || 'assets/default-image.jpg'" alt="{{ product.name }}" class="product-image"></td>
+        <td>{{product.name}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.price }}</td>
+        <td>
+          <button  class="btn btn-info" (click)="editProduct(product)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="d-flex justify-content-evenly">
-              <button type="button" class="btn btn-primary btn-sm">Edit</button>
-              <button type="button" class="btn btn-danger btn-sm">Delete</button>
-            </td>
-          </tr>
+  <div class="modal" *ngIf="selectedProduct">
+    <div class="modal-content">
+      <span class="close" (click)="selectedProduct = null">&times;</span>
+      <h2>Edit Product</h2>
+      <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+        <label for="productName">Name</label>
+        <input type="text" id="productName" formControlName="name">
 
-          <!-- Add more rows as needed -->
-        </tbody>
-      </table>
+        <label for="productImage">Image URL</label>
+        <input type="text" id="productImage" formControlName="image">
+
+        <label for="productQuantity">Quantity</label>
+        <input type="number" id="productQuantity" formControlName="quantity">
+
+        <label for="productPrice">Price</label>
+        <input type="number" id="productPrice" formControlName="price">
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
     </div>
   </div>
-
 </div>

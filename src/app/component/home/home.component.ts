@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
 
   goToProductDetails(id: string) {
-    this.router.navigate(['/product', id])
+    this.router.navigate(['/home', id])
   }
 
 }
