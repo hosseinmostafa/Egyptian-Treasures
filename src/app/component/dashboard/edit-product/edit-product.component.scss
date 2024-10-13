@@ -1,28 +1,94 @@
-.cont{
-  background: #f1f1f1;
+.cont {
+  background: #ebca96; 
   position: relative;
   top: 100px;
   height: 70%;
+  padding: 20px;
+  border-radius: 15px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 
-h1{
+h1 {
   margin-top: 50px;
-  color: black;
+  color: black; 
 }
 
 
+.custom-table {
+  width: 100%;
+  border-collapse: collapse; 
+  border-radius: 12px; 
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
 
-th{
 
-  background: #d6d6d6;
+th {
+  background: #f5e1c1; 
   padding: 10px;
-  color: black;
-
+  color: black; 
   font-size: 20px;
-
-}
-.b{
-  border: 2px;
+  border: 2px solid #f5c476; 
 }
 
+
+td {
+  padding: 10px;
+  border: 2px solid #f5c476; 
+  text-align: center; 
+  background: #fff; 
+}
+
+
+.custom-table tr {
+  border-bottom: none; 
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none; 
+}
+
+
+.custom-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.custom-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+
+.custom-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.custom-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+
+.btn-custom-primary {
+  background-color: #f0ae45; 
+  color: white; 
+  border: none;
+  border-radius: 5px; 
+}
+
+.btn-custom-primary:hover {
+  background-color: #0056b3; 
+}
+
+.btn-custom-danger {
+  background-color: #dc3545; 
+  color: white; 
+  border-radius: 5px; 
+}
+
+.btn-custom-danger:hover {
+  background-color: #c82333; 
+}
+
+
+.d-flex button {
+  margin: 0 5px; }
