@@ -18,7 +18,7 @@ export class UserService {
     return this.http.post<any>(this.baseURL, user);
   }
 
-  getUsers() :Observable<USERModul[]> {
+  getUsers(): Observable<USERModul[]> {
     return this.http.get<USERModul[]>(this.baseURL);
   }
 

@@ -1,0 +1,60 @@
+[
+    {
+        "id": "2",
+        "name": "Drapes  of colorful cotton balls",
+        "price": 50,
+        "image": "https://img.freepik.com/free-photo/decorative-pom-poms-used-decorations-around-house_23-2149449952.jpg",
+        "description": "is a vibrant and playful textile art installation that transforms the ordinary into the extraordinary. A curtain made entirely of colorful cotton balls, suspended from a delicate framework, creates a mesmerizing visual experience. The cotton balls, varying in size and hue, are carefully arranged to resemble a flowing fabric, evoking a sense of movement and energy.",
+        "material": "Terracotta",
+        "dimensions": "20cm x 10cm",
+        "date": "2024-09-01"
+    },
+    {
+        "id": "4",
+        "name": "Macrame Wall Decoration  ",
+        "price": 150,
+        "image": "https://img.freepik.com/free-phohttps://img.freepik.com/premium-photo/macrame-decoration-interior_154092-5636.jpg",
+        "description": "A handcrafted macrame wall decoration that adds a bohemian and cozy touch to any interior space. This wall-hanging piece features carefully woven threads forming geometric or natural patterns. It’s perfect for decorating living rooms, bedrooms, or even offices, bringing a sense of warmth and natural elegance to the environment.",
+        "material": "Ceramic",
+        "dimensions": "Varying sizes",
+        "date": "2024-09-01"
+    },
+    {
+        "id": "6",
+        "name": "Clothes Drying Table Against ",
+        "price": 130,
+        "image": "https://img.freepik.com/free-photo/2022-christmas-wall-calendar_23-2149758803.jpg",
+        "description": "a clothes drying table positioned against the wall in a home. This table adds a practical and modern touch to the space, providing a comfortable place to dry clothes neatly..",
+        "material": "Wool threads ",
+        "date": "2024-09-01"
+    },
+    {
+        "id": "3",
+        "name": "Ancient pottery vessel with retro",
+        "price": 70,
+        "image": "https://img.freepik.com/premium-photo/collection-art-with-picture-flowers-picture-bird_1087688-1479.jpg",
+        "description": "The image showcases a collection of four glass frames, each containing a unique arrangement of pressed flowers and foliage, carefully suspended on a gray wall.",
+        "material": "Ceramic",
+        "dimensions": "25cm x 12cm",
+        "date": "2024-09-01"
+    },
+    {
+        "id": "5",
+        "name": "Handmade fabric design close",
+        "price": 90,
+        "image": "../imges/img1.jpg",
+        "description": "Detailed fabric design showcasing intricate hand-stitching and patterns.",
+        "material": "Handwoven Fabric",
+        "dimensions": "50cm x 50cm",
+        "date": "2024-09-01"
+    },
+    {
+        "id": "7",
+        "name": "Glass Cubes with Flowers ",
+        "price": 400,
+        "image": "https://img.freepik.com/premium-photo/three-square-glass-cubes-with-flowers-word-spring-them_1087688-1356.jpg",
+        "description": "three square glass cubes filled with colorful flowers and the word Spring written in an appealing way. This arrangement adds a touch of nature and beauty to the space, reflecting the spirit of spring and life.",
+        "material": "glass",
+        "date": "2024-09-01"
+    }
+]
