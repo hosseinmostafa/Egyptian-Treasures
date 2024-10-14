@@ -5,8 +5,13 @@
 }
 
 .logo {
-    height: 30px;
-    width: auto
+    width: 17vh;
+    height: 7vh;
+    // font-size: 20px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: color-burn;
 }
 
 .nav-link {
@@ -18,28 +23,19 @@
     color: #000 !important
 }
 
-.img-logo-navbar {
-    border-radius: 50%;
-    width: 6vh;
-    height: 6vh
-}
-
-.icont,
-.icont:hover {
-    background-color: #66483b !important;
-    border: none
-}
-
 .fa-solid.fa-bars {
     color: #000;
     font-size: 25px
 }
 
 .icont {
-    color: #eee2dc !important;
-    transition: .3s
+    color: #000 !important;
+    transition: .3s;
+    border: none;
 }
 
 .icont:hover {
-    color: #d4a95a !important
+    color: #000 !important;
+    background-color: white;
+    font-size: 16px;
 }

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { HomeService } from '../../Services/home.service';
 import { ActivatedRoute } from '@angular/router';
 import { throwError } from 'rxjs';
-
+import { Router } from '@angular/router';
+import { Iproduct } from '../interfaces/Iproduct';
+import { CartService } from '../../Services/cart.service';
 @Component({
   selector: 'app-product-home',
   templateUrl: './product-home.component.html',
@@ -12,7 +14,8 @@ export class ProductHomeComponent {
   oneProduct: any;
   productId: any;
   errMsg: any;
-  constructor(private homeServes: HomeService, private activatedRoute: ActivatedRoute) { }
+  constructor(private homeServes: HomeService, private activatedRoute: ActivatedRoute,
+    private router: Router, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -25,5 +28,16 @@ export class ProductHomeComponent {
         return throwError(() => err.message || 'product not found');
       }
     })
+  }
+
+
+  // add to cart
+  cartCount: number = 0;
+  goToCart() {
+    this.router.navigate(['/cart'])
+  }
+  addToCart(product: Iproduct) {
+    this.cartCount++;
+    this.cartService.addToCart(product);
   }
 }
