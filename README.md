@@ -1,115 +1,120 @@
-# DeployProject
+<h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; text-align: center;">
+  HERAF 🧶🎨  
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-
-# FinalProject
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-### To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# Egyptian Handicrafts Project
-
-## Overview:
-<p>
-This project aims to promote and preserve traditional Egyptian handicrafts by creating a platform for artisans to showcase and sell their products.
-The project will also provide training and resources for artisans to improve their skills and market their products effectively.
+<p style="font-family: 'Poppins', sans-serif; text-align: center; font-size: 18px;">
+  HERAF is a platform for artisans and handcrafters to showcase and sell their handmade products.  
+  It simplifies the buying and selling process for the Egyptian market, empowering local talent.
 </p>
 
-## Project Structure:
-<p>
-Artisan Profiles: A directory of Egyptian artisans, including their bio, products, and contact information.
-Product Catalog: A showcase of traditional Egyptian handicrafts, including images, descriptions, and prices.
-Training Resources: A collection of tutorials, guides, and workshops for artisans to improve their skills and market their products.
-Marketplace: An e-commerce platform for artisans to sell their products to customers worldwide.
-</p>
+---
 
-## Technical Requirements:
-<p>
-Frontend: Built using HTML, CSS, and JavaScript, and ( Bootstrap, Angular )  with a responsive design for optimal user experience.
-<br>
-Backend: Built using Node.js, Express, and MongoDB, with a RESTful API for data storage and retrieval.
-<br>
-Database: MongoDB, with a schema designed to store artisan profiles, product information, and customer data.
-</p>
+## 🌟 Features  
+- **User Authentication**: Secure login and registration using Firebase.  
+- **Product Management**: Add, edit, and delete products.  
+- **Order System**: Customers can place orders and sellers can track them.  
+- **Responsive Design**: Works seamlessly on mobile and desktop devices.
 
-### Work is now being done on:
-<ul>
-  <li> Home page. </li>
-  <li> Sign-in && Sign-up. </li>
-</ul>
->>>>>>> origin/master
+---
+
+## 🛠️ Technologies Used  
+- **Angular**: Frontend framework for building the interface.  
+- **TypeScript**: Type-safe JavaScript for robust development.  
+- **Firebase**: Authentication, database, and hosting.  
+- **HTML & CSS**: Structure and styling of the pages.  
+
+---
+
+## 🚀 Setup & Installation  
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/hosseinmostafa/Egyptian-Treasures
+   cd heraf
+   
+2. **Install dependencies**  
+   ```bash
+   npm install
+
+2. **Add Firebase Configuration**  
+   Create a `src/environments/environment.ts` file and add your Firebase configuration as follows:
+
+   ```typescript
+   export const environment = {
+     production: false,
+     firebaseConfig: {
+       apiKey: "YOUR_API_KEY",
+       authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+       projectId: "YOUR_PROJECT_ID",
+       storageBucket: "YOUR_PROJECT_ID.appspot.com",
+       messagingSenderId: "YOUR_SENDER_ID",
+       appId: "YOUR_APP_ID"
+     }
+   };
+## 🖼️ Screenshots  
+1. **Home Page**  
+   ![2024-10-14](https://github.com/user-attachments/assets/89623490-496f-4298-8ae4-2df4216e7245)
+  ![2024-10-14 (1)](https://github.com/user-attachments/assets/124830e2-c20f-4fed-aadf-6b380374c290)
+![2024-10-14 (2)](https://github.com/user-attachments/assets/fce787ea-eb3b-4fc1-9973-0f5c3946ed44)
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+2. **Product Listing**  
+   ![2024-10-14 (3)](https://github.com/user-attachments/assets/53e9a8a2-2205-405f-94a5-b65947898baa)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+3. **Add Items**  
+   ![2024-10-14 (6)](https://github.com/user-attachments/assets/cb695184-1612-49c4-9b1e-79cf0d741cfd)
+  
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ⚙️ How It Works  
+1. **User Registration & Login:**  
+   Users register and log in securely via Firebase Authentication.  
 
-## Build
+2. **Adding Products:**  
+   Sellers can upload products with details such as price and category.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Order Placement:**  
+   Customers browse products, add items to their cart, and place orders.  
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🤝 Contributing  
+1. **Fork the Repository**  
+   Click on the **Fork** button in GitHub.
 
-## Running end-to-end tests
+2. **Create a New Branch**  
+   ```bash
+   git checkout -b feature-branch
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Commit Changes**  
+   ```bash
+   git commit -m "Add new feature"
 
-## Further help
+4. **Push to Your Branch**  
+   ```bash
+   git push origin feature-branch
+   
+5. **Create a Pull Request**  
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page
+---
+
+## 📄 License  
+This project is licensed under the **MIT License**.
+
+---
+
+## 🔗 Links  
+- **GitHub Repository**: [HERAF Repository](https://github.com/Hussein-osama/heraf)  
+- **HERAF Website**: [HERAF Website](https://herfa-handicraft.netlify.app/)  
+
+### **LinkedIn**  
+- [Hussein Osama](https://www.linkedin.com/in/hussein-osama-a4b38b1b7)  
+- [Hessein Mostafa](https://www.linkedin.com/in/hessein-mostafa)  
+- [Osama Sameh](https://www.linkedin.com/in/osama-sameh-03704a28b/)  
+- [Madonna Nageh](https://www.linkedin.com/in/madonna-nageh-39b3a428a/)  
+- [Omnia Abu-Elhassan](https://www.linkedin.com/in/omnia-abu-elhassan-4b79a126a)  
+
+
+
