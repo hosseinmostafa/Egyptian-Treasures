@@ -31,54 +31,64 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onLogin() {
     this.userService.getUsers().subscribe({
-      next: (users: any) => { // استخدم any كنوع مؤقت
-        console.log('Users retrieved from API:', users);
+      next: (users: USERModul[]) => {
+        // Find user by email and password
+        const user = Object.values(users).find(
+          (u: USERModul) =>
+            u.email === this.email && u.password === this.password
+        );
 
-        // التأكد من تحويل الكائن إلى مصفوفة
-        const userArray: USERModul[] = Array.isArray(users) ? users : Object.values(users);
-
-        const user = userArray.find((u: USERModul) => u.email === this.email && u.password === this.password);
         if (user) {
-          console.log('Login Successful');
+          // Successful login
+          console.log('Login successful!');
+
+          // Generate fake token and set expiration
           const token = this.generateFakeToken();
-          const expiration = this.generateFakeTokenExpiration(1);
+          const expiration = this.generateTokenExpiration(1); // Token expires in 1 hour
+
+          // Save the token and expiration in localStorage
           localStorage.setItem('authToken', token);
           localStorage.setItem('tokenExpiration', expiration);
+
+          // Navigate to home
           this.router.navigate(['/home']);
         } else {
+          // Login failed, show error message
           this.loginError = true;
           Swal.fire({
+            title: 'Error!',
+            text: 'Invalid email or password.',
             icon: 'error',
-            title: 'Login Error',
-            text: 'Invalid email or password. Please try again.',
-            confirmButtonText: 'OK',
+            confirmButtonText: 'Try Again',
           });
         }
       },
       error: (err) => {
-        console.error('Error fetching users:', err);
+        console.log('Error fetching users:', err);
+        this.loginError = true;
         Swal.fire({
+          title: 'Error!',
+          text: 'Could not fetch users. Please try again later.',
           icon: 'error',
-          title: 'Login Error',
-          text: 'Something went wrong!',
           confirmButtonText: 'OK',
         });
-      }
+      },
     });
   }
 
-
-
+  // Generate a random fake token
   generateFakeToken(): string {
     return Math.random().toString(36).substring(2) + Date.now().toString(36);
   }
 
-  generateFakeTokenExpiration(hours: number): string {
+  // Generate expiration time in ISO string (hours)
+  generateTokenExpiration(hours: number): string {
     const expirationDate = new Date();
     expirationDate.setHours(expirationDate.getHours() + hours);
     return expirationDate.toISOString();
   }
 
+  // Check if token is expired
   isTokenExpired(): boolean {
     const expiration = localStorage.getItem('tokenExpiration');
     if (expiration) {

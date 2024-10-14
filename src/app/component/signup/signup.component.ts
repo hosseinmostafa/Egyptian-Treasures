@@ -11,7 +11,7 @@ import { FooterService } from '../../Services/footer.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit, OnDestroy {
-  usermodel = new USERModul("", "", "", "", false);
+  userModel = new USERModul('', '', '', '', false);
 
   constructor(
     private userSarvies: UserService,
@@ -28,26 +28,20 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    // Directly attempt to register the user
-    this.userSarvies.addUser(this.usermodel).subscribe({
+    // console.log(this.userModel)
+    this.userSarvies.addUser(this.userModel).subscribe({
       next: (data) => {
-        console.log(data);
-        Swal.fire({
-          icon: "success",
-          title: "Registration Successful",
-          text: "You have been registered successfully!",
-        });
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login'])
       },
-      error: (err) => {
-        console.log(err);
+      error: (error) => {
+        console.log(error)
         Swal.fire({
-          icon: "error",
-          title: "Register Failed",
-          text: "Something went wrong!",
+          title: 'Error!',
+          text: 'Internal Server Error',
+          icon: 'error',
+          confirmButtonText: 'Try Again',
         });
-      }
+      },
     });
-    console.log('Form submitted!');
   }
 }
