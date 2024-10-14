@@ -1,25 +1,30 @@
 <div class="section">
     <div class="container">
+        <div class="row justify-content-center">
+            <!-- Error Message Section -->
+            <div class="col-12 col-md-8">
+                <div *ngIf="errMsg" class="text-center alert alert-danger my-3">{{errMsg}}</div>
+            </div>
+        </div>
+
         <div class="row">
-            <div class="col-6 offset-3">
-                <div *ngif="errMsg" class="text-center bg-light alert alert-danger my-3">{{errMsg}}</div>
+            <!-- Image Section -->
+            <div class="col-md-6 mb-4" id="image-border">
+                <img class="img-fluid rounded-3" [alt]="oneProduct?.name" [src]="oneProduct?.image">
             </div>
-            <div class="col-md-6" id="image-border"><img [alt]="oneProduct?.name" [src]="oneProduct?.image"></div>
-            <div class="col-md-6 fw-bold" id="details">
-                <h3 class="text-center" id="title">pottery</h3>
-                <h3>description:</h3>
-                <h4>{{oneProduct?.description}}</h4>
-                <h4>material: {{oneProduct?.material}}</h4>
-                <h4>price: {{oneProduct?.price}}$</h4>
-                <h6>date of publish : {{oneProduct?.date}}</h6>
-                <!-- (click)="goToCart()" -->
-                <a class="btn mt-auto" routerLink="/cart">add to cart
-                    <!-- <span id="counter">{{cartCount}}</span>
-                    <button (click)="addToCart(productId)" class="ms-auto" id="addToCart">
-                        <i class="fa-solid fa-cart-arrow-down fa-2xl"></i>
-                    </button> -->
-                </a>
+
+            <!-- Product Details Section -->
+            <div class="col-md-6" id="details">
+                <h3 class="text-center fw-bold mb-5" id="title">Pottery</h3>
+                <div class="product-details">
+                    <h4 class="mb-5">Description:</h4>
+                    <p class="mb-5">{{oneProduct?.description}}</p>
+                    <h4 class="mb-5">Material: <span class="text-muted">{{oneProduct?.material}}</span></h4>
+                    <h4 class="mb-5">Price: <span class="text-primary">{{oneProduct?.price}}$</span></h4>
+                    <h6 class="text-muted">Published: {{oneProduct?.date}}</h6>
+                </div>
             </div>
+            <a class="btn btn-add-to-cart p-3 mt-3 rounded-3" (click)="openSpinner1()" role="button">Add to Cart</a>
         </div>
     </div>
 </div>

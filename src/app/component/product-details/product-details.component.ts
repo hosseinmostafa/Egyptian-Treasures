@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { throwError } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-product-details',
@@ -12,7 +13,7 @@ export class ProductDetailsComponent {
   oneProduct: any;
   productId: any;
   errMsg: any;
-  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) { }
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -25,5 +26,13 @@ export class ProductDetailsComponent {
         return throwError(() => err.message || 'product not found');
       }
     })
+  }
+
+  openSpinner1() {
+    this.spinner.show();
+
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 }

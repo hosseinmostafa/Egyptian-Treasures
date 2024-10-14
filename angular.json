@@ -44,11 +44,12 @@
             "styles": [
               "node_modules/aos/dist/aos.css",
               "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/ngx-spinner/animations/ball-atom.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/aos/dist/aos.js",
-
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },

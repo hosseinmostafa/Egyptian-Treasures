@@ -16,7 +16,7 @@
 .proinfo {
     box-shadow: 0 0 5px #525252;
     border-radius: 10px;
-    background: rgb(255 255 255 / 87%);
+    background: #ebc681c2;
 }
 
 .form-control,
@@ -33,10 +33,6 @@
 .proinfo,
 .proinfo label {
     margin-bottom: 20px
-}
-
-* {
-    overflow: hidden
 }
 
 .addtext {
@@ -64,15 +60,18 @@
 }
 
 .card {
-    position: relative;
-    top: 100px;
+    // position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // top: 100px;
     padding: 40px;
     height: 400px
 }
 
 .border-dashed {
-    border: 2px dashed #ccc;
-    border-radius: 10px
+    // border: 2px dashed #ccc;
+    border-radius: 40px
 }
 
 .file-label {

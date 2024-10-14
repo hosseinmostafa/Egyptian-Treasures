@@ -1,137 +1,101 @@
-                    .container,
-                    img {
-                    border-radius: 20px
-                    }
+.section {
+    background-image: url("https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 60px 0;
+    min-height: 100vh;
+}
 
-                    h3,
-                    h4,
-                    h5 {
-                    padding-left: 15px
-                    }
+.container {
+    background-color: rgba(255, 255, 255, 0.185);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
 
-                    .section {
-                    background-image: url("https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg");
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    min-height: 100vh;
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
-                    background-color: #eee;
-                    background-size: cover;
-                    background-position: center;
-                    padding: 20px
-                    }
+#image-border {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-                    .container {
-                    width: auto;
-                    margin-top: 80px;
-                    margin-bottom: 100px;
-                    background-color: rgba(113, 113, 112, .5);
-                    padding: 20px;
-                    box-shadow: 5px 5px 5px #4f4747
-                    }
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
 
-                    #image-border {
-                    box-shadow: 0 0 13px #4f4747;
-                    border-radius: 10px;
-                    padding: 0;
-                    height: auto;
-                    box-sizing: border-box
-                    }
+img:hover {
+    transform: scale(1.05);
+}
 
-                    img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover
-                    }
+#details {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
 
-                    #details {
-                    padding: 10px;
-                    box-sizing: border-box;
-                    font-size: 20px;
-                    line-height: 1.5;
-                    text-align: start;
-                    background-image: none;
-                    font-family: Arial, Helvetica, sans-serif;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    color: rgba(0, 0, 0, .726);
-                    font-weight: 700
-                    }
+#details h3 {
+    font-size: 28px;
+    color: #b8a398;
+    margin-bottom: 20px;
+}
 
-                    h3 {
-                    margin-bottom: 20px
-                    }
+#details h4,
+#details p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
 
-                    h4 {
-                    margin-bottom: 40px
-                    }
+#details h6 {
+    font-size: 16px;
+    color: #777;
+}
 
-                    h5 {
-                    margin-bottom: 50px
-                    }
+.btn-add-to-cart {
+    background-color: #b8a398;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
 
-                    .btn {
-                    background-color: #f0ce8f;
-                    color: #000;
-                    border-radius: 50px;
-                    display: block;
-                    margin-top: 20px;
-                    transition: .5s
-                    }
+.btn-add-to-cart:hover {
+    background-color: #fff;
+    color: #b8a398;
+    border: 2px solid #b8a398;
+}
 
-                    .btn:hover {
-                    background-color: #fff
-                    }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #details {
+        text-align: center;
+    }
 
-                    @media (max-width:768px) {
+    img {
+        margin-bottom: 20px;
+    }
 
-                    #details,
-                    h6 {
-                    padding-left: 0
-                    }
+    .btn-add-to-cart {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
 
-                    .section {
-                    height: auto
-                    }
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+    }
 
-                    .container {
-                    width: 100%;
-                    margin: 0 auto;
-                    padding: 15px
-                    }
-
-                    #details {
-                    text-align: center
-                    }
-
-                    .btn {
-                    width: 100%;
-                    margin: 15px 0
-                    }
-                    }
-
-                    @media (max-width:576px) {
-                    .container {
-                    margin-top: 50px;
-                    margin-bottom: 50px
-                    }
-
-                    h6 {
-                    padding-left: 0
-                    }
-
-                    .btn {
-                    width: 100%
-                    }
-                    }
-
-                    .icon-home {
-                    color: var(--pymant-color);
-                    transition: color .2s;
-                    display: flex;
-                    justify-content: end;
-                    align-items: center
-                    }
+    .section {
+        padding: 40px 0;
+    }
+}

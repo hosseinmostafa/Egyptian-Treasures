@@ -1,8 +1,13 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+
+
 <body class="bod" data-bs-spy="scroll" data-bs-target=".navbar">
-    <section id="hero" class="min-vh-100 d-flex align-items-center text-center bg-white">
+    <!-- <section id="hero" class="min-vh-100 d-flex align-items-center text-center bg-white">
         <div class="container-fluid ">
+            <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-atom">
+                <p style="font-size: 20px; color: white"> Loading...</p>
+            </ngx-spinner>
             <div class="row ">
                 <div class="col-12">
                     <h1 data-aos="fade-left" class="text-uppercase text-dark fw-semibold display-1">Welcome to
@@ -10,14 +15,39 @@
                     <h5 class="text-dark mt-3 mb-4" data-aos="fade-right">We offer a unique collection of handcrafted
                         artwork, beautifully decorated pottery, and exquisite handicrafts made from
                         palm fronds, leaves, and dried flowers, and string</h5>
-                    <a class="btn me-2 btn-start btn-get-start rounded-3" href="#services" data-aos="fade-up">Get
-                        Started</a>
-                    <a class="btn  ms-2 btn-start btn-get-Products rounded-3" routerLink="/products"
-                        data-aos="fade-up">Our Products <i class="fa-solid fa-arrow-right fa-fade ps-1"></i></a>
+                        
+                        <a (click)="openSpinner2() " class="btn  ms-2 btn-start btn-get-Products rounded-3" routerLink="/products" data-aos="fade-up"
+                        >Our Products <i class="fa-solid fa-arrow-right fa-fade ps-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center bg-white">
+        <div class="container-fluid">
+            <ngx-spinner bdColor = "rgba(212,169,90,0.4)" size = "medium" color = "#070707"  type="ball-atom">
+                <p style="font-size: 20px; color: white"> Loading...</p>
+            </ngx-spinner>
+            <div class="row ">
+                <div class="col-12">
+                    <h1 data-aos="fade-left" class="text-uppercase text-dark fw-semibold display-1">Welcome to
+                        Handicraft</h1>
+                    <h5 class="text-dark mt-3 mb-4" data-aos="fade-right">We offer a unique collection of handcrafted
+                        artwork, beautifully decorated pottery, and exquisite handicrafts made from
+                        palm fronds, leaves, and dried flowers, and string</h5>
+
+                        <a class="btn me-2 btn-start btn-get-start rounded-3" href="#services" data-aos="fade-up">Get
+                            Started</a>
+                    <!-- الزر الذي يعرض الـ Spinner ثم ينتقل إلى صفحة المنتجات -->
+                    <a (click)="openSpinner2()" class="btn ms-2 btn-start btn-get-Products rounded-3"
+                        data-aos="fade-up">
+                        Our Products <i class="fa-solid fa-arrow-right fa-fade ps-1"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <!-- services -->
@@ -104,6 +134,7 @@
         </div>
     </div>
 
+
     <!-- prortfolio -->
     <section id="protfolio" class="section-padding bg-white">
         <div class="container">
@@ -126,6 +157,9 @@
                         designed to inspire, delight, and leave a lasting impression</p>
                 </div>
             </div>
+            <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-atom">
+                <p style="font-size: 20px; color: white"> Loading...</p>
+            </ngx-spinner>
             <div class="row">
                 <div class="col-md-4" *ngFor="let product of filteredProducts" data-aos="fade-down"
                     data-aos-delay="150">
@@ -133,7 +167,8 @@
                         <div class="image-zoom-warpper">
                             <img class="rounded-3 p-2" [src]="product.image" [alt]="product.name">
                         </div>
-                            <button (click)="goToProductDetails(product.id)"class="iconbox btn btn-brand rounded-3" id="viewDetails">Shop</button>
+                        <button (click)="handleButtonClick(product.id)" class="iconbox btn btn-brand rounded-3"
+                            id="viewDetails">Shop</button>
                     </div>
                 </div>
 

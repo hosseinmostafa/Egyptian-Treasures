@@ -4,15 +4,22 @@
 }
 
 .logo {
-    height: 30px;
-    width: auto
+    width: 19vh;
+    height: 4vh;
+    // font-size: 20px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: color-burn;
 }
+
+
 
 .footer {
     background: var(--color-gradient);
 }
 
-.footer .copyright > span {
+.footer .copyright>span {
     color: var(--green-color)
 }
 

@@ -7,7 +7,7 @@
                 <input id="search-input" type="text" [(ngModel)]="searchTerm" (input)="searchProducts()"
                     class="form-control form-control-lg" placeholder="Search for products..." />
                 <div class="icon-cart">
-                    <a (click)="goToCart()">
+                    <a (click)="goToCart(); openSpinner1()">
                         <i class="fa-solid fa-cart-shopping fa-2xl icon-shop"></i>
                         <span id="counter">{{cartCount}}</span>
                     </a>
@@ -51,7 +51,7 @@
 
                                 <!-- Container for buttons to align them properly -->
                                 <div class="card-buttons d-flex justify-content-start align-items-space-between">
-                                    <button (click)="goToProductDetails(product.id)" class="btn btn-shoping-card"
+                                    <button (click)="goToProductDetails(product.id); openSpinner1()" class="btn btn-shoping-card"
                                         id="viewDetails">View Details</button>
                                     <button (click)="addToCart(product)" class="ms-auto" id="addToCart">
                                         <i class="fa-solid fa-cart-arrow-down fa-2xl"></i>

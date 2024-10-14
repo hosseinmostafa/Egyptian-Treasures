@@ -1,11 +1,14 @@
 <div class="footer pt-5 pb-3 text-dark-75 text-center text-md-start" *ngIf="showFooter">
     <div class="container">
+        <ngx-spinner bdColor = "rgba(212,169,90,0.4)" size = "medium" color = "#070707"  type="ball-atom">
+            <p style="font-size: 20px; color: white"> Loading...</p>
+        </ngx-spinner>
         <div class="row">
             <!-- Logo and Info Section -->
             <div class="col-md-6 col-lg-4">
                 <div class="info mb-5 text-col">
                     <a class="navbar-brand" href="/">
-                        <img src="./assests/logo-no-background.svg" alt="Logo" class="logo mb-3">
+                        <img src="./assests/199962250.png" alt="Logo" class="logo mb-3">
                     </a>
                     <p class="mb-5">
                         Sell your handcrafted products and join our community of creators and buyers.
@@ -22,10 +25,10 @@
                 <div class="links">
                     <h5 class="text-col">Quick Links</h5>
                     <ul class="list-unstyled lh-lg">
-                        <li class="link"><a routerLink="/home">Home</a></li>
-                        <li class="link"><a routerLink="/products">Shop</a></li>
-                        <li class="link"><a routerLink="/about-us">About Us</a></li>
-                        <li class="link"><a routerLink="/privacy-policy">Privacy Policy</a></li>
+                        <li class="link"><a (click)=" openSpinner1()"  routerLink="/home">Home</a></li>
+                        <li class="link"><a (click)=" openSpinner1()" routerLink="/products">Shop</a></li>
+                        <li class="link"><a (click)=" openSpinner1()" routerLink="/about-us">About Us</a></li>
+                        <li class="link"><a (click)=" openSpinner1()" routerLink="/privacy-policy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>

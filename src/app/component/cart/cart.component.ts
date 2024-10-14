@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CartService } from '../../Services/cart.service';  // Adjust as needed
 import { Iproduct } from '../interfaces/Iproduct';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +17,7 @@ export class CartComponent {
 
   cartItems: Iproduct[] = [];
 
-  constructor(private cartService: CartService, private router: Router) {
+  constructor(private cartService: CartService, private router: Router, private spinner: NgxSpinnerService) {
     this.cartItems = this.cartService.getCartItems();
 
     // Initialize the quantity for each item if not already present (default to 1)
@@ -52,5 +53,13 @@ export class CartComponent {
   // Calculate total cost of the cart
   getCartTotal() {
     return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  }
+
+  openSpinner1() {
+    this.spinner.show();
+
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 }

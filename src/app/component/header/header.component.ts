@@ -1,6 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NavbarService } from '../../Services/navbar.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -28,7 +30,7 @@ export class HeaderComponent implements OnDestroy {
   showNavbar: boolean = true;
   subscription: Subscription;
 
-  constructor(private navbarService: NavbarService) {
+  constructor(private navbarService: NavbarService, private spinner: NgxSpinnerService) {
     this.subscription = this.navbarService.showNavbar.subscribe((value) => {
       this.showNavbar = value;
     });
@@ -40,7 +42,11 @@ export class HeaderComponent implements OnDestroy {
   }
 
 
+  openSpinner1() {
+    this.spinner.show();
 
-
-
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000); 
+  }
 }

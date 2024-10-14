@@ -3,90 +3,84 @@
         <div class="card">
             <div class="row">
                 <!-- Left side (Product Table) -->
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12 mb-4">
                     <h5 class="text-center">Shopping Cart</h5>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Sub Total</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr class="tr" *ngFor="let item of cartItems">
-                                <td>{{item.name}}</td>
-                                <td>{{item.price}}</td>
-
-                                <td class="special">
-
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button class="btn btn-outline-secondary" type="button"
+                    <div class="table-responsive"> <!-- Add responsive wrapper -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Sub Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tr" *ngFor="let item of cartItems">
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.price | currency}}</td>
+                                    <td class="special">
+                                        <div class="input-group">
+                                            <button class="btn-quantity" type="button"
                                                 (click)="decreaseQuantity(item)">-</button>
-                                        </div>
-                                        <!-- Bind the input to item.quantity -->
-                                        <input type="text" class="form-control" [(ngModel)]="item.quantity">
-
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button"
+                                            <input type="text" class="form-control quantity-input"
+                                                [(ngModel)]="item.quantity">
+                                            <button class="btn-quantity" type="button"
                                                 (click)="increaseQuantity(item)">+</button>
                                         </div>
-                                    </div>
-
-                                </td>
-
-
-                                <td>{{item.price * item.quantity |currency}}</td>
-
-                            </tr>
-
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <td>{{item.price * item.quantity | currency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div class="col-md-1 d-flex align-items-center justify-content-center">
+                <!-- Divider -->
+                <div class="col-lg-1 d-none d-lg-flex align-items-center justify-content-center">
                     <div class="divider"></div>
                 </div>
-                <div class="col-md-5">
+
+                <!-- Right side (Cart Summary) -->
+                <div class="col-lg-5 col-md-12">
                     <h5 class="text-center">Cart Total</h5>
                     <table class="table table-bordered">
                         <tbody>
                             <tr>
                                 <td class="total-label">Subtotal:</td>
-                                <td>{{getCartTotal()|currency}}</td>
+                                <td>{{getCartTotal() | currency}}</td>
                             </tr>
                             <tr>
                                 <td class="total-label">Shipping:</td>
                                 <td>
-                                    <div class="checkbox-label">
-                                        <input type="checkbox" id="freeShipping">
-                                        <label for="freeShipping">Free Shipping</label>
-                                    </div>
-                                    <div class="checkbox-label">
-                                        <input type="checkbox" id="flatRate">
-                                        <label for="flatRate">Flat Rate</label>
-                                    </div>
-                                    <div class="checkbox-label">
-                                        <input type="checkbox" id="pickup">
-                                        <label for="pickup">Pickup</label>
+                                    <div class="shipping-options">
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="freeShipping">
+                                            <label for="freeShipping">Free Shipping</label>
+                                        </div>
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="flatRate">
+                                            <label for="flatRate">Flat Rate</label>
+                                        </div>
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="pickup">
+                                            <label for="pickup">Pickup</label>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="total-label">Total:</td>
-                                <td>{{getCartTotal()|currency}}</td>
+                                <td>{{getCartTotal() | currency}}</td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="text-center mt-3">
-                        <button class="btn " (click)="goToPayment()">Proceed to Checkout</button>
+                        <button class="btn btn-primary" (click)="goToPayment(); openSpinner1()">Proceed to
+                            Checkout</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>

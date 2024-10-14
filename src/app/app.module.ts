@@ -26,6 +26,8 @@ import { EditProductComponent } from './component/dashboard/edit-product/edit-pr
 import { AboutUsComponent } from './component/about-us/about-us.component';
 import { ProductHomeComponent } from './component/product-home/product-home.component';
 import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-polic
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())

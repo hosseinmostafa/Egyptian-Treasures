@@ -4,6 +4,7 @@ import { ProductService } from '../../Services/product.service';
 import { Router } from '@angular/router';
 import { Iproduct } from '../interfaces/Iproduct';
 import { CartService } from '../../Services/cart.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-products',
@@ -31,7 +32,8 @@ clearFilter() {
   filterPrice: number | null = null;
   filterDate: string = ''; // To hold the selected date
 
-  constructor(private productService: ProductService, private router: Router,private cartService:CartService) { }
+  constructor(private productService: ProductService, 
+    private router: Router, private cartService: CartService, private spinner: NgxSpinnerService) { }
     addToCart(product: Iproduct) {
     this.cartCount++;
     // window.localStorage.setItem('Iproduct', JSON.stringify(product));
@@ -95,5 +97,13 @@ clearFilter() {
       chunks.push(this.filteredProducts.slice(i, i + chunkSize));
     }
     return chunks;
+  }
+
+  openSpinner1() {
+    this.spinner.show();
+
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 }

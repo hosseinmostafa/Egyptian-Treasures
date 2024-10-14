@@ -5,6 +5,7 @@ import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { Iproduct } from '../interfaces/Iproduct';
 import { CartService } from '../../Services/cart.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-product-home',
   templateUrl: './product-home.component.html',
@@ -15,7 +16,7 @@ export class ProductHomeComponent {
   productId: any;
   errMsg: any;
   constructor(private homeServes: HomeService, private activatedRoute: ActivatedRoute,
-    private router: Router, private cartService: CartService) { }
+    private router: Router, private cartService: CartService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -39,5 +40,13 @@ export class ProductHomeComponent {
   addToCart(product: Iproduct) {
     this.cartCount++;
     this.cartService.addToCart(product);
+  }
+
+  openSpinner1() {
+    this.spinner.show();
+
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 }
