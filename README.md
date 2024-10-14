@@ -29,7 +29,7 @@
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/Hussein-osama/heraf.git
+   git clone https://github.com/hosseinmostafa/Egyptian-Treasures
    cd heraf
    
 2. **Install dependencies**  
