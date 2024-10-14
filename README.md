@@ -106,12 +106,14 @@ This project is licensed under the **MIT License**.
 ---
 
 ## 🔗 Links  
-- **GitHub Repository**: [HERAF Repository]([https://github.com/Hussein-osama/heraf](https://github.com/hosseinmostafa/Egyptian-Treasures))  
-- **LinkedIn**:
-- [Hussein Osama](https://www.linkedin.com/in/hussein-osama-a4b38b1b7)
-- [Hessein Mostafa](https://www.linkedin.com/in/hessein-mostafa)
-- [Osama Sameh](https://www.linkedin.com/in/osama-sameh-03704a28b/)
-- [Madonna Nageh](https://www.linkedin.com/in/madonna-nageh-39b3a428a/)
-- [omnia Abu-Elhassan](https://www.linkedin.com/in/omnia-abu-elhassan-4b79a126a) 
+- **GitHub Repository**: [HERAF Repository](https://github.com/Hussein-osama/heraf)  
+
+### **LinkedIn**  
+- [Hussein Osama](https://www.linkedin.com/in/hussein-osama-a4b38b1b7)  
+- [Hessein Mostafa](https://www.linkedin.com/in/hessein-mostafa)  
+- [Osama Sameh](https://www.linkedin.com/in/osama-sameh-03704a28b/)  
+- [Madonna Nageh](https://www.linkedin.com/in/madonna-nageh-39b3a428a/)  
+- [Omnia Abu-Elhassan](https://www.linkedin.com/in/omnia-abu-elhassan-4b79a126a)  
+
 
 
