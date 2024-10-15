@@ -36,8 +36,9 @@ textarea.form-control {
 }
 
 .btn-brand {
-    background-color: var(--c-brand);
-    color: white;
+    background-color: #d4a95a;
+    ;
+    color: black;
     transition: .4s;
     padding: 10px 24px;
     text-transform: uppercase;
@@ -46,7 +47,9 @@ textarea.form-control {
 }
 
 .btn-brand:hover {
-    background-color: var(--c-brand-light);
+    background-color: #e0ba72;
+    color: white;
+    
 }
 
 /* Responsive */

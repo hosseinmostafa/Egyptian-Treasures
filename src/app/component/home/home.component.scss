@@ -79,6 +79,7 @@ img {
     transition: .4s !important;
     padding: 10px 24px;
 }
+
 .btn-get-Products:hover {
     background-color: #b8a398;
     color: white;
@@ -108,13 +109,15 @@ img {
 }
 
 .btn-brand {
-    background-color: var(--c-brand);
+    background-color: #d4b272;
+    border-radius: 20px;
     color: white;
     transition: .4s;
 }
 
 .btn-brand:hover {
-    background-color: var(--c-brand-light);
+    background-color: #ecd2a2;
+    color: black;
 }
 
 
@@ -135,9 +138,9 @@ img {
 }
 
 .section-title .line {
-    width: 60px;
+    width: 100px;
     height: 4px;
-    background-color: var(--c-brand);
+    background-color: #d4a95a;
     margin: 16px auto 24px auto;
 }
 
@@ -154,7 +157,8 @@ img {
     align-items: center;
     justify-content: center;
     background: rgba(var(--c-brand-rgb) 0.1);
-    color: var(--c-brand);
+    color: #d4a95a;
+    ;
     font-size: 34px;
     flex: none;
 
@@ -217,18 +221,24 @@ img {
 /*  portfolio */
 
 .protfolio-item .iconbox {
-    background-color: var(--c-brand);
+    background-color: #d4a95a;
     color: white;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    transition: .4s;
 }
 
 .protfolio-item:hover .iconbox {
     opacity: 3;
     top: 50%;
+}
+
+.protfolio-item .iconbox:hover {
+    background-color: #e2c286;
+    color: black;
 }
 
 /* revew */
@@ -302,10 +312,11 @@ img {
 }
 
 
-.img-dad{
+.img-dad {
     width: 90px !important;
 }
-.img-dad2{
+
+.img-dad2 {
     width: 90px !important;
     // height: 70px;
 }

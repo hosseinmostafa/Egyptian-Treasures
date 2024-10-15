@@ -12,6 +12,18 @@
     padding: 20px
 }
 
+
+.btn-flt{
+    background-color: #e9c78a;
+    color: black;
+    font-size: 17px;
+    transition: .4s;
+}
+.btn-flt:hover{
+    background-color: #dbb671;
+    color: white;
+    font-size: 17px;
+}
 .container,
 .container[_ngcontent-ng-c2708429709] {
     margin: auto;
@@ -33,7 +45,7 @@
 }
 .btn-shoping-card,
 .filtering {
-    color: #000;
+    color: black;
     text-align: center !important;
     margin-bottom: 10px
 }
@@ -52,7 +64,8 @@
     flex-direction: column;
     gap: 10px;
     transition: .4s;
-    background-color: #e0bc78
+    background-color: #eecd8f;
+    transition: .4s;
 }
 
 .card,
@@ -62,7 +75,8 @@ img {
 }
 
 .filtering:hover {
-    background-color: #ddb66d
+    background-color: #e9c88c;
+    color: white;
 }
 
 .card {
@@ -108,11 +122,17 @@ img:hover {
 
 #viewDetails {
     padding: 10px 15px;
-    display: inline-block
+    display: inline-block;
+    // background-color: #e6cea2;
+}
+#viewDetails:hover {
+    background-color: #e0bd7a;
+    color: white;
 }
 
 #addToCart {
-    background-color: transparent;
+    // background-color: #e0bc78;
+    border-radius: 50%;
     border: none;
     transition: .5s
 }
@@ -124,7 +144,7 @@ img:hover {
 }
 
 #addToCart:hover {
-    background-color: #000;
+    background-color: #686767c0;
     border-radius: 50%;
     width: 40px;
     height: 40px
