@@ -38,7 +38,6 @@ export class ProductHomeComponent {
     this.router.navigate(['/cart'])
   }
   addToCart(product: Iproduct) {
-    this.cartCount++;
     this.cartService.addToCart(product);
   }
 

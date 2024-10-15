@@ -24,7 +24,7 @@
                     <h6 class="text-muted">Published: {{oneProduct?.date}}</h6>
                 </div>
             </div>
-            <a class="btn btn-add-to-cart p-3 mt-3 rounded-3" (click)="openSpinner1()" role="button">Add to Cart</a>
+            <a class="btn btn-add-to-cart p-3 mt-3 rounded-3" (click)="openSpinner1(); addToCart(oneProduct)" routerLink="/cart" role="button">Add to Cart</a>
         </div>
     </div>
 </div>

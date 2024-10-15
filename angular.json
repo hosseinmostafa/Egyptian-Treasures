@@ -90,6 +90,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
+            "allowedCommonJsDependencies": [
+              "aos",
+              "sweetalert2"
+            ],
             "polyfills": [
               "zone.js",
               "zone.js/testing"
