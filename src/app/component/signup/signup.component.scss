@@ -311,6 +311,12 @@ input.form-control {
   margin-bottom: 1rem;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .container {
