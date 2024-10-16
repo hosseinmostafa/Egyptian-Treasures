@@ -1,6 +1,5 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="container">
-    <!-- Left side panel -->
     <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center">
       <h2>Hello, Friend 👋</h2>
       <p>
@@ -9,15 +8,11 @@
       <a class="btn btn-warning mt-4" routerLink="/login">I already have an account</a>
       <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
     </div>
-
-    <!-- Right form panel -->
     <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center">
       <div class="text-center my-3">
         <h1 class="text-success">Sign Up</h1>
       </div>
-
       <form #registerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
-        <!-- User Name Field -->
         <div class="mb-3">
           <label for="exampleInputName" class="form-label">Name</label>
           <input
@@ -34,8 +29,6 @@
             Name is required
           </small>
         </div>
-
-        <!-- Phone Field -->
         <div class="mb-3">
           <label for="exampleInputPhone" class="form-label">Phone</label>
           <input
@@ -59,7 +52,6 @@
           </div>
         </div>
 
-        <!-- Email Field -->
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input
@@ -76,8 +68,6 @@
             Email is required
           </small>
         </div>
-
-        <!-- Password Field -->
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input
@@ -94,13 +84,9 @@
             Password is required
           </small>
         </div>
-
-        <!-- Confirm Password Field -->
         <div class="form-group">
           <input type="password" class="form-control" placeholder="Confirm Password" required>
         </div>
-
-        <!-- Remember Me Checkbox -->
         <div class="mb-3 form-check">
           <input
             [(ngModel)]="userModel.isChecked"
@@ -112,8 +98,6 @@
           />
           <label class="form-check-label" for="exampleCheck1">Remember me</label>
         </div>
-
-        <!-- Submit Button -->
         <button
           [disabled]="registerForm.form.invalid"
           type="submit"
@@ -122,13 +106,91 @@
           Sign Up
         </button>
       </form>
-
-      <!-- Social Media Buttons -->
       <div class="mt-3 text-center">Or sign in with social platforms</div>
       <div class="mt-1 d-flex justify-content-center">
         <button class="btn btn-outline-dark mx-1"><i class="fab fa-facebook-f"></i></button>
         <button class="btn btn-outline-dark mx-1"><i class="fab fa-google"></i></button>
         <button class="btn btn-outline-dark mx-1"><i class="fab fa-instagram"></i></button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="color-back ">
+  <div class="container-fluid ">
+    <div class="row ">
+      <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center cont-text" >
+        <h2>Hello, Friend 👋</h2>
+        <p>
+          Welcome to your journey to discover the beauty of Egyptian handicrafts! Sign up to join our community and
+          explore authentic, handmade masterpieces.
+        </p>
+        <a class="btn btn-warning mt-4" routerLink="/login">I already have an account</a>
+        <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
+      </div>
+      <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center cont-form">
+        <div class="text-center my-3">
+          <h1 class="text-success">Sign Up</h1>
+        </div>
+        <form #registerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Name</label>
+            <input [(ngModel)]="userModel.name" name="name" #name="ngModel" type="text" class="form-control"
+              id="exampleInputName" required [class.is-invalid]="name.invalid && name.touched" />
+            <small *ngIf="name.invalid && name.touched" class="text-danger">
+              Name is required
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPhone" class="form-label">Phone</label>
+            <input [class.is-invalid]="phone.invalid && phone.touched" name="phone" [(ngModel)]="userModel.phone"
+              #phone="ngModel" type="tel" class="form-control" id="exampleInputPhone" required />
+            <div *ngIf="phone.errors && phone.touched">
+              <small *ngIf="phone.errors['required']" class="text-danger">
+                Phone is required
+              </small>
+              <small *ngIf="phone.errors['pattern']" class="text-danger">
+                Phone must be 11 digits at least
+              </small>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input [(ngModel)]="userModel.email" required [class.is-invalid]="email.invalid && email.touched" name="email"
+              #email="ngModel" type="email" class="form-control" id="exampleInputEmail1" />
+            <small *ngIf="email.invalid && email.touched" class="text-danger">
+              Email is required
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input [(ngModel)]="userModel.password" name="password" #password="ngModel" type="password"
+              class="form-control" id="exampleInputPassword1" required
+              [class.is-invalid]="password.invalid && password.touched" />
+            <small *ngIf="password.invalid && password.touched" class="text-danger">
+              Password is required
+            </small>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Confirm Password" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input [(ngModel)]="userModel.isChecked" type="checkbox" class="form-check-input" id="exampleCheck1"
+              name="checked" #isChecked="ngModel" />
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <button [disabled]="registerForm.form.invalid" type="submit" class="btn btn-warning w-100 mb-3">
+            Sign Up
+          </button>
+        </form>
+        <div class="mt-3 text-center">Or sign in with social platforms</div>
+        <div class="mt-1 d-flex justify-content-center">
+          <button class="btn btn-outline-dark mx-1"><i class="fab fa-facebook-f"></i></button>
+          <button class="btn btn-outline-dark mx-1"><i class="fab fa-google"></i></button>
+          <button class="btn btn-outline-dark mx-1"><i class="fab fa-instagram"></i></button>
+        </div>
       </div>
     </div>
   </div>

@@ -10,8 +10,8 @@ import { Iproduct } from '../component/interfaces/Iproduct';
 })
 export class ProductService {
 
-  // private apiUrl = './data/products.json';
-  private apiUrl = 'https://egyption-treasure-89099-default-rtdb.firebaseio.com/Products.json';
+  private apiUrl = './data/products.json';
+  // private apiUrl = 'https://egyption-treasure-89099-default-rtdb.firebaseio.com/Products.json';
 
   constructor(private http: HttpClient) { }
   getProducts(): Observable<Iproduct[]> {
