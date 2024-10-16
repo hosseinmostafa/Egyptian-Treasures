@@ -1,74 +1,104 @@
-<div class="container-fluid">
-  <div class="container">
-    <!-- Left side panel -->
-    <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center">
-      <h2>Welcome Back 👋</h2>
-      <p>
-        To keep connected with us, please login with your personal info and continue exploring the beautiful world of Egyptian handicrafts!
-      </p>
-      <a class="btn btn-warning mt-4" routerLink="/signup">Create a new account</a>
-      <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
-    </div>
+<!-- <div class="color-back">
 
-    <!-- Right form panel -->
-    <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center">
-      <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px;">
-        <h3 class="text-center mb-4">Login</h3>
-        <form (ngSubmit)="onLogin()">
-          <!-- Email Field -->
-          <div class="form-group mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input
-              type="email"
-              id="email"
-              class="form-control"
-              [(ngModel)]="email"
-              name="email"
-              required
-            />
+  <div class="container-fluid">
+    <div class="container">
+      <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center">
+        <h2>Welcome Back 👋</h2>
+        <p>
+          To keep connected with us, please login with your personal info and continue exploring the beautiful world of
+          Egyptian handicrafts!
+        </p>
+        <a class="btn btn-warning mt-4" routerLink="/signup">Create a new account</a>
+        <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
+      </div>
+
+      <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center">
+        <div class="card shadow-sm p-5">
+          <h3 class="text-center mb-4">Login</h3>
+          <form (ngSubmit)="onLogin()">
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required />
+            </div>
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password"
+                required />
+            </div>
+            <div *ngIf="loginError" class="alert alert-danger">
+              Invalid email or password.
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+          </form>
+          <div class="text-center">
+            <a href="#" class="text-decoration-none">Forgot password?</a>
           </div>
 
-          <!-- Password Field -->
-          <div class="form-group mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input
-              type="password"
-              id="password"
-              class="form-control"
-              [(ngModel)]="password"
-              name="password"
-              required
-            />
+          <div class="mt-3 text-center">Or sign in with social platforms</div>
+          <div class="mt-1 d-flex justify-content-center">
+            <button class="btn btn-outline-dark mx-1"><i class="fab fa-facebook-f"></i></button>
+            <button class="btn btn-outline-dark mx-1"><i class="fab fa-google"></i></button>
+            <button class="btn btn-outline-dark mx-1"><i class="fab fa-instagram"></i></button>
           </div>
-
-          <!-- Error Message -->
-          <div *ngIf="loginError" class="alert alert-danger">
-            Invalid email or password.
-          </div>
-
-          <!-- Login Button -->
-          <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
-        </form>
-
-        <!-- Forgot Password Link -->
-        <div class="text-center">
-          <a href="#" class="text-decoration-none">Forgot password?</a>
         </div>
+      </div>
+    </div>
+  </div>
+</div> -->
 
-        <div class="mt-3 text-center">Or sign in with social platforms</div>
-        <div class="mt-1 d-flex justify-content-center">
-          <button class="btn btn-outline-dark mx-1"><i class="fab fa-facebook-f"></i></button>
-          <button class="btn btn-outline-dark mx-1"><i class="fab fa-google"></i></button>
-          <button class="btn btn-outline-dark mx-1"><i class="fab fa-instagram"></i></button>
+
+<div class="color-back">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center text-center">
+        <h2>Welcome Back 👋</h2>
+        <p>
+          To keep connected with us, please login with your personal info and continue exploring the beautiful world of
+          Egyptian handicrafts!
+        </p>
+        <a class="btn btn-warning mt-4" routerLink="/signup">Create a new account</a>
+        <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
+      </div>
+
+      <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center">
+        <div class="card shadow-sm p-5">
+          <h3 class="text-center mb-4">Login</h3>
+          <form (ngSubmit)="onLogin()" #registerForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">Email</label>
+              <!-- email -->
+              <input type="email" id="email" autofocus [(ngModel)]="userModul.email" name="email" #email="ngModel"
+                class="form-control " aria-describedby="emailHelp"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required
+                [class.is-invalid]="email.invalid && email.touched" />
+              <small *ngIf="email.invalid && email.touched" class="text-danger">Email is required</small>
+            </div>
+            <!-- email -->
+
+            <!-- password -->
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" [(ngModel)]="userModul.password" autofocus
+                name="password" #password="ngModel" ngModel type="password" class="form-control" id="password" required
+                [class.is-invalid]="password.invalid && password.touched" />
+              <small *ngIf="password.invalid && password.touched" class="text-danger">Password is required</small>
+            </div>
+            <!-- password -->
+             
+            <div *ngIf="loginError" class="alert alert-danger">Invalid email or password.</div>
+            <button type="submit" class="btn w-100 mb-3 btn-warning">Login</button>
+          </form>
+          <div class="text-center">
+            <a href="#" class="text-decoration-none text-color">Forgot password?</a>
+          </div>
+          <div class="mt-3 text-center ">Or sign in with social platforms</div>
+          <div class="mt-1 d-flex justify-content-center">
+            <button class="btn btn-outline-dark mx-1"><i class="fab fa-facebook-f"></i></button>
+            <button class="btn btn-outline-dark mx-1"><i class="fab fa-google"></i></button>
+            <button class="btn btn-outline-dark mx-1"><i class="fab fa-instagram"></i></button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<style>
-  .form-control {
-    border: none;
-    box-shadow: none;
-  }
-</style>

@@ -15,11 +15,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   password: string = '';
   loginError: boolean = false;
 
+  userModul = new USERModul('', '', '', '', false);
   constructor(
     private router: Router,
     private userService: UserService,
-    private footerServes: FooterService
-  ) {}
+    private footerServes: FooterService,
+  ) { }
 
   ngOnInit(): void {
     this.footerServes.hideFooter();
@@ -96,5 +97,12 @@ export class LoginComponent implements OnInit, OnDestroy {
       return expirationDate < new Date();
     }
     return true;
+  }
+
+  onSubmit() {
+    this.userService.addUser(this.userModul).subscribe({
+      next: (data) => console.log(data),
+      error: (error) => console.log(error),
+    });
   }
 }

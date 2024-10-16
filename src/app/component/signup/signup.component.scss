@@ -1,22 +1,221 @@
-/* Full background gradient for both login and sign-up pages */
+// /* Full background gradient for both login and sign-up pages */
+// .container-fluid {
+//   background: linear-gradient(135deg, #F1E4D6, #FEE3C3);
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 1rem; /* Add padding for better mobile view */
+// }
+
+// /* Main content container with fixed max-width */
+// .container {
+//   max-width: 850px; /* Limits container width for desktop */
+//   width: 100%;
+//   background-color: white; /* Keep this so the form area stands out */
+//   border-radius: 30px;
+//   display: flex;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for better contrast */
+//   overflow: hidden; /* Prevents overflow */
+// }
+
+// /* Left side panel */
+// .col-md-6.bg-light {
+//   background-color: #F9F3ED;
+//   color: #4D4D4D;
+//   padding: 4rem;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// h2, h3 {
+//   color: #4D4D4D;
+//   text-align: center;
+// }
+
+// p {
+//   margin-top: 1.5rem;
+//   text-align: center; /* Center-align text for better look on small screens */
+// }
+
+// /* Button styles */
+// .btn-warning {
+//   background-color: #F4A25B;
+//   border: none;
+//   color: white;
+//   border-radius: 30px;
+//   padding: 0.75rem 1.5rem;
+//   font-size: 1rem;
+//   transition: background-color 0.3s ease;
+// }
+
+// .btn-warning:hover {
+//   background-color: #f39c3d;
+// }
+
+// /* Home icon styling */
+// a i.fa-home {
+//   color: #F4A25B;
+//   margin-top: 1.5rem;
+//   font-size: 2rem;
+// }
+
+// a i.fa-home:hover {
+//   color: #f39c3d;
+// }
+
+// /* Social media button styling */
+// .btn-outline-dark {
+//   border: none;
+//   background-color: transparent;
+//   color: #4D4D4D;
+//   border-radius: 50%;
+//   padding: 0.5rem;
+//   margin: 0.2rem; /* Space between buttons */
+//   display: inline;
+// }
+
+// .btn-outline-dark:hover {
+//   color: #F4A25B;
+//   background-color: #F9F3ED;
+// }
+
+// .btn-outline-dark i {
+//   font-size: 1.5rem;
+// }
+
+// /* Right form panel */
+// .col-md-6.bg-white {
+//   background-color: white;
+//   padding: 3rem;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// /* Form styling */
+// form {
+//   width: 100%;
+// }
+
+// input.form-control {
+//   border-radius: 10px;
+//   border: 1px solid #ddd;
+//   padding: 0.75rem;
+//   font-size: 1rem;
+//   margin-bottom: 1rem;
+// }
+
+// /* Responsive Styles */
+// @media (max-width: 1200px) {
+//   .container {
+//     max-width: 750px; /* Adjust max-width for large tablets */
+//   }
+// }
+
+// @media (max-width: 992px) {
+//   .container {
+//     max-width: 600px; /* Reduce width for medium-sized tablets */
+//   }
+
+//   .col-md-6.bg-light, .col-md-6.bg-white {
+//     padding: 2.5rem; /* Reduce padding slightly for tablets */
+//   }
+
+//   .btn-warning {
+//     font-size: 0.9rem; /* Adjust button font size */
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   /* For small tablets and large phones */
+//   .container {
+//     max-width: 100%; /* Make container full-width */
+//     flex-direction: column; /* Stack columns vertically */
+//     height: 850px;
+//   }
+
+//   .col-md-6 {
+//     border-radius: 0; /* Remove border radius on small devices */
+//     width: 100%; /* Full width for each section */
+//     padding: 2rem; /* Reduce padding */
+//     text-align: center; /* Center text on small screens */
+//   }
+
+//   .btn-warning, .btn-outline-dark {
+//     width: 100%; /* Full-width buttons */
+//     margin-top: 1rem;
+
+//   }
+
+//   input.form-control {
+//     font-size: 0.9rem; /* Adjust input size */
+//     padding: 0.5rem; /* Reduce padding */
+//   }
+
+// }
+
+// @media (max-width: 576px) {
+//   /* For smaller mobile screens */
+//   .container {
+//     padding: 0;/* Remove container padding */
+//     height: 800px;
+//   }
+//   .container-fluid{
+//     height: 100vh;
+//   }
+
+//   .col-md-6 {
+//     padding: 1.5rem; /* Further reduce padding for smaller screens */
+//   }
+
+//   h2, h3 {
+//     font-size: 1.5rem; /* Reduce heading font size */
+//   }
+
+//   .btn-warning {
+//     font-size: 0.85rem; /* Further reduce button font size */
+//     padding: 0.6rem; /* Adjust padding */
+//   }
+
+//   .btn-outline-dark i {
+//     font-size: 1.3rem; /* Adjust icon size */
+//   }
+
+//   input.form-control {
+//     font-size: 0.85rem; /* Reduce input font size */
+//     padding: 0.4rem; /* Reduce padding */
+//   }
+// }
+
+
+.color-back {
+  background: linear-gradient(-45deg, #ac89689a, #eee2dc, #d4a95ad7);
+}
+
 .container-fluid {
-  background: linear-gradient(135deg, #F1E4D6, #FEE3C3);
-  height: 100vh;
+  // background: linear-gradient(135deg, #F1E4D6, #FEE3C3);
+  // height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem; /* Add padding for better mobile view */
+  padding: 1rem;
 }
 
-/* Main content container with fixed max-width */
-.container {
-  max-width: 850px; /* Limits container width for desktop */
-  width: 100%;
-  background-color: white; /* Keep this so the form area stands out */
-  border-radius: 30px;
-  display: flex;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for better contrast */
-  overflow: hidden; /* Prevents overflow */
+.cont-text {
+  // border-radius: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+
+}
+
+.cont-form {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+
 }
 
 /* Left side panel */
@@ -30,19 +229,20 @@
   align-items: center;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: #4D4D4D;
   text-align: center;
 }
 
 p {
   margin-top: 1.5rem;
-  text-align: center; /* Center-align text for better look on small screens */
+  text-align: center;
 }
 
 /* Button styles */
 .btn-warning {
-  background-color: #F4A25B;
+  background-color: #d4b272;
   border: none;
   color: white;
   border-radius: 30px;
@@ -52,18 +252,20 @@ p {
 }
 
 .btn-warning:hover {
-  background-color: #f39c3d;
+  background-color: #e0c696;
+  color: black;
 }
 
 /* Home icon styling */
 a i.fa-home {
-  color: #F4A25B;
+  color: #d4b272;
+  ;
   margin-top: 1.5rem;
   font-size: 2rem;
 }
 
 a i.fa-home:hover {
-  color: #f39c3d;
+  color: #e4c895;
 }
 
 /* Social media button styling */
@@ -73,12 +275,12 @@ a i.fa-home:hover {
   color: #4D4D4D;
   border-radius: 50%;
   padding: 0.5rem;
-  margin: 0.2rem; /* Space between buttons */
+  margin: 0.2rem;
   display: inline;
 }
 
 .btn-outline-dark:hover {
-  color: #F4A25B;
+  color: #d4b272;
   background-color: #F9F3ED;
 }
 
@@ -109,84 +311,91 @@ input.form-control {
   margin-bottom: 1rem;
 }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .container {
-    max-width: 750px; /* Adjust max-width for large tablets */
-  }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0
 }
 
+/* Responsive Styles */
 @media (max-width: 992px) {
   .container {
-    max-width: 600px; /* Reduce width for medium-sized tablets */
+    max-width: 600px;
+    width: 100%;
+    flex-direction: row-reverse;
+    /* Stack columns vertically on smaller screens */
   }
 
-  .col-md-6.bg-light, .col-md-6.bg-white {
-    padding: 2.5rem; /* Reduce padding slightly for tablets */
+  .col-md-6.bg-light,
+  .col-md-6.bg-white {
+    padding: 2.5rem;
   }
 
   .btn-warning {
-    font-size: 0.9rem; /* Adjust button font size */
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 768px) {
-  /* For small tablets and large phones */
   .container {
-    max-width: 100%; /* Make container full-width */
-    flex-direction: column; /* Stack columns vertically */
-    height: 850px;
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
   }
 
   .col-md-6 {
-    border-radius: 0; /* Remove border radius on small devices */
-    width: 100%; /* Full width for each section */
-    padding: 2rem; /* Reduce padding */
-    text-align: center; /* Center text on small screens */
+    padding: 2rem;
+    width: 100% !important;
+    text-align: center;
   }
 
-  .btn-warning, .btn-outline-dark {
-    width: 100%; /* Full-width buttons */
-    margin-top: 1rem;
-
+  .btn-warning,
+  .btn-outline-dark {
+    width: 100%;
   }
 
   input.form-control {
-    font-size: 0.9rem; /* Adjust input size */
-    padding: 0.5rem; /* Reduce padding */
+    font-size: 0.9rem;
+    padding: 0.5rem;
   }
 
+  .cont-text {
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+  }
+
+  .cont-form {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+  }
 }
 
 @media (max-width: 576px) {
-  /* For smaller mobile screens */
   .container {
-    padding: 0;/* Remove container padding */
-    height: 800px;
-  }
-  .container-fluid{
-    height: 100vh;
+    padding: 0;
   }
 
   .col-md-6 {
-    padding: 1.5rem; /* Further reduce padding for smaller screens */
+    padding: 1.5rem;
   }
 
-  h2, h3 {
-    font-size: 1.5rem; /* Reduce heading font size */
+  h2,
+  h3 {
+    font-size: 1.5rem;
   }
 
   .btn-warning {
-    font-size: 0.85rem; /* Further reduce button font size */
-    padding: 0.6rem; /* Adjust padding */
-  }
-
-  .btn-outline-dark i {
-    font-size: 1.3rem; /* Adjust icon size */
+    font-size: 0.85rem;
   }
 
   input.form-control {
-    font-size: 0.85rem; /* Reduce input font size */
-    padding: 0.4rem; /* Reduce padding */
+    font-size: 0.85rem;
+    padding: 0.4rem;
   }
+
+
 }
