@@ -82,3 +82,14 @@
 .file-label p {
     margin-bottom: 10px
 }
+.btn {
+  background-color: #a77b28;
+  color: rgb(0, 0, 0);
+  padding: 10px 24px;
+  transition: .4s !important;
+}
+
+.btn:hover {
+  background-color: #d1b27c;
+  color: rgb(255, 255, 255);
+}
