@@ -1,54 +1,110 @@
-<div class="contaner all-page">
-    <div class=container-fluid>
-        <div class="mb-3 h-50 jld mt-3">
-            <div class="contaner fw-bold">
-                <div class="d-block content d-sm-flex">
-                    <div class="m-auto w-100 m-sm-2 proinfo">
-                        <div class="text-center">
-                            <h2>Prouduct Information</h2>
-                        </div>
-                        <form>
-                            <div class=mb-3><label class=form-label for=exampleInputEmail1>Product Name</label> <input
-                                    class="form-control w-75" id=exampleInputEmail1 type=email
-                                    aria-describedby=emailHelp></div>
-                            <div class=my-4><label class=form-label for=exampleInputPassword1>Short Decription</label>
-                                <textarea class="form-control w-75" id=floatingTextarea2 style=height:150px></textarea>
-                            </div>
-                            <div class=my-4><label class=form-label for=exampleInputPassword2>Product Type</label>
-                                <select aria-label="Default select example" class="w-100 form-select"
-                                    style=margin-bottom:20px>
-                                    <option selected>prouduct type
-                                    <option value=1>One
-                                    <option value=2>Two
-                                    <option value=3>Three
-                                </select>
-                                <div><label class="form-label d-block" for=exampleInputPassword1>Product Price</label>
-                                    <input class="form-control d-inline" aria-label="Amount (to the nearest dollar)">
-                                    <span>$</span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="m-auto w-100 addimg my-sm-2">
-                        <div class="text-center">
-                            <h2>Prouduct Image</h2>
-                        </div>
-                        <div>
-                            <div class="mt-5 border-dashed card text-center"
-                                style="background:#bbb">
-                                <div><input class="d-none" id="file-upload" type=file>
-                                    <label class=file-label for="file-upload">
-                                        <div class="mb-3 file-icon"><i class="fa-file-upload fas" 
-                                                style=font-size:48px;color:#ebc681></i></div>
-                                        <p class=font-weight-bold>Select Image to Upload</p><small class=text-muted>or
-                                            Drag and Drop, Copy and Paste Files</small>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="container all-page">
+  <div class="container-fluid">
+    <div class="mb-3 h-50 jld mt-3">
+      <div class="container fw-bold">
+        <div class="d-block content d-sm-flex">
+          <div class="m-auto w-100 m-sm-2 proinfo">
+            <div class="text-center">
+              <h2>Product Information</h2>
             </div>
+            <form (ngSubmit)="onSubmit()" #productForm="ngForm" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Product Name</label>
+                <input
+                  type="text"
+                  class="form-control w-75"
+                  id="name"
+                  name="name"
+                  [(ngModel)]="product['name']"
+                  required
+                />
+                <div *ngIf="productForm.submitted && !productForm.controls['name']?.valid" class="text-danger">
+                  Product Name is required.
+                </div>
+              </div>
+
+              <div class="my-4">
+                <label for="description" class="form-label">Short Description</label>
+                <textarea
+                  class="form-control w-75"
+                  id="description"
+                  name="description"
+                  [(ngModel)]="product.description"
+                  required
+                ></textarea>
+                <div *ngIf="productForm.submitted && !productForm.controls['description']?.valid" class="text-danger">
+                  Description is required.
+                </div>
+              </div>
+
+              <div class="my-4">
+                <label for="type" class="form-label">Product Type</label>
+                <select
+                  id="type"
+                  class="w-100 form-select"
+                  name="type"
+                  [(ngModel)]="product['type']"
+                  required
+                >
+                  <option value="" disabled selected>Select product type</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <div *ngIf="productForm.submitted && !productForm.controls['type']?.valid" class="text-danger">
+                  Product Type is required.
+                </div>
+              </div>
+
+              <div class="my-4">
+                <label for="price" class="form-label">Product Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="price"
+                  name="price"
+                  [(ngModel)]="product.price"
+                  required
+                  min="0"
+                />
+                <div *ngIf="productForm.submitted && !productForm.controls['price']?.valid" class="text-danger">
+                  Valid Product Price is required.
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+
+          </div>
+
+          <div class="m-auto w-100 addimg my-sm-2">
+            <div class="text-center">
+              <h2>Product Image</h2>
+            </div>
+            <div class="mt-5 border-dashed card text-center" style="background:#bbb">
+              <div>
+                <input
+                  class="d-none"
+                  id="file-upload"
+                  type="file"
+                  (change)="onFileChange($event)"
+                />
+                <label class="file-label" for="file-upload">
+                  <div class="mb-3 file-icon">
+                    <i class="fa fa-upload" style="font-size:48px;color:#ebc681"></i>
+                  </div>
+                  <p class="font-weight-bold">Select Image to Upload</p>
+                  <small class="text-muted">or Drag and Drop, Copy and Paste Files</small>
+                </label>
+              </div>
+
+              <div *ngIf="imageUrl" class="mt-3">
+                <img [src]="imageUrl" alt="Product Image" class="img-thumbnail" width="200" />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
