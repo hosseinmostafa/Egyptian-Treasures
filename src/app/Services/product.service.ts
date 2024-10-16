@@ -13,10 +13,17 @@ export class ProductService {
 
   getProducts(): Observable<Iproduct[]> {
     return this.http.get<Iproduct[]>(this.apiUrl).pipe(
-      map((products: Iproduct[]) => products.filter((product) => product && product.id)),
-      catchError((err) => throwError(() => err.message || 'server error'))
+      map((response) => {
+        // Convert the response object into an array of products
+        const products = response ? Object.values(response) : [];
+        return products.filter((product) => product && product.id); // Apply filter to the array
+      }),
+      catchError((err) => throwError(() => err.message || 'Server error'))
     );
   }
+
+
+
 
   getOneProduct(id: string): Observable<Iproduct | undefined> {
     return this.getProducts().pipe(
