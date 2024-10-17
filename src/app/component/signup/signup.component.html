@@ -1,242 +1,127 @@
-<!-- <div class="container-fluid">
-  <div class="container">
-    <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center">
-      <h2>Hello, Friend 👋</h2>
-      <p>
-        Welcome to your journey to discover the beauty of  Herfa! Sign up to join our community and explore authentic, Herfa masterpieces.
-      </p>
-      <a class="btn btn-warning mt-4" routerLink="/login">I already have an account</a>
-      <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
-    </div>
-    <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center">
-      <div class="text-center my-3">
-        <h1 class="text-success">Sign Up</h1>
-      </div>
-      <form #registerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-          <label for="exampleInputName" class="form-label">Name</label>
-          <input
-            [(ngModel)]="userModel.name"
-            name="name"
-            #name="ngModel"
-            type="text"
-            class="form-control"
-            id="exampleInputName"
-            required
-            [class.is-invalid]="name.invalid && name.touched"
-          />
-          <small *ngIf="name.invalid && name.touched" class="text-danger">
-            Name is required
-          </small>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPhone" class="form-label">Phone</label>
-          <input
-            [class.is-invalid]="phone.invalid && phone.touched"
-            name="phone"
-            [(ngModel)]="userModel.phone"
-            #phone="ngModel"
-            type="tel"
-            class="form-control"
-            id="exampleInputPhone"
-            required
-            
-          />
-          <div *ngIf="phone.errors && phone.touched">
-            <small *ngIf="phone.errors['required']" class="text-danger">
-              Phone is required
-            </small>
-            <small *ngIf="phone.errors['pattern']" class="text-danger">
-              Phone must be 11 digits at least
-            </small>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input
-            [(ngModel)]="userModel.email"
-            required
-            [class.is-invalid]="email.invalid && email.touched"
-            name="email"
-            #email="ngModel"
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-          />
-          <small *ngIf="email.invalid && email.touched" class="text-danger">
-            Email is required
-          </small>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            [(ngModel)]="userModel.password"
-            name="password"
-            #password="ngModel"
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            required
-            [class.is-invalid]="password.invalid && password.touched"
-          />
-          <small *ngIf="password.invalid && password.touched" class="text-danger">
-            Password is required
-          </small>
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" placeholder="Confirm Password" required>
-        </div>
-        <div class="mb-3 form-check">
-          <input
-            [(ngModel)]="userModel.isChecked"
-            type="checkbox"
-            class="form-check-input"
-            id="exampleCheck1"
-            name="checked"
-            #isChecked="ngModel"
-          />
-          <label class="form-check-label" for="exampleCheck1">Remember me</label>
-        </div>
-        <button
-          [disabled]="registerForm.form.invalid"
-          type="submit"
-          class="btn btn-warning w-100 mb-3"
-        >
-          Sign Up
-        </button>
-      </form>
-      <div class="mt-3 text-center">Or sign in with social platforms</div>
-      <div class="mt-1 d-flex justify-content-center">
-        <button class="btn btn-outline-dark mx-1"><i class="fab fa-facebook-f"></i></button>
-        <button class="btn btn-outline-dark mx-1"><i class="fab fa-google"></i></button>
-        <button class="btn btn-outline-dark mx-1"><i class="fab fa-instagram"></i></button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
 <div class="color-back ">
   <div class="container-fluid ">
-    <div class="row ">
+    <div class="row">
       <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center cont-text">
         <h2>Hello, Friend 👋</h2>
-        <p>
-          Welcome to your journey to discover the beauty of  Herfa! Sign up to join our community and
-          explore authentic, handmade masterpieces.
-        </p>
+        <p>Welcome to your journey to discover the beauty of Herfa! Sign up to join our community and explore authentic, Herfa masterpieces.</p>
         <a class="btn btn-warning mt-4" routerLink="/login">I already have an account</a>
         <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
       </div>
       <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center cont-form">
         <div class="text-center my-3">
-          <h1 class="ts">Sign Up</h1>
+          <h1 class="text-success">Sign Up</h1>
         </div>
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit()" [formGroup]="regsetForm" novalidate>
+        <form #registerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+          <!-- First Name Field -->
           <div class="mb-3">
-            <label for="exampleInputName" class="form-label">Name</label>
-            <input 
-            name="name" 
-            type="text" 
-            pattern="[a-zA-Z]*" 
-            formControlName="userName"
-            [class.is-invalid]="regsetForm.get('userName')?.touched && regsetForm.get('userName')?.invalid"
-            class="form-control" id="exampleInputName" required 
-              />
-            <div *ngIf="regsetForm.get('userName')?.touched && regsetForm.get('userName')?.invalid">
-              <small class="text-danger" *ngIf="regsetForm.get('userName')?.errors?.['required']">Name is
-                required</small>
-              <small class="text-danger" *ngIf="regsetForm.get('userName')?.errors?.['minlength']">maximum name is
-                3 characters at
-                least</small>
-              <small class="text-danger" *ngIf="regsetForm.get('userName')?.errors?.['forbiddenName']">UserName
-                admin is not
-                allwod</small>
-            </div>
-
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPhone" class="form-label">Phone</label>
-            <input 
-            placeholder="011 11 111 111" 
-            [(ngModel)]="userModel.phone" 
-            name="phone"
-            #phone="ngModel" 
-            type="number" 
-            class="form-control p-2" 
-            id="exampleInputcardNumber" 
-            required
-            [class.is-invalid]="phone.invalid && phone.touched" 
-            pattern="^\d{11}$"
-            >
-
-
-            <div *ngIf="phone.errors && phone.touched">
-              <small *ngIf='phone.errors["required"]' class="text-danger">cardNumber is
-                required</small>
-              <small *ngIf='phone.errors["pattern"]' class="text-danger">cardNumber must be 16
-                digit at
-                leste</small>
-            </div>
-
+            <label for="exampleInputFirstName" class="form-label">First Name</label>
+            <input
+              [(ngModel)]="userModel.first_name"
+              name="first_name"
+              #firstName="ngModel"
+              type="text"
+              class="form-control"
+              id="exampleInputFirstName"
+              required
+              pattern="[a-zA-Z ]*"
+              [class.is-invalid]="firstName.invalid && firstName.touched"
+            />
+            <small *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+              First name is required
+            </small>
           </div>
 
+          <!-- Last Name Field -->
+          <div class="mb-3">
+            <label for="exampleInputLastName" class="form-label">Last Name</label>
+            <input
+              [class.is-invalid]="lastName.invalid && lastName.touched"
+              name="last_name"
+              [(ngModel)]="userModel.last_name"
+              #lastName="ngModel"
+              type="text"
+              class="form-control"
+              id="exampleInputLastName"
+              required
+            />
+            <div *ngIf="lastName.errors && lastName.touched">
+              <small *ngIf="lastName.errors['required']" class="text-danger">Last name is required.</small>
+            </div>
+          </div>
+
+          <!-- Email Field -->
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input 
-            [(ngModel)]="userModel.email" 
-            required 
-            name="email" 
-            type="email" 
-            class="form-control"
-            id="exampleInputEmail1" 
-            formControlName="email" 
-            aria-describedby="emailHelp" 
-            [class.is-invalid]="email?.touched && email?.invalid" 
+            <input
+              [(ngModel)]="userModel.email"
+              required
+              [class.is-invalid]="email.invalid && email.touched"
+              name="email"
+              #email="ngModel"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
             />
-
-            <small *ngIf="email?.touched && email?.invalid" class="text-danger">Email is required</small>
-
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-
-            <div class="form-check">
-
-              <input class="form-check-input" type="checkbox" value="" formControlName="subscrib"
-                (click)="setValetator()" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Send me new Offer
-              </label>
-
-            </div>
+            <small *ngIf="email.invalid && email.touched" class="text-danger">
+              Email is required and must be valid.
+            </small>
           </div>
 
+          <!-- Password Field -->
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1" required
-              formControlName="password" />
-            <small *ngIf="regsetForm.get('password')?.touched && regsetForm.get('password')?.invalid"
-              class="text-danger">Password
-              is required</small>
-
+            <input
+              [(ngModel)]="userModel.password"
+              name="password"
+              #password="ngModel"
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              required
+              [class.is-invalid]="password.invalid && password.touched"
+            />
+            <small *ngIf="password.invalid && password.touched" class="text-danger">
+              Password is required
+            </small>
           </div>
+
+          <!-- Confirm Password Field -->
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-            <input formControlName="confirmPassword" type="password" class="form-control"
-              [class.is-invalid]="regsetForm.errors?.['misMatch']" id="exampleInputPassword1">
-
-            <small class="text-danger" *ngIf="regsetForm.errors?.['misMatch']"></small>
-
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Confirm Password"
+              required
+              [(ngModel)]="userModel.confirmPassword"
+              name="confirmPassword"
+              #confirmPassword="ngModel"
+              [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched || userModel.password !== userModel.confirmPassword"
+            />
+            <small *ngIf="userModel.password !== userModel.confirmPassword && confirmPassword.touched" class="text-danger">
+              Passwords do not match.
+            </small>
           </div>
+
+          <!-- Remember Me Checkbox -->
           <div class="mb-3 form-check">
-            <input [(ngModel)]="userModel.isChecked" type="checkbox" class="form-check-input" id="exampleCheck1"
-              name="checked" #isChecked="ngModel" />
+            <input
+              [(ngModel)]="userModel.isChecked"
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+              name="checked"
+              #isChecked="ngModel"
+            />
             <label class="form-check-label" for="exampleCheck1">Remember me</label>
           </div>
+
+          <!-- Submit Button -->
           <button [disabled]="registerForm.form.invalid" type="submit" class="btn btn-warning w-100 mb-3">
             Sign Up
           </button>
         </form>
+
         <div class="mt-3 text-center">Or sign in with social platforms</div>
         <div class="mt-1 d-flex justify-content-center">
           <button class="btn btn-outline-dark mx-1"><i class="fab fa-facebook-f"></i></button>
