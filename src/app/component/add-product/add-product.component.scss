@@ -83,7 +83,7 @@
     margin-bottom: 10px
 }
 .btn {
-  background-color: #a77b28;
+  background-color: #ad915d;
   color: rgb(0, 0, 0);
   padding: 10px 24px;
   transition: .4s !important;
@@ -92,4 +92,10 @@
 .btn:hover {
   background-color: #d1b27c;
   color: rgb(255, 255, 255);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
 }

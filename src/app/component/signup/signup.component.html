@@ -131,14 +131,19 @@
       </div>
       <div class="col-md-6 bg-white d-flex flex-column justify-content-center align-items-center cont-form">
         <div class="text-center my-3">
-          <h1 class="text-success">Sign Up</h1>
+          <h1 class="ts">Sign Up</h1>
         </div>
         <form #registerForm="ngForm" (ngSubmit)="onSubmit()" [formGroup]="regsetForm" novalidate>
           <div class="mb-3">
             <label for="exampleInputName" class="form-label">Name</label>
-            <input name="name" type="text" pattern="[a-zA-Z]*" formControlName="userName"
-              [class.is-invalid]="regsetForm.get('userName')?.touched && regsetForm.get('userName')?.invalid"
-              class="form-control" id="exampleInputName" required />
+            <input 
+            name="name" 
+            type="text" 
+            pattern="[a-zA-Z]*" 
+            formControlName="userName"
+            [class.is-invalid]="regsetForm.get('userName')?.touched && regsetForm.get('userName')?.invalid"
+            class="form-control" id="exampleInputName" required 
+              />
             <div *ngIf="regsetForm.get('userName')?.touched && regsetForm.get('userName')?.invalid">
               <small class="text-danger" *ngIf="regsetForm.get('userName')?.errors?.['required']">Name is
                 required</small>
@@ -174,22 +179,35 @@
                 digit at
                 leste</small>
             </div>
+
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input [(ngModel)]="userModel.email" required name="email" type="email" class="form-control"
-              id="exampleInputEmail1" formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
-              aria-describedby="emailHelp" [class.is-invalid]="email?.touched && email?.invalid" />
+            <input 
+            [(ngModel)]="userModel.email" 
+            required 
+            name="email" 
+            type="email" 
+            class="form-control"
+            id="exampleInputEmail1" 
+            formControlName="email" 
+            aria-describedby="emailHelp" 
+            [class.is-invalid]="email?.touched && email?.invalid" 
+            />
 
             <small *ngIf="email?.touched && email?.invalid" class="text-danger">Email is required</small>
+
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
             <div class="form-check">
+
               <input class="form-check-input" type="checkbox" value="" formControlName="subscrib"
                 (click)="setValetator()" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
                 Send me new Offer
               </label>
+
             </div>
           </div>
 

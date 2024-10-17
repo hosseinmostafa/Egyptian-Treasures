@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .menu{
@@ -11,16 +11,15 @@
   width: 90px  !important;
   height: 100vh;
   padding: 20px;
+  position: fixed;
   overflow: hidden;
   transition: 0.5s;
+  z-index: 1000000;
 
 }
 .menu:hover{
  width: 17% !important;
 }
-
-
-
 
 
 ul{
@@ -45,21 +44,21 @@ ul li a{
 
 }
 ul li a:hover , .active{
-  background-color: rgb(195, 108, 57);
+  background-color: #c4a05f;
 }
 
 
 .logout{
   position: absolute;
-  bottom: 0;
- background-color: #c72323;
+  bottom: 100px;
+ background-color: #d4b272;
  width: 40px;
 }
 
 
 .logout:hover{
   width: 190px;
-  background-color: #d00d0d;
+  background-color: #ac8d53;
 
 
 }
