@@ -40,5 +40,8 @@ export class UserService {
   }
 
 
-
+  deleteUser(id: string): Observable<void> {
+    const deleteURL = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/${id}.json`;
+    return this.http.delete<void>(deleteURL);
+  } 
 }

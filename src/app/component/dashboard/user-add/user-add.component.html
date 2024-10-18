@@ -1,8 +1,30 @@
 
 <div class="container">
-  <div class="container text-center text-dark my-5" >
-    <h1 routerLink="/user-add">
-        Products added
-    </h1>
+  <div class="container text-center text-dark my-5">
+    <h1>Users</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
+          
+          <td>
+            <a [href]="'mailto:' + user.email" class="btn btn-primary me-2">Contact</a>
+            <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
