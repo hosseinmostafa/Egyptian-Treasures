@@ -14,47 +14,6 @@
         <form #registerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
           <!-- First Name Field -->
           <div class="mb-3">
-<<<<<<< HEAD
-            <label for="exampleInputName" class="form-label">Name</label>
-            <input name="name" type="text" pattern="[a-zA-Z]*" formControlName="userName"
-              [class.is-invalid]="regsetForm.get('userName')?.touched && regsetForm.get('userName')?.invalid"
-              class="form-control" id="exampleInputName" required />
-            <div *ngIf="regsetForm.get('userName')?.touched && regsetForm.get('userName')?.invalid">
-              <small class="text-danger" *ngIf="regsetForm.get('userName')?.errors?.['required']">Name is
-                required</small>
-              <small class="text-danger" *ngIf="regsetForm.get('userName')?.errors?.['minlength']">maximum name is
-                3 characters at
-                least</small>
-              <small class="text-danger" *ngIf="regsetForm.get('userName')?.errors?.['forbiddenName']">UserName
-                admin is not
-                allwod</small>
-            </div>
-
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPhone" class="form-label">Phone</label>
-            <input 
-            placeholder="011 11 111 111" 
-            [(ngModel)]="userModel.phone" 
-            name="phone"
-            #phone="ngModel" 
-            type="number" 
-            class="form-control p-2" 
-            id="exampleInputcardNumber" 
-            required
-            [class.is-invalid]="phone.invalid && phone.touched" 
-            pattern="^\d{11}$"
-            >
-
-
-            <div *ngIf="phone.errors && phone.touched">
-              <small *ngIf='phone.errors["required"]' class="text-danger">cardNumber is
-                required</small>
-              <small *ngIf='phone.errors["pattern"]' class="text-danger">cardNumber must be 16
-                digit at
-                leste</small>
-            </div>
-=======
             <label for="exampleInputFirstName" class="form-label">First Name</label>
             <input
               [(ngModel)]="userModel.first_name"
@@ -70,7 +29,6 @@
             <small *ngIf="firstName.invalid && firstName.touched" class="text-danger">
               First name is required
             </small>
->>>>>>> d314799880d68e5853828073227d694083eedb58
           </div>
 
           <!-- Last Name Field -->
@@ -94,21 +52,6 @@
           <!-- Email Field -->
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-<<<<<<< HEAD
-            <input [(ngModel)]="userModel.email" required name="email" type="email" class="form-control"
-              id="exampleInputEmail1" formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
-              aria-describedby="emailHelp" [class.is-invalid]="email?.touched && email?.invalid" />
-
-            <small *ngIf="email?.touched && email?.invalid" class="text-danger">Email is required</small>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" formControlName="subscrib"
-                (click)="setValetator()" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Send me new Offer
-              </label>
-            </div>
-=======
             <input
               [(ngModel)]="userModel.email"
               required
@@ -122,7 +65,6 @@
             <small *ngIf="email.invalid && email.touched" class="text-danger">
               Email is required and must be valid.
             </small>
->>>>>>> d314799880d68e5853828073227d694083eedb58
           </div>
 
           <!-- Password Field -->
