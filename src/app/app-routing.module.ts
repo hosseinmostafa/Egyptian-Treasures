@@ -40,6 +40,7 @@
     { path: "edit-profile", component: EditProfileComponent},
     { path: "about-us" , component: AboutUsComponent},
     { path: "privacy-policy", component: PrivacyPolicyComponent},
+    // { path: "dash-home", component: DashHomeComponent, children: [{ path: "edit-product", component: EditProductComponent }, { path: "user-add", component: UserAddComponent }] },
     // canActivate: [authGuardGuard] 
     { path: "cart", component: CartComponent},
     { path: "edit-profile", component: EditProfileComponent},

@@ -13,8 +13,8 @@ import { ConfirmPasswordValidator } from '../../CostmorFormSigin/costemFormPassw
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent implements OnInit, OnDestroy {
-  userModel = new USERModul('', '', '', '', false);
+export class SignupComponent implements  OnDestroy {
+  userModel = new USERModul('','', '', '', '', false);
   regsetForm: FormGroup;
   constructor(
     private userSarvies: UserService,
@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.regsetForm = this.fb.group({
       userName: ['', [Validators.required, Validators.minLength(3), ForbiddenNameValidator]],
       email: [''],
-      phone: [''],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
       location: this.fb.group({
@@ -43,9 +42,9 @@ export class SignupComponent implements OnInit, OnDestroy {
     return this.regsetForm.get('phone');
   }
 
-  ngOnInit(): void {
-    this.footerServes.hideFooter();
-  }
+  // ngOnInit(): void {
+  //   this.footerServes.hideFooter();
+  // }
 
   ngOnDestroy(): void {
     this.footerServes.displayFooter();

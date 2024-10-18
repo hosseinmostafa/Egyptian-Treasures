@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>Edit Product</h1>
 
   <table>
@@ -45,6 +45,74 @@
         <input type="number" id="productPrice" formControlName="price">
 
         <button type="submit" class="btn btn-primary">Save Changes</button>
+       
+      </form>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container cont">
+  <h1 class="text-center">Edit Product</h1>
+
+  <div class="table-responsive">
+    <table class="table table-bordered custom-table">
+      <thead>
+        <tr >
+          <th class="th-nm">Id</th>
+          <th class="th-nm">Image</th>
+          <th class="th-nm">Name</th>
+          <th class="th-nm">Quantity</th>
+          <th class="th-nm">Price</th>
+          <th class="th-nm">Action</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr  *ngFor="let product of products">
+          <td class="mt-4">{{ product.id }}</td>
+          <td>
+            <img [src]="product.image || 'assets/default-image.jpg'" alt="{{ product.name }}"
+              class="product-image img-fluid">
+          </td>
+          <td class="mt-4">{{ product.name }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.price }}</td>
+          <td class="d-flex justify-content-between">
+            <button class="btn btn-ed btn-sm mb-1 me-1 mt-3 p-2" (click)="editProduct(product)">Edit</button>
+            <button class="btn btn-dl btn-sm mt-3 p-2" (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal" *ngIf="selectedProduct">
+    <div class="modal-content">
+      <span class="close" (click)="selectedProduct = null">&times;</span>
+      <h2>Edit Product</h2>
+      <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="productName">Name</label>
+          <input type="text" id="productName" formControlName="name" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label for="productImage">Image URL</label>
+          <input type="text" id="productImage" formControlName="image" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label for="productQuantity">Quantity</label>
+          <input type="number" id="productQuantity" formControlName="quantity" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label for="productPrice">Price</label>
+          <input type="number" id="productPrice" formControlName="price" class="form-control">
+        </div>
+
+        <button type="submit" class="btn save-btn w-100">Save Changes</button>
       </form>
     </div>
   </div>

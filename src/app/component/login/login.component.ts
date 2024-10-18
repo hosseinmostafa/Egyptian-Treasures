@@ -10,21 +10,19 @@ import { FooterService } from '../../Services/footer.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements  OnDestroy {
   email: string = '';
   password: string = '';
   loginError: boolean = false;
 
-  userModul = new USERModul('', '', '', '', false);
+  userModul = new USERModul('', '', '', '','', false);
   constructor(
     private router: Router,
     private userService: UserService,
     private footerServes: FooterService,
   ) { }
 
-  ngOnInit(): void {
-    this.footerServes.hideFooter();
-  }
+
 
   ngOnDestroy(): void {
     this.footerServes.displayFooter();
