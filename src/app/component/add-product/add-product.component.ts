@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { Iproduct } from '../interfaces/Iproduct';
+import { Router } from '@angular/router'; // Import Router for navigation
 
 @Component({
   selector: 'app-add-product',
@@ -22,14 +23,14 @@ export class AddProductComponent {
   };
   imageUrl: any;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
   onSubmit() {
     if (this.isFormValid()) {
-      // Add product to the database
       this.productService.addProduct(this.product).subscribe(
         () => {
           alert('Product added successfully!');
+          this.router.navigate(['/products']); // Navigate to products page after adding
         },
         (error: any) => {
           console.error('Error adding product:', error);
@@ -49,6 +50,7 @@ export class AddProductComponent {
       this.product.price > 0
     );
   }
+
   onFileChange(event: any): void {
     const file = event.target.files[0];
     if (file) {
@@ -59,5 +61,4 @@ export class AddProductComponent {
       reader.readAsDataURL(file);
     }
   }
-
 }

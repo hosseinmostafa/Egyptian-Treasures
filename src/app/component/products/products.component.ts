@@ -5,12 +5,13 @@ import { Iproduct } from '../interfaces/Iproduct';
 import { CartService } from '../../Services/cart.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ChangeDetectorRef } from '@angular/core';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'], // Corrected from styleUrl to styleUrls
+  styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent implements OnInit, OnChanges{
+export class ProductsComponent implements OnInit {
   products: Iproduct[] = [];
   filteredProducts: Iproduct[] = [];
   errMsg: string | null = null;
@@ -19,9 +20,7 @@ export class ProductsComponent implements OnInit, OnChanges{
   searchTerm: string = '';
   filterCategory: string = '';
   filterPrice: number | null = null;
-  filterDate: string = ''; // To hold the selected date
-
-
+  filterDate: string = '';
 
   constructor(
     private productService: ProductService,
@@ -35,16 +34,18 @@ export class ProductsComponent implements OnInit, OnChanges{
     this.openSpinner1();
     this.loadProducts();
   }
+
   ngOnChanges(): void {
     this.applyFilters();
     this.loadProducts();
   }
-  // Load products from the service
-  loadProducts(): void {
+
+   // Load products from the service
+   loadProducts(): void {
     this.productService.getProducts().subscribe({
       next: (data) => {
-        console.log('Products loaded:', data); // Ensure the new product appears here
-        this.products = [...data]; // Use spread operator to trigger change detection
+        console.log('Products loaded:', data); // Check if products are loaded
+        this.products = [...data];
         this.filteredProducts = [...data];
       },
       error: (err) => {
@@ -54,7 +55,6 @@ export class ProductsComponent implements OnInit, OnChanges{
     });
   }
 
-
   // Add product to the cart
   addToCart(product: Iproduct): void {
     this.cartCount++;
@@ -62,7 +62,18 @@ export class ProductsComponent implements OnInit, OnChanges{
     this.applyFilters(); // Apply filters to update UI immediately
   }
 
-
+  // Add product and refresh the product list
+  addProduct(newProduct: Iproduct): void {
+    this.productService.addProduct(newProduct).subscribe({
+      next: (addedProduct) => {
+        console.log('Product added:', addedProduct);
+        this.loadProducts(); // Reload products to include the newly added product
+      },
+      error: (err) => {
+        console.error('Error adding product:', err);
+      },
+    });
+  }
 
   // Navigate to cart
   goToCart(): void {
