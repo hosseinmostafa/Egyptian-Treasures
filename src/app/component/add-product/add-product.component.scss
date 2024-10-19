@@ -1,86 +1,90 @@
-.all-page {
-  background-image: url("https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg");
+.fa-home{
+  background-image: url('https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-size: cover;
-  background-position: center;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  width: 60%;
-  max-width: 800px;
-  background-color: rgba(235, 198, 129, 0.8);
+  background: rgba(235, 198, 129, 0.85);
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .addtext {
   font-size: 30px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.border-dashed {
-  border: 2px dashed #ccc;
-  border-radius: 15px;
-  padding: 20px;
-  width: 100%;
-  text-align: center;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
-.file-label {
-  cursor: pointer;
-  font-weight: bold;
-  color: #525252;
+.form-container {
+  display: grid;
+  grid-gap: 15px;
 }
 
-.proinfo {
+.form-group {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 100%;
 }
 
 .form-control {
   padding: 10px;
-  font-size: 16px;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  border-radius: 8px;
 }
 
-textarea {
-  resize: none;
+textarea.form-control {
+  resize: vertical;
 }
 
-.btn {
-  align-self: center;
+.btn-submit {
   background-color: #ad915d;
   color: black;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
+  padding: 10px 24px;
+  margin-top: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.btn:hover {
+.btn-submit:hover {
   background-color: #d1b27c;
   color: white;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+
+  .form-container {
+    grid-gap: 10px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .addtext {
+    font-size: 24px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
 }

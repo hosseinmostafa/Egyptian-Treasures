@@ -1,31 +1,48 @@
-<div class="all-page">
+<div class="fa-home">
+<div class="container">
   <div class="card">
-    <h1 class="addtext">Add New Product</h1>
+    <h2 class="addtext">Add Product</h2>
 
-    <div class="addimg border-dashed">
-      <label class="file-label" for="image">
-        <p>Upload Product Image</p>
-        <input type="file" id="image" (change)="onImageSelected($event)" />
-      </label>
-    </div>
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="product.name" name="name" required />
+        </div>
 
-    <div class="proinfo">
-      <label for="name">Product Name:</label>
-      <input type="text" id="name" class="form-control" [(ngModel)]="product.name" placeholder="Enter product name" />
+        <div class="form-group">
+          <label for="material">Material</label>
+          <input type="text" id="material" class="form-control" [(ngModel)]="product.material" name="material" required />
+        </div>
 
-      <label for="material">Material:</label>
-      <input type="text" id="material" class="form-control" [(ngModel)]="product.material" placeholder="Enter material type" />
+        <div class="form-group">
+          <label for="dimensions">Dimensions</label>
+          <input type="text" id="dimensions" class="form-control" [(ngModel)]="product.dimensions" name="dimensions" required />
+        </div>
 
-      <label for="dimensions">Dimensions:</label>
-      <input type="text" id="dimensions" class="form-control" [(ngModel)]="product.dimensions" placeholder="Enter dimensions" />
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" id="price" class="form-control" [(ngModel)]="product.price" name="price" required />
+        </div>
 
-      <label for="price">Price:</label>
-      <input type="number" id="price" class="form-control" [(ngModel)]="product.price" min="0" placeholder="Enter price" />
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" class="form-control" [(ngModel)]="product.quantity" name="quantity" min="1" />
+        </div>
 
-      <label for="description">Description:</label>
-      <textarea id="description" class="form-control" [(ngModel)]="product.description" rows="3"></textarea>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" class="form-control" [(ngModel)]="product.description" name="description"></textarea>
+        </div>
 
-      <button class="btn" (click)="addProduct()">Add Product</button>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" id="image" class="form-control" (change)="onImageSelected($event)" />
+        </div>
+
+        <button type="button" class="btn btn-submit" (click)="addProduct()">Add Product</button>
+      </form>
     </div>
   </div>
+</div>
 </div>
