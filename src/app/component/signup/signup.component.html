@@ -96,11 +96,12 @@
               [(ngModel)]="userModel.confirmPassword"
               name="confirmPassword"
               #confirmPassword="ngModel"
-              [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched || userModel.password !== userModel.confirmPassword"
-            />
-            <small *ngIf="userModel.password !== userModel.confirmPassword && confirmPassword.touched" class="text-danger">
-              Passwords do not match.
-            </small>
+              [class.is-invalid]="(confirmPassword.invalid && confirmPassword.touched) || (userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword)"
+              />
+              <small *ngIf="userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword && confirmPassword.touched" class="text-danger">
+                Passwords do not match.
+              </small>
+
           </div>
 
           <!-- Remember Me Checkbox -->
