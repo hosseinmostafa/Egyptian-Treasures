@@ -1,101 +1,86 @@
 .all-page {
-    background-image: url("https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg");
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #eee;
-    background-size: cover;
-    background-position: center;
-    padding: 20px
-}
-
-.addimg,
-.proinfo {
-    box-shadow: 0 0 5px #525252;
-    border-radius: 10px;
-    background: #ebc681c2;
-}
-
-.form-control,
-.proinfo {
-    width: 50%
-}
-
-.addimg,
-.addtext,
-.border-dashed,
-.card,
-.file-label,
-.form-control,
-.proinfo,
-.proinfo label {
-    margin-bottom: 20px
-}
-
-.addtext {
-    font-size: 35px;
-    font-weight: 700;
-    padding: 20px
-}
-
-.proinfo {
-    padding: 20px;
-    margin-bottom: 10px !important
-}
-
-.proinfo label {
-    font-size: 20px
-}
-
-.form-control {
-    margin-right: 10px
-}
-
-.addimg {
-    padding: 10px;
-    width: 70%
+  background-image: url("https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .card {
-    // position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // top: 100px;
-    padding: 40px;
-    height: 400px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  width: 60%;
+  max-width: 800px;
+  background-color: rgba(235, 198, 129, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.addtext {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
 }
 
 .border-dashed {
-    // border: 2px dashed #ccc;
-    border-radius: 40px
+  border: 2px dashed #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .file-label {
-    cursor: pointer;
-    display: inline-block
+  cursor: pointer;
+  font-weight: bold;
+  color: #525252;
 }
 
-.file-label p {
-    margin-bottom: 10px
+.proinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
 }
+
+.form-control {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+textarea {
+  resize: none;
+}
+
 .btn {
+  align-self: center;
   background-color: #ad915d;
-  color: rgb(0, 0, 0);
-  padding: 10px 24px;
-  transition: .4s !important;
+  color: black;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
   background-color: #d1b27c;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

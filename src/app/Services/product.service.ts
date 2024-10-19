@@ -60,14 +60,22 @@ export class ProductService {
 
   // Modified addProduct to update the BehaviorSubject
   addProduct(product: Iproduct): Observable<Iproduct> {
-    return this.http.post<Iproduct>('https://egytion-treasure-89099-default-rtdb.firebaseio.com/Products.json', product).pipe(
+    console.log('Adding product:', product); // Verify product data
+
+    return this.http.post<Iproduct>(
+      'https://egyption-treasure-89099-default-rtdb.firebaseio.com/Products.json',
+      product
+    ).pipe(
       map((newProduct) => {
-        this.productsSubject.next([...this.productsSubject.getValue(), newProduct]); // Update the products list
-        return newProduct; // Return the newly added product
+        console.log('Product added:', newProduct); // Confirm success
+        this.productsSubject.next([...this.productsSubject.getValue(), newProduct]);
+        return newProduct;
       }),
       catchError((err) => {
+        console.error('Error adding product:', err); // Log the error details
         return throwError(() => err.message || 'Server error');
       })
     );
   }
+
 }

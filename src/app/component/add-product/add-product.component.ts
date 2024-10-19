@@ -1,64 +1,47 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { Iproduct } from '../interfaces/Iproduct';
-import { Router } from '@angular/router'; // Import Router for navigation
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.scss']
+  styleUrls: ['./add-product.component.scss'],
 })
 export class AddProductComponent {
   product: Iproduct = {
     id: '',
     name: '',
-    description: '',
-    type: '',
     price: 0,
     image: '',
+    description: '',
     material: '',
     dimensions: '',
-    date: '',
-    quantity: 0
+    date: new Date().toISOString(),
+    quantity: 1,
   };
-  imageUrl: any;
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(private productService: ProductService) {}
 
-  onSubmit() {
-    if (this.isFormValid()) {
-      this.productService.addProduct(this.product).subscribe(
-        () => {
-          alert('Product added successfully!');
-          this.router.navigate(['/products']); // Navigate to products page after adding
-        },
-        (error: any) => {
-          console.error('Error adding product:', error);
-          alert('Error adding product!');
-        }
-      );
-    } else {
-      alert('Please fill out all required fields!');
-    }
-  }
-
-  isFormValid(): boolean {
-    return (
-      this.product.name.trim() !== '' &&
-      this.product.description.trim() !== '' &&
-      this.product['type'] !== '' &&
-      this.product.price > 0
-    );
-  }
-
-  onFileChange(event: any): void {
+  onImageSelected(event: any): void {
     const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        this.imageUrl = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.product.image = reader.result as string;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  addProduct(): void {
+    this.product.id = uuidv4(); // Generate unique ID
+    this.productService.addProduct(this.product).subscribe({
+      next: (response) => {
+        alert('Product added successfully!');
+      },
+      error: (err: any) => {
+        console.error('Error adding product:', err);
+        alert('Error adding product!');
+      },
+    });
   }
 }
