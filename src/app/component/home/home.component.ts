@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit {
   products: Iproduct[] = [];
   filteredProducts: Iproduct[] = [];
   errMsg: string | null = null;
-  constructor(private spinner: NgxSpinnerService, private spinner2: NgxSpinnerService, private router: Router, private homeServes: HomeService) { }
+  constructor(private spinner: NgxSpinnerService, private spinner2: NgxSpinnerService, 
+    private router: Router, private homeServes: HomeService) { }
 
 
   ngOnInit(): void {
@@ -72,9 +73,5 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/products']); // بعد انتهاء الـ spinner ننتقل إلى صفحة المنتجات
     }, 2000); // مدة عرض الـ spinner هي 4 ثواني
   }
-
-  // goToProductDetails(id: string) {
-  //   this.router.navigate(['/home', id])
-  // }
 
 }

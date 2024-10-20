@@ -3,30 +3,123 @@
 
 
 <body class="bod" data-bs-spy="scroll" data-bs-target=".navbar">
-    <section id="hero" class="min-vh-100 d-flex align-items-center text-center bg-white">
-        <div class="container-fluid">
-            <ngx-spinner bdColor = "rgba(212,169,90,0.4)" size = "medium" color = "#070707"  type="ball-atom">
-                <p style="font-size: 20px; color: white"> Loading...</p>
-            </ngx-spinner>
-            <div class="row ">
-                <div class="col-12">
-                    <h1 data-aos="fade-left" class="text-uppercase text-dark fw-semibold display-1">Welcome to
-                        HERFA</h1>
-                    <h5 class="text-dark mt-3 mb-4" data-aos="fade-right">We offer a unique collection of handcrafted
-                        artwork, beautifully decorated pottery, and exquisite handicrafts made from
-                        palm fronds, leaves, and dried flowers, and string</h5>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- القسم الأول -->
+            <div class="carousel-item active">
+                <section id="hero" class="min-vh-100 d-flex align-items-center text-center bg-white">
+                    <div class="container-fluid">
+                        <ngx-spinner bdColor="rgba(212,169,90,0.4)" size="medium" color="#070707" type="ball-atom">
+                            <p style="font-size: 20px; color: white"> Loading...</p>
+                        </ngx-spinner>
+                        <div class="row">
+                            <div class="col-12 text1">
+                                <h1 data-aos="fade-left"
+                                    class="text-uppercase ms-5 ps-5 d-flex justify-content-start align-items-start fw-semibold display-1">
+                                    Welcome
+                                    to
+                                    <br>
+                                    HERFA
+                                </h1>
+                                <h5 class=" mt-3 mb-4 ps-5 d-flex justify-content-start align-items-start"
+                                    data-aos="fade-right">We offer a unique collection of
+                                    handcrafted artwork, beautifully decorated pottery,<br> and exquisite handicrafts
+                                    made
+                                    from
+                                    palm fronds, leaves, and dried flowers, and string</h5>
+                                <div class=" d-flex justify-content-start align-items-start btn-all">
+                                    <a class="btn me-2 btn-start btn-get-start rounded-3 " href="#services"
+                                        data-aos="fade-up">Get Started</a>
+                                    <a (click)="openSpinner2()" class="btn ms-2 btn-start btn-get-Products rounded-3  "
+                                        data-aos="fade-up">
+                                        Our Products <i class="fa-solid fa-arrow-right fa-fade ps-1"></i>
+                                    </a>
 
-                        <a class="btn me-2 btn-start btn-get-start rounded-3" href="#services" data-aos="fade-up">Get
-                            Started</a>
-                    <!-- الزر الذي يعرض الـ Spinner ثم ينتقل إلى صفحة المنتجات -->
-                    <a (click)="openSpinner2()" class="btn ms-2 btn-start btn-get-Products rounded-3"
-                        data-aos="fade-up">
-                        Our Products <i class="fa-solid fa-arrow-right fa-fade ps-1"></i>
-                    </a>
-                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="carousel-item">
+                <section id="hero2" class="min-vh-100 d-flex align-items-center text-center bg-white">
+                    <div class="container-fluid">
+                        <ngx-spinner bdColor="rgba(212,169,90,0.4)" size="medium" color="#070707" type="ball-atom">
+                            <p style="font-size: 20px; color: white"> Loading...</p>
+                        </ngx-spinner>
+                        <div class="row">
+                            <div class="col-12 text2">
+                                <h1 data-aos="fade-left"
+                                    class="text-uppercase ms-5 ps-5 fw-semibold display-1 d-flex justify-content-start align-items-start">
+                                    Welcome
+                                    to <br>
+                                    HERFA</h1>
+                                <h5 class=" mt-3 mb-4 ms-5 d-flex justify-content-start align-items-start"
+                                    data-aos="fade-right">We offer a unique collection of
+                                    handcrafted artwork, beautifully decorated pottery, <br> and exquisite handicrafts
+                                    made
+                                    from
+                                    palm fronds, leaves, and dried flowers, and string</h5>
+                                <div class=" d-flex justify-content-start align-items-start btn-all">
+
+                                    <a class="btn me-2 btn-start btn-get-start rounded-3" href="#services"
+                                        data-aos="fade-up">Get Started</a>
+                                    <a (click)="openSpinner2()" class="btn ms-2 btn-start btn-get-Products rounded-3"
+                                        data-aos="fade-up">
+                                        Our Products <i class="fa-solid fa-arrow-right fa-fade ps-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="carousel-item">
+                <section id="hero3" class="min-vh-100 d-flex align-items-center text-center bg-white">
+                    <div class="container-fluid">
+                        <ngx-spinner bdColor="rgba(212,169,90,0.4)" size="medium" color="#070707" type="ball-atom">
+                            <p style="font-size: 20px; color: white"> Loading...</p>
+                        </ngx-spinner>
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 data-aos="fade-left"
+                                    class="text-uppercase text-light fw-semibold display-1 me-5   d-flex justify-content-end align-items-end">
+                                    Welcome
+                                    to
+                                    HERFA</h1>
+                                <h5 class="text-light mt-3 mb-4 me-5 d-flex justify-content-end align-items-end"
+                                    data-aos="fade-right">We offer a unique collection of
+                                    handcrafted artwork, beautifully decorated pottery,<br> and exquisite handicrafts
+                                    made
+                                    from
+                                    palm fronds, leaves, and dried flowers, and string</h5>
+                                <div class="d-flex justify-content-end align-items-end  btn-end">
+                                    <a class="btn me-2 btn-start btn-get-start rounded-3" href="#services"
+                                        data-aos="fade-up">Get Started</a>
+                                    <a (click)="openSpinner2()" class="btn ms-2 btn-start btn-get-Products rounded-3"
+                                        data-aos="fade-up">
+                                        Our Products <i class="fa-solid fa-arrow-right fa-fade ps-1"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 
 
 
@@ -266,7 +359,7 @@
                         <div class="line bg-white"></div>
                     </div>
                     <p class="text-white fs-5"> We value your feedback! Whether you have a question, a suggestion,
-                        or would like to leave a review of our 
+                        or would like to leave a review of our
                         Herfa, we would love to hear from you. Your thoughts help us continue to craft unique,
                         high-quality pieces and improve
                         your experience with our products. Thank you for supporting handmade craftsmanship!</p>

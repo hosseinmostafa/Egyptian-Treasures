@@ -61,6 +61,14 @@ img {
     overflow: hidden;
 }
 
+.btn-all{
+    margin-left: 13%;
+}
+
+.btn-end{
+    margin-right: 13%;
+}
+
 .btn-get-start {
     background-color: #d4b272;
     color: white;
@@ -68,10 +76,20 @@ img {
     transition: .4s !important;
 }
 
+.text1 h1,
+.text1 h5{
+    color: #2f2617;
+}
+.text2 h1,
+.text2 h5{
+    color: #d7af63;
+}
+
 .btn-get-start:hover {
     background-color: #e6d2af;
     color: black;
 }
+
 
 .btn-get-Products {
     background-color: #ebdfcb;
@@ -84,6 +102,7 @@ img {
     background-color: #d4b272;
     color: white;
 }
+
 
 
 .image-zoom-warpper {
@@ -122,19 +141,49 @@ img {
 
 
 #hero {
-    background: linear-gradient(rgba(var(--c-brand-rgb), 0.507), rgba(var(--c-brand-rgb), 0.438));
-    background-image: url("https://img.freepik.com/free-photo/macrame-arrangement-with-copy-space_23-2149072850.jpg");
-    // background-image: url("https://img.freepik.com/premium-photo/woman-crocheting-with-supplies-near_23-2148242082.jpg");
-    background-size: cover;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.4)), url("https://img.freepik.com/premium-photo/punch-needle-workshop-needlework-young-girl-with-red-painted-nails-knitting_223582-2157.jpg");
+    // no-repeat center center
     background-position: center;
-
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* تأكد من تغطية الخلفية */
+    height: 100vh;
+    /* 100% من ارتفاع الشاشة */
 }
+
+#hero2 {
+    background: linear-gradient(rgba(255, 255, 255, 0.356), rgba(0, 0, 0, 0.781)), url("https://img.freepik.com/premium-photo/woman-makes-handmade-diy-lamp-from-jute-rope-home-top-view_266247-3244.jpg");
+    // no-repeat center center
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* تأكد من تغطية الخلفية */
+    height: 100vh;
+    /* 100% من ارتفاع الشاشة */
+}
+
+#hero3 {
+    background: linear-gradient(rgba(255, 255, 255, 0.199), rgba(0, 0, 0, 0.541)), url("https://img.freepik.com/premium-photo/hands-holding-dried-grass-herbs-leaves-ribbon-scissors-rustic-table-making-stylish-autumn-wreath-fall-decor-arrangement-home-thanksgiving-halloween_250813-32445.jpg");
+    // no-repeat center center
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* تأكد من تغطية الخلفية */
+    height: 100vh;
+    /* 100% من ارتفاع الشاشة */
+}
+
+/* تأكد من أن الشرائح تأخذ 100% من ارتفاع الشاشة */
+.carousel-inner {
+    height: 100vh;
+    /* 100% من ارتفاع الشاشة */
+}
+
+
 
 /* secton title */
 .section-title {
     margin-bottom: 60px;
-
-
 }
 
 .section-title .line {
