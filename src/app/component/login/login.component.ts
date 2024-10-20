@@ -8,21 +8,19 @@ import { FooterService } from '../../Services/footer.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements  OnDestroy {
+export class LoginComponent implements OnDestroy {
   email: string = '';
   password: string = '';
   loginError: boolean = false;
 
-  userModul = new USERModul('', '', '', '','', false);
+  userModul = new USERModul('', '', '', '', '',  false);
   constructor(
     private router: Router,
     private userService: UserService,
-    private footerServes: FooterService,
-  ) { }
-
-
+    private footerServes: FooterService
+  ) {}
 
   ngOnDestroy(): void {
     this.footerServes.displayFooter();
@@ -40,6 +38,8 @@ export class LoginComponent implements  OnDestroy {
         if (user) {
           // Successful login
           console.log('Login successful!');
+          // // Set the current user
+          // this.userService.setCurrentUser(user);
 
           // Generate fake token and set expiration
           const token = this.generateFakeToken();

@@ -1,14 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
-
-
 <nav class="navbar navbar-expand-lg sticky-top" *ngIf="showNavbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="./assests/199962250.png" alt="Logo" class="logo" />
         </a>
         
-        <ngx-spinner bdColor = "rgba(212,169,90,0.4)" size = "medium" color = "#070707" type="ball-atom">
+        <ngx-spinner bdColor="rgba(212,169,90,0.4)" size="medium" color="#070707" type="ball-atom">
             <p style="font-size: 20px; color: white"> Loading...</p>
         </ngx-spinner>
         
@@ -17,8 +15,8 @@
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse fw-bold" id="main">
-            <ul class="navbar-nav nav-pills nav-fill ms-auto mt-2  mb-lg-0 small " id="pillNav2" role="tablist"
-                style="--bs-nav-link-color: var(--bs-white);  --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+            <ul class="navbar-nav nav-pills nav-fill ms-auto mt-2 mb-lg-0 small" id="pillNav2" role="tablist"
+                style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
                 <li class="nav-item" routerLink="/home" role="presentation">
                     <button class="nav-link active rounded-3 p-2 p-lg-3" id="home-tab2" data-bs-toggle="tab"
                         type="button" role="tab" aria-selected="true">Home</button>
@@ -27,22 +25,23 @@
                     <button class="nav-link rounded-3 p-2 p-lg-3" id="profile-tab2" data-bs-toggle="tab" type="button"
                         role="tab" aria-selected="false" (click)="openSpinner1()">Products</button>
                 </li>
-                <li class="nav-item" routerLink="/add-prouduct" role="presentation">
+                <li class="nav-item" routerLink="/add-product" role="presentation">
                     <button class="nav-link rounded-3 p-2 mb-2 p-lg-3" id="contact-tab2" data-bs-toggle="tab"
-                        type="button" role="tab" aria-selected="false" (click)=" openSpinner1() ">Add Items</button>
+                        type="button" role="tab" aria-selected="false" (click)="openSpinner1()">Add Items</button>
                 </li>
-                <!-- <li class="nav-item" routerLink="/dash-home" role="presentation">
-                    <button class="nav-link rounded-3 p-2 mb-2 p-lg-3" id="contact-tab2" data-bs-toggle="tab"
-                        type="button" role="tab" aria-selected="false" (click)=" openSpinner1() ">da</button>
-                </li> -->
             </ul>
-            <a (click)="openSpinner1()" routerLink="/users" class="btn btn-outline-secondary ms-2 icont">
+            <a (click)="openSpinner1()" routerLink="/users" class="btn btn-outline-secondary ms-2 icont" *ngIf="currentUser">
                 <i class="fas fa-user"></i>
             </a>
-            <a (click)=" openSpinner1() " class="btn btn-outline-secondary ms-2 icont" (mouseover)="showLoginText()" (mouseout)="hideLoginText()"
-                routerLink="/signup">
+            <a (click)="openSpinner1()" class="btn btn-outline-secondary ms-2 icont" (mouseover)="showLoginText()" (mouseout)="hideLoginText()"
+                routerLink="/signup" *ngIf="!currentUser">
                 <i class="fa-solid fa-arrow-right-to-bracket login-icon" [style.opacity]="loginIconOpacity"></i>
-                <span class="ms-2 login-text" [style.display]="loginTextVisible ? 'inline' : 'none'"  >Login</span>
+                <span class="ms-2 login-text" [style.display]="loginTextVisible ? 'inline' : 'none'">Login</span>
+            </a>
+            <a (click)="logout()" class="btn btn-outline-secondary ms-2 icont" (mouseover)="showLoginText()" (mouseout)="hideLoginText()"
+                *ngIf="currentUser">
+                <i class="fa-solid fa-arrow-right-to-bracket login-icon" [style.opacity]="loginIconOpacity"></i>
+                <span class="ms-2 login-text" [style.display]="loginTextVisible ? 'inline' : 'none'">Logout</span>
             </a>
         </div>
     </div>
