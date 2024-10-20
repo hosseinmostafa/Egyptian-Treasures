@@ -146,9 +146,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* تأكد من تغطية الخلفية */
     height: 100vh;
-    /* 100% من ارتفاع الشاشة */
 }
 
 #hero2 {
@@ -157,9 +155,9 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* تأكد من تغطية الخلفية */
+
     height: 100vh;
-    /* 100% من ارتفاع الشاشة */
+ 
 }
 
 #hero3 {
@@ -168,15 +166,11 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* تأكد من تغطية الخلفية */
     height: 100vh;
-    /* 100% من ارتفاع الشاشة */
 }
 
-/* تأكد من أن الشرائح تأخذ 100% من ارتفاع الشاشة */
 .carousel-inner {
     height: 100vh;
-    /* 100% من ارتفاع الشاشة */
 }
 
 
