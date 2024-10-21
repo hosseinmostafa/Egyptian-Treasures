@@ -27,8 +27,11 @@ export class UserService {
 
   // Fetch all users
   getUsers(): Observable<USERModul[]> {
-    return this.http.get<USERModul[]>(this.baseURL);
+    return this.http.get<{ [key: string]: USERModul }>(this.baseURL).pipe(
+      map(response => Object.values(response)) // Convert object of objects to array
+    );
   }
+  
 
   // Check if an email already exists
   checkIfEmailExists(email: string): Observable<boolean> {
