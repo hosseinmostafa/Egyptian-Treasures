@@ -1,10 +1,11 @@
-.fa-home{
+.fa-home {
   background-image: url('https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -19,7 +20,7 @@
   border-radius: 15px;
   padding: 30px;
   width: 100%;
-  max-width: 500px;
+  max-width: 1000px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
@@ -62,6 +63,13 @@ textarea.form-control {
 .btn-submit:hover {
   background-color: #d1b27c;
   color: white;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0
 }
 
 /* Media Queries for Responsiveness */
