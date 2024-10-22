@@ -28,8 +28,8 @@
     { path: "signup", component: SignupComponent },
     { path: "payment", component: PaymentComponent },
     { path: "products", component: ProductsComponent },
-    // canActivate: [authGuardGuard] 
-    { path: "add-prouduct", component: AddProductComponent},
+    // canActivate: [authGuardGuard]
+    { path: "add-product", component: AddProductComponent},
     { path: "product/:id", component: ProductDetailsComponent },
     {path:"home/:id",component:ProductHomeComponent},
     // { path: 'Users', canActivateChild: [authChildGuard], { path: 'Users', canActivateChild: [authChildGuard], children: [  { path: 'add-product', component: AddProductComponent },  { path: 'cart', component: CartComponent } ] { path: "products", component: ProductsComponent },
@@ -41,7 +41,7 @@
     { path: "about-us" , component: AboutUsComponent},
     { path: "privacy-policy", component: PrivacyPolicyComponent},
     // { path: "dash-home", component: DashHomeComponent, children: [{ path: "edit-product", component: EditProductComponent }, { path: "user-add", component: UserAddComponent }] },
-    // canActivate: [authGuardGuard] 
+    // canActivate: [authGuardGuard]
     { path: "cart", component: CartComponent},
     { path: "edit-profile", component: EditProfileComponent},
     { path: "**", component: NotFondComponent },

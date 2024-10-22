@@ -25,15 +25,23 @@ export class ProductService {
     });
   }
 
-  getProducts(): Observable<Iproduct[]> {
-    return this.http.get<Iproduct[]>(this.apiUrl).pipe(
-      map((response) => {
-        const products = response ? Object.values(response) : [];
-        return products.filter((product) => product && product.id);
+  getProducts(): Observable<any[]> {
+    const url = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Products.json`;
+
+    return this.http.get<{ [key: string]: any }>(url).pipe(
+      map(response => {
+        return Object.keys(response).map(key => ({
+          key,  // Store the Firebase key
+          ...response[key]
+        }));
       }),
-      catchError((err) => throwError(() => err.message || 'Server error'))
+      catchError((err) => {
+        console.error('Error fetching products:', err);
+        return throwError(() => new Error('Failed to fetch products.'));
+      })
     );
   }
+
 
   getOneProduct(id: string): Observable<Iproduct | undefined> {
     return this.getProducts().pipe(
@@ -46,17 +54,35 @@ export class ProductService {
     );
   }
 
-  deleteProduct(productId: string): Observable<void> {
-    return this.http.delete<void>(`https://egytion-treasure-89099-default-rtdb.firebaseio.com/Products/${productId}.json`).pipe(
-      catchError((err) => throwError(() => err.message || 'Server error'))
+  deleteProduct(id : string): Observable<void> {
+    const url = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Products/${id}.json`;
+    console.log('DELETE request to:', url); // Debug log
+
+    return this.http.delete<void>(url).pipe(
+      catchError((err) => {
+        console.error('Error in DELETE request:', err); // Log the error
+        return throwError(() => err.message || 'Server error');
+      })
     );
   }
 
+
   updateProduct(product: Iproduct): Observable<Iproduct> {
-    return this.http.put<Iproduct>(`https://egytion-treasure-89099-default-rtdb.firebaseio.com/Products/${product.id}.json`, product).pipe(
-      catchError((err) => throwError(() => err.message || 'Update failed'))
+    const updateUrl = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Products/${product.id}.json`;
+
+    return this.http.put<Iproduct>(updateUrl, product).pipe(
+      map((updatedProduct) => {
+        console.log('Product updated successfully:', updatedProduct);
+        this.loadProducts(); // Refresh the product list
+        return updatedProduct;
+      }),
+      catchError((err) => {
+        console.error('Error updating product:', err);
+        return throwError(() => err.message || 'Update failed');
+      })
     );
   }
+
 
   // Modified addProduct to update the BehaviorSubject
   addProduct(product: Iproduct): Observable<Iproduct> {

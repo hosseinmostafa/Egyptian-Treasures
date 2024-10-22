@@ -41,6 +41,8 @@ export class EditProductComponent implements OnInit {
 
   // Open the modal and populate the form with the selected product's data
   editProduct(product: Iproduct) {
+    console.log('Editing product:', product); // Debug log
+
     this.selectedProduct = product;
 
     // Populate the form with the product data
@@ -51,24 +53,21 @@ export class EditProductComponent implements OnInit {
       quantity: product.quantity,
       price: product.price,
     });
-
-    // Show the modal by setting selectedProduct to the product
   }
 
   // Save the edited product
   onSubmit() {
     if (this.editProductForm.valid) {
-      // Get the updated product data from the form
       const updatedProduct: Iproduct = {
         ...this.selectedProduct!,
         ...this.editProductForm.getRawValue(),
       };
 
-      // Update the product via the service
+      console.log('Updating product:', updatedProduct); // Debug log
+
       this.productService.updateProduct(updatedProduct).subscribe({
         next: () => {
           console.log('Product updated successfully');
-          // Update the local product list with the edited product
           this.products = this.products.map(p => (p.id === updatedProduct.id ? updatedProduct : p));
           this.selectedProduct = null; // Close the modal
         },
@@ -80,19 +79,23 @@ export class EditProductComponent implements OnInit {
     }
   }
 
-  // Delete product
-  deleteProduct(productId: string) {
-    if (confirm('Are you sure you want to delete this product?')) {
-      this.productService.deleteProduct(productId).subscribe({
-        next: () => {
-          this.products = this.products.filter(product => product.id !== productId);
-          console.log(`Product with ID ${productId} has been deleted.`);
-        },
-        error: (err) => {
-          console.error('Error deleting product:', err);
-          this.errMsg = 'Error deleting product';
-        },
-      });
-    }
+
+// Delete product
+deleteProduct(productId: string) {
+  console.log('Deleting product with ID:', productId); // Debug log
+
+  if (confirm('Are you sure you want to delete this product?')) {
+    this.productService.deleteProduct(productId).subscribe({
+      next: () => {
+        console.log(`Product with ID ${productId} has been deleted.`); // Confirm deletion
+        this.products = this.products.filter(product => product.id !== productId);
+      },
+      error: (err) => {
+        console.error('Error deleting product:', err);
+        this.errMsg = 'Error deleting product';
+      },
+    });
   }
+}
+
 }

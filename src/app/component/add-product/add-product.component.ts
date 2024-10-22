@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class AddProductComponent {
   product: Iproduct = {
-    id: '',
+    id: '',  // Generate unique ID only for the frontend
     name: '',
     price: 0,
     image: '',
@@ -33,9 +33,13 @@ export class AddProductComponent {
   }
 
   addProduct(): void {
-    this.product.id = uuidv4(); // Generate unique ID
+    const uniqueId = Date.now().toString(); // You can use any method to generate a unique ID
+    this.product.id = uniqueId;
     this.productService.addProduct(this.product).subscribe({
-      next: (response) => {
+      next: (response: Iproduct) => {
+
+        // The response contains the product with the generated 'key'
+        console.log('Product added with key:', response['key']);
         alert('Product added successfully!');
       },
       error: (err: any) => {
