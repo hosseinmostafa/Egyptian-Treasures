@@ -53,7 +53,8 @@
       <div class="section1 mt-3">
         <div class="product-grid">
           <div class="row">
-            <div class="col-lg-3 col-md-6 my-3" *ngFor="let product of filteredProducts">
+            <div class="col-lg-3 col-md-6 my-3" *ngFor="let product of filteredProducts" data-aos="fade-down"
+              data-aos-delay="150">
               <div class="card h-100" style="border: none;">
                 <img [src]="product.image" class="card-img-top product-image" [alt]="product.name" />
                 <div class="card-body d-flex flex-column">
