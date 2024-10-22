@@ -363,3 +363,29 @@ img {
     width: 90px !important;
     // height: 70px;
 }
+.star-rating {
+    display: inline-block;
+    direction: rtl;
+    font-size: 2rem;
+    position: relative;
+  }
+  
+  .star-rating input {
+    display: none;
+  }
+  
+  .star-rating label {
+    color: lightgray;
+    cursor: pointer;
+    padding: 0 5px;
+  }
+  
+  .star-rating input:checked ~ label {
+    color: gold;
+  }
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: gold;
+  }
+  

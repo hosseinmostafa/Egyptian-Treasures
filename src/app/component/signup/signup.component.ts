@@ -11,10 +11,10 @@ import { ConfirmPasswordValidator } from '../../CostmorFormSigin/costemFormPassw
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
 })
-export class SignupComponent implements  OnDestroy {
-  userModel = new USERModul('','', '', '', '', false);
+export class SignupComponent implements OnDestroy {
+  userModel = new USERModul('', '', '', '', '', false);
   regsetForm: FormGroup;
   constructor(
     private userSarvies: UserService,
@@ -22,17 +22,27 @@ export class SignupComponent implements  OnDestroy {
     private footerServes: FooterService,
     private fb: FormBuilder
   ) {
-    this.regsetForm = this.fb.group({
-      userName: ['', [Validators.required, Validators.minLength(3), ForbiddenNameValidator]],
-      email: [''],
-      password: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]],
-      location: this.fb.group({
-        city: [''],
-        state: [''],
-        postalCode: ['']
-      })
-    }, { validators: [ConfirmPasswordValidator] })
+    this.regsetForm = this.fb.group(
+      {
+        userName: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(3),
+            ForbiddenNameValidator,
+          ],
+        ],
+        email: [''],
+        password: ['', [Validators.required]],
+        confirmPassword: ['', [Validators.required]],
+        location: this.fb.group({
+          city: [''],
+          state: [''],
+          postalCode: [''],
+        }),
+      },
+      { validators: [ConfirmPasswordValidator] }
+    );
   }
 
   get email() {
@@ -57,10 +67,10 @@ export class SignupComponent implements  OnDestroy {
     // console.log(this.userModel)
     this.userSarvies.addUser(this.userModel).subscribe({
       next: (data) => {
-        this.router.navigate(['/login'])
+        this.router.navigate(['/login']);
       },
       error: (error) => {
-        console.log(error)
+        console.log(error);
         Swal.fire({
           title: 'Error!',
           text: 'Internal Server Error',
@@ -72,13 +82,15 @@ export class SignupComponent implements  OnDestroy {
   }
 
   setValetator() {
-    this.regsetForm.get('subscrib')?.valueChanges.subscribe((checkedValidator) => {
-      if (checkedValidator) {
-        this.email?.setValidators(Validators.required)
-      } else {
-        this.email?.clearValidators();
-      }
-      this.email?.updateValueAndValidity();
-    })
+    this.regsetForm
+      .get('subscrib')
+      ?.valueChanges.subscribe((checkedValidator) => {
+        if (checkedValidator) {
+          this.email?.setValidators(Validators.required);
+        } else {
+          this.email?.clearValidators();
+        }
+        this.email?.updateValueAndValidity();
+      });
   }
 }

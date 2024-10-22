@@ -245,151 +245,97 @@
         </div>
     </section>
 
-    <!-- Review -->
-    <section id="review" class="section-padding bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
-                    <div class="section-title">
-                        <h1 class="display-4 fw-semibold">
-                            Customer Review for the Handmade Crafts Website
-                        </h1>
-                        <div class="line"></div>
-                        <p>Our portfolio highlights a range of distinguished reviews that praise the quality and
-                            craftsmanship of our handmade products, with our pieces becoming unique gifts and lasting
-                            memories in our customers homes.”</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row gy-5 gx-4">
-                <div class="col-lg-4 co-sm-6" data-aos="fade-down" data-aos-delay="250">
-                    <div class="reviw">
-                        <div class="reviw-head p-4 bg-white theme-shadow">
-                            <div class="text-warning">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p>"Every piece I ordered was stunning! The craftsmanship is top-notch, and I can tell a lot
-                                of love went into making them.
-                                Customer service was also very responsive and helpful. I can't wait to buy more!"</p>
-                        </div>
-                    </div>
-                    <div class="review-person mt-4 d-flex align-items-center">
-                        <img class="rounded-circle w-25 h-25"
-                            src="https://img.freepik.com/free-photo/artist-white_1368-3543.jpg" alt="">
-                        <div class="ms-3">
-                            <h5 class="text-start"> Ali Hassan</h5>
-                            <small>Interior Designer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 co-sm-6" data-aos="fade-down" data-aos-delay="250">
-                    <div class="reviw">
-                        <div class="reviw-head p-4 bg-white theme-shadow">
-                            <div class="text-warning">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p>"I am absolutely thrilled with my recent purchase! The handmade items are not only
-                                beautiful but also incredibly
-                                well-crafted. The attention to detail is impressive, and they arrived quickly. I will
-                                definitely recommend this site to
-                                my friends!"</p>
-                        </div>
-                    </div>
-                    <div class="review-person mt-4 d-flex align-items-center">
-                        <img class="rounded-circle img-dad h-25"
-                            src="https://img.freepik.com/free-photo/front-view-beautiful-woman-floral-dress_23-2148357672.jpg"
-                            alt="">
-                        <div class="ms-3">
-                            <h5 class="text-start">Sarah Ahmed</h5>
-                            <small>Marketing Specialist</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 co-sm-6" data-aos="fade-down" data-aos-delay="350">
-                    <div class="reviw">
-                        <div class="reviw-head p-4 bg-white theme-shadow">
-                            <div class="text-warning">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p>"The variety of handmade crafts available is fantastic! I found exactly what I was
-                                looking for, and the quality exceeded
-                                my expectations. However, I wish the shipping options were a bit more flexible. Overall,
-                                a great experience!"</p>
-                        </div>
-                    </div>
-                    <div class="review-person mt-4 d-flex align-items-center">
-                        <img class="rounded-circle img-dad2  "
-                            src="https://img.freepik.com/free-psd/close-up-kid-expression-portrait_23-2150193157.jpg"
-                            alt="">
-                        <div class="ms-3">
-                            <h5 class="text-start">Asmaa Abdrahman</h5>
-                            <small> Entrepreneur</small>
-                        </div>
-                    </div>
+   <!-- review -->
+
+<!-- Reviews Section -->
+<section id="review" class="section-padding bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">
+                        Customer Review for the Handmade Crafts Website
+                    </h1>
+                    <div class="line"></div>
+                    <p>Our portfolio highlights a range of distinguished reviews that praise the quality and
+                        craftsmanship of our handmade products.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- contact -->
-    <section class="section-padding" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="section-title">
-                        <h1 class="display-4 text-white fw-semibold">
-                            Leave Us a Message or Review
-                        </h1>
-                        <div class="line bg-white"></div>
+        <!-- Responsive Display of Reviews -->
+        <div class="row gy-5 gx-4 mt-5 review-list">
+            <div *ngFor="let review of reviews" class="col-lg-4 col-md-6 col-sm-12">
+                <div class="review-head p-4 bg-white theme-shadow h-100">
+                    <div class="text-warning">
+                        <ng-container *ngFor="let star of [].constructor(review.rating); let i = index">
+                            <i class="fa-solid fa-star"></i>
+                        </ng-container>
                     </div>
-                    <p class="text-white fs-5"> We value your feedback! Whether you have a question, a suggestion,
-                        or would like to leave a review of our
-                        Herfa, we would love to hear from you. Your thoughts help us continue to craft unique,
-                        high-quality pieces and improve
-                        your experience with our products. Thank you for supporting handmade craftsmanship!</p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <form action="" class="row g-3  p-lg-5 p-4 bg-white theme-shadow rounded-3">
-                        <div class="form-group col-lg-6">
-                            <input type="text" name="" class="form-control" placeholder="Enter first name" id="">
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <input type="text" name="" class="form-control" placeholder="Enter last name" id="">
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <input type="email" name="" class="form-control" placeholder="Enter email address" id="">
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <input type="text" name="" class="form-control" placeholder="Enter message" id="">
-                        </div>
-
-                        <div class="form-group col-lg-12">
-
-                            <textarea name="" class="form-control" placeholder=" Enter subject " id="" cols="30"
-                                rows="4"></textarea>
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <button class="btn btn-brand">send message</button>
-                        </div>
-                    </form>
+                    <p>"{{ review.message }}"</p>
+                    <h5>{{ review.name }}</h5>
+                    <small>{{ review.email }}</small>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+<!-- Contact Form for Review Submission -->
+<section class="section-padding" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <h1 class="display-4 text-white fw-semibold">
+                        Leave Us a Message or Review
+                    </h1>
+                    <div class="line bg-white"></div>
+                </div>
+                <p class="text-white fs-5"> We value your feedback! Whether you have a question, a suggestion,
+                    or would like to leave a review, we would love to hear from you. Your thoughts help us improve your experience with our products.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row g-3 p-lg-5 p-4 bg-white theme-shadow rounded-3">
+                    <div class="form-group col-lg-6">
+                        <input type="text" [(ngModel)]="userData.name" name="name" class="form-control" placeholder="Enter Your Name" required>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <input type="email" [(ngModel)]="userData.email" name="email" class="form-control" placeholder="Enter email address" required>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <textarea [(ngModel)]="userData.message" name="message" class="form-control" placeholder="Enter your message" cols="30" rows="4" required></textarea>
+                    </div>
+                    <div class="star-rating form-group col-lg-12">
+                        <input type="radio" id="star5" name="rating" [(ngModel)]="userData.rating" [value]="5" />
+                        <label for="star5" title="5 stars">&#9733;</label>
+                      
+                        <input type="radio" id="star4" name="rating" [(ngModel)]="userData.rating" [value]="4" />
+                        <label for="star4" title="4 stars">&#9733;</label>
+                      
+                        <input type="radio" id="star3" name="rating" [(ngModel)]="userData.rating" [value]="3" />
+                        <label for="star3" title="3 stars">&#9733;</label>
+                      
+                        <input type="radio" id="star2" name="rating" [(ngModel)]="userData.rating" [value]="2" />
+                        <label for="star2" title="2 stars">&#9733;</label>
+                      
+                        <input type="radio" id="star1" name="rating" [(ngModel)]="userData.rating" [value]="1" />
+                        <label for="star1" title="1 star">&#9733;</label>
+                      </div>
+                      
+                      
+                    <div class="form-group col-lg-6">
+                        <button type="submit" class="btn btn-brand">Submit Review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- scrol -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
