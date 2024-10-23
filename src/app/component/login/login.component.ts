@@ -38,8 +38,8 @@ export class LoginComponent implements OnDestroy {
         if (user) {
           // Successful login
           console.log('Login successful!');
-          // // Set the current user
-          // this.userService.setCurrentUser(user);
+          // Set the current user
+          this.userService.setCurrentUser(user);
 
           // Generate fake token and set expiration
           const token = this.generateFakeToken();
