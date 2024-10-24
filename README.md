@@ -53,7 +53,7 @@
    };
 ## 🖼️ Screenshots  
 1. **Home Page**  
-   ![2024-10-14]([(https://github.com/hosseinmostafa/Egyptian-Treasures/blob/d524f87afc24bbed64097e9718d6b5db0d8e2bc6/Screenshot%20(339).png)](https://github.com/hosseinmostafa/Egyptian-Treasures/blob/d524f87afc24bbed64097e9718d6b5db0d8e2bc6/Screenshot%20(339).png))
+   ![Screenshot (339)](https://github.com/user-attachments/assets/6b187cea-1a68-47cc-be41-915e0ba130f4)
    
    
   ![2024-10-14 (1)](https://github.com/user-attachments/assets/124830e2-c20f-4fed-aadf-6b380374c290)
