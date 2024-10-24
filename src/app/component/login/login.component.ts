@@ -4,6 +4,7 @@ import { UserService } from '../../Services/user.service';
 import { USERModul } from '../signup/UserModule';
 import Swal from 'sweetalert2';
 import { FooterService } from '../../Services/footer.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -14,32 +15,32 @@ export class LoginComponent implements OnDestroy {
   email: string = '';
   password: string = '';
   loginError: boolean = false;
+  loginObj: Login;
 
-  userModul = new USERModul('', '', '', '', '',  false);
-
+  userModul = new USERModul('', '', '', '', '', false);
   constructor(
     private router: Router,
     private userService: UserService,
-    private footerServes: FooterService
-  ) {}
+    private footerServes: FooterService,
+    private http: HttpClient,
+  ) { this.loginObj = new Login()}
 
   ngOnDestroy(): void {
     this.footerServes.displayFooter();
   }
 
-  // Handle user login
   onLogin() {
     this.userService.getUsers().subscribe({
       next: (users: USERModul[]) => {
         // Find user by email and password
-        const user = users.find(
-          (u: USERModul) => u.email === this.email && u.password === this.password
+        const user = Object.values(users).find(
+          (u: USERModul) =>
+            u.email === this.email && u.password === this.password
         );
 
         if (user) {
           // Successful login
           console.log('Login successful!');
-
           // Set the current user
           this.userService.setCurrentUser(user);
 
@@ -104,5 +105,26 @@ export class LoginComponent implements OnDestroy {
       next: (data) => console.log(data),
       error: (error) => console.log(error),
     });
+  }
+
+  onLoginn() {
+    this.http.post('https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/Login.json', this.loginObj).subscribe((res: any) => {
+      if(res.result){
+        alert('login success');
+        localStorage.setItem('token', res.data.token);
+        this.router.navigateByUrl('/add-product');
+      }else{
+        alert(res.message);
+      }
+    })
+  }
+}
+
+export class Login{
+  EmailId: string;
+  Password: string;
+  constructor(){
+    this.EmailId = '';
+    this.Password = '';
   }
 }

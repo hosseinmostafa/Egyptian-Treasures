@@ -61,9 +61,9 @@ export class SignupComponent implements OnDestroy {
   }
 
   onSubmit() {
-     // Generate a unique ID for the user
-     const uniqueId = Date.now().toString(); // You can use any method to generate a unique ID
-     this.userModel.first_name
+    // Generate a unique ID for the user
+    const uniqueId = Date.now().toString(); // You can use any method to generate a unique ID
+    this.userModel.first_name
     console.log(this.userModel)
     this.userSarvies.addUser(this.userModel).subscribe({
       next: (data) => {

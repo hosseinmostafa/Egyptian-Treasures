@@ -1,5 +1,14 @@
-import { CanActivateFn } from '@angular/router';
+import { inject } from '@angular/core';
+import { CanActivateFn, Router } from '@angular/router';
 
 export const guardsGuard: CanActivateFn = (route, state) => {
-  return true;
+  const router = inject(Router)
+
+  const localData = localStorage.getItem('currentUser')
+  if(localData != null){
+    return true
+  }else{
+    router.navigate(['/login'])
+    return false
+  }
 };
