@@ -47,6 +47,26 @@
     background-color: #ddc79e
 }
 
+.btn-Edit{
+    background-color: #ddc79e;
+}
+.btn-Edit:hover{
+    background-color: #d8cab1;
+    color: black;
+}
+.btn-cancer{
+    background-color: #e6dfd3;
+}
+.btn-cancer:hover{
+    background-color: #ddc79e;
+    color: black;
+}
+
+.button-Edit{
+    text-align: end;
+}
+
+
 .profile-head {
     transform: translateY(5rem)
 }
