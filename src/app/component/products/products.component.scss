@@ -1,212 +1,258 @@
 .container-fluid {
-    background-image: url("https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg");
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #eee;
-    background-size: cover;
-    background-position: center;
-    padding: 20px
+  background-image: url("https://img.freepik.com/premium-photo/macrame-arrangement-with-copy-space_23-2149072871.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #eee;
+  background-size: cover;
+  background-position: center;
+  padding: 20px
 }
 
 
 .btn-flt{
-    background-color: #e9c78a;
-    color: black;
-    font-size: 17px;
-    transition: .4s;
+  background-color: #e9c78a;
+  color: black;
+  font-size: 17px;
+  transition: .4s;
 }
 .btn-flt:hover{
-    background-color: #dbb671;
-    color: white;
-    font-size: 17px;
+  background-color: #dbb671;
+  color: white;
+  font-size: 17px;
 }
 .container,
 .container[_ngcontent-ng-c2708429709] {
-    margin: auto;
-    max-width: 90vw;
-    padding-top: 10px;
-    transition: transform .5s
+  margin: auto;
+  max-width: 90vw;
+  padding-top: 10px;
+  transition: transform .5s
 }
 
 .container {
-    text-align: end
+  text-align: end
 }
 
 .section1 {
-    margin: 0 auto;
-    min-width: 100%;
+  margin: 0 auto;
+  min-width: 100%;
 }
 .section{
-    min-width: 100%;
+  min-width: 100%;
 }
 .btn-shoping-card,
 .filtering {
-    color: black;
-    text-align: center !important;
-    margin-bottom: 10px
+  color: black;
+  text-align: center !important;
+  margin-bottom: 10px
 }
 
 #addToCart,
 .icon-shop {
-    cursor: pointer;
-    margin-left: 10px
+  cursor: pointer;
+  margin-left: 10px
 }
 
 .filtering {
-    padding: 5px 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    transition: .4s;
-    background-color: #eecd8f;
-    transition: .4s;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  transition: .4s;
+  background-color: #eecd8f;
+  transition: .4s;
 }
 
 .card,
 img {
-    transition: .3s;
-    border-radius: 20px
+  transition: .3s;
+  border-radius: 20px
 }
 
 .filtering:hover {
-    background-color: #e9c88c;
-    color: white;
+  background-color: #e9c88c;
+  color: white;
 }
 
 .card {
-    background-color: #eeeee6;
-    padding: 15px
+  background-color: #eeeee6;
+  padding: 15px
 }
 
 .product-card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    height: 100%
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  height: 100%
 }
 
 img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover
+  width: 100%;
+  height: 450px;
+  object-fit: cover
 }
 
 img:hover {
-    transform: scale(1.02);
-    opacity: .8
+  transform: scale(1.02);
+  opacity: .8
 }
 
 .btn-shoping-card {
-    background-color: #f0ce8f;
-    transition: .4s;
-    font-weight: 600
+  background-color: #f0ce8f;
+  transition: .4s;
+  font-weight: 600
 }
 
 .btn-shoping-card:hover {
-    background-color: #ddc79e
+  background-color: #ddc79e
 }
 
 .card-buttons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 #viewDetails {
-    padding: 10px 15px;
-    display: inline-block;
-    // background-color: #e6cea2;
+  padding: 10px 15px;
+  display: inline-block;
+  // background-color: #e6cea2;
 }
 #viewDetails:hover {
-    background-color: #e0bd7a;
-    color: white;
+  background-color: #e0bd7a;
+  color: white;
 }
 
 #addToCart {
-    // background-color: #e0bc78;
-    border-radius: 50%;
-    border: none;
-    transition: .5s
+  // background-color: #e0bc78;
+  border-radius: 50%;
+  border: none;
+  transition: .5s
 }
 
 #addToCart i {
-    font-size: 24px;
-    vertical-align: middle;
-    color: #d4a95a
+  font-size: 24px;
+  vertical-align: middle;
+  color: #d4a95a
 }
 
 #addToCart:hover {
-    background-color: #686767c0;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px
+  background-color: #686767c0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px
 }
 
 .icon-cart {
-    position: relative;
-    display: inline-block
+  position: relative;
+  display: inline-block
 }
 
 .container[_ngcontent-ng-c2708429709] {
-    text-align: left
+  text-align: left
 }
 
 .search-bar.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0
 }
 
 .icon-shop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: #615c52;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: .3s;
-    margin-top: 20px;
-    margin-bottom: 20px
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #615c52;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: .3s;
+  margin-top: 20px;
+  margin-bottom: 20px
 }
 
 .icon-cart span {
-    position: absolute;
-    background-color: #f44336;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    top: 50%;
-    right: -20px
+  position: absolute;
+  background-color: #f44336;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  top: 50%;
+  right: -20px
 }
 
 #search-input {
-    display: inline-block !important;
-    width: 95% !important
+  display: inline-block !important;
+  width: 95% !important
 }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0
+  -webkit-appearance: none;
+  margin: 0
 }
 
 @media (max-width:968px) {
-    .icon-cart {
-        margin-top: 20px
-    }
+  .icon-cart {
+      margin-top: 20px
+  }
 }
+.message {
+background-color: #4caf50;
+color: white;
+padding: 10px;
+margin: 10px 0;
+text-align: center;
+border-radius: 5px;
+animation: fade-in-out 3s forwards;
+}
+
+@keyframes fade-in-out {
+0% { opacity: 0; }
+10% { opacity: 1; }
+90% { opacity: 1; }
+100% { opacity: 0; }
+}
+
+
+.alert {
+position: fixed;
+top: 50%;
+left: 50%;
+z-index: 1050; /* Ensure it appears above other content */
+background-color: #d4a95a; /* Green background for success */
+color: white;
+padding: 15px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+opacity: 0; /* Initially hidden */
+transition: opacity 0.5s ease-in-out;
+min-width: 250px;
+display: inline-block;
+transform: translate(-50%, -50%);
+
+}
+
+.alert.show {
+opacity: 1; /* Fade in when the message is visible */
+}
+
+.alert.hide {
+opacity: 0; /* Fade out to hide the message */
+}
+
+
+

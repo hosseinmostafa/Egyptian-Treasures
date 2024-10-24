@@ -6,6 +6,8 @@ import { CartService } from '../../Services/cart.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ChangeDetectorRef } from '@angular/core';
 import Aos from 'aos';
+import { ChangeDetectionStrategy } from '@angular/core';
+
 
 @Component({
   selector: 'app-products',
@@ -22,6 +24,8 @@ export class ProductsComponent implements OnInit {
   filterCategory: string = '';
   filterPrice: number | null = null;
   filterDate: string = '';
+  showMessage = false;
+  message='';
 
   constructor(
     private productService: ProductService,
@@ -66,10 +70,25 @@ export class ProductsComponent implements OnInit {
 
   // Add product to the cart
   addToCart(product: Iproduct): void {
-    this.cartCount++;
-    this.cartService.addToCart(product);
-    this.applyFilters(); // Apply filters to update UI immediately
-  }
+    console.log('Adding product to cart:', product.name);
+
+    // Directly add the product to the cart without incrementing cartCount
+    this.cartService.addToCart({ ...product, quantity: 1 }); // Set quantity to 1 explicitly
+
+    this.cartCount++; // Increment the cart count for the UI
+    this.showMessage = true;
+    this.message = `${product.name} has been added to the cart!`;
+
+    console.log('Message:', this.message);
+    console.log('Show message:', this.showMessage);
+
+    this.cdr.detectChanges(); // Ensure changes are detected
+
+    setTimeout(() => {
+        this.showMessage = false;
+    }, 3000);
+}
+
 
   // Add product and refresh the product list
   addProduct(newProduct: Iproduct): void {
