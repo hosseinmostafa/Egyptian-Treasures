@@ -54,7 +54,7 @@
 ## 🖼️ Screenshots  
 ##**Video**
 
-![video](https://github.com/user-attachments/assets/f1c4d5b8-9561-495b-943f-b9811d5d91d)
+![vidoe](https://github.com/user-attachments/assets/74a9d2c2-2ed6-4d59-91cc-84050d68ddf9)
 
 1. **Home Page**  
    ![Screenshot (339)](https://github.com/user-attachments/assets/6b187cea-1a68-47cc-be41-915e0ba130f4)
