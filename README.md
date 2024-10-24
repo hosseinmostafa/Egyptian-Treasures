@@ -53,16 +53,18 @@
    };
 ## 🖼️ Screenshots  
 1. **Home Page**  
-   ![2024-10-14](https://github.com/user-attachments/assets/89623490-496f-4298-8ae4-2df4216e7245)
+   ![2024-10-14]([https://github.com/user-attachments/assets/89623490-496f-4298-8ae4-2df4216e7245](https://github.com/hosseinmostafa/Egyptian-Treasures/blob/41ada93d0597d9c45223943f468e7bd7c47f66d6/Screenshot%20(339).png))
+   
   ![2024-10-14 (1)](https://github.com/user-attachments/assets/124830e2-c20f-4fed-aadf-6b380374c290)
+
 ![2024-10-14 (2)](https://github.com/user-attachments/assets/fce787ea-eb3b-4fc1-9973-0f5c3946ed44)
 
 
-2. **Product Listing**  
+3. **Product Listing**  
    ![2024-10-14 (3)](https://github.com/user-attachments/assets/53e9a8a2-2205-405f-94a5-b65947898baa)
 
 
-3. **Add Items**  
+4. **Add Items**  
    ![2024-10-14 (6)](https://github.com/user-attachments/assets/cb695184-1612-49c4-9b1e-79cf0d741cfd)
   
 
