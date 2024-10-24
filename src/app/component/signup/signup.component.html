@@ -86,23 +86,27 @@
           </div>
 
           <!-- Confirm Password Field -->
-          <div class="mb-3">
-            <label for="confirmPassword" class="form-label">Confirm Password</label>
-            <input
-              type="password"
-              class="form-control"
-              placeholder="Confirm Password"
-              required
-              [(ngModel)]="userModel.confirmPassword"
-              name="confirmPassword"
-              #confirmPassword="ngModel"
-              [class.is-invalid]="(confirmPassword.invalid && confirmPassword.touched) || (userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword)"
-              />
-              <small *ngIf="userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword && confirmPassword.touched" class="text-danger">
-                Passwords do not match.
-              </small>
+         <!-- Confirm Password Field -->
+<div class="mb-3">
+  <label for="confirmPassword" class="form-label">Confirm Password</label>
+  <input
+    type="password"
+    class="form-control"
+    placeholder="Confirm Password"
+    required
+    [(ngModel)]="userModel.confirmPassword"
+    name="confirmPassword"
+    #confirmPassword="ngModel"
+    [class.is-invalid]="(confirmPassword.invalid && confirmPassword.touched) || (userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword)"
+  />
+  <small *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger">
+    Confirm password is required.
+  </small>
+  <small *ngIf="userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword && confirmPassword.touched" class="text-danger">
+    Passwords do not match.
+  </small>
+</div>
 
-          </div>
 
           <!-- Remember Me Checkbox -->
           <div class="mb-3 form-check">
