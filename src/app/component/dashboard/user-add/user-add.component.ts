@@ -32,7 +32,7 @@ export class UserAddComponent implements OnInit {
   deleteUser(id: string): void {
     this.userService.deleteUser(id).subscribe({
       next: () => {
-        this.users = this.users.filter(user => user.id !== id);
+        this.users = this.users.filter(user => user.first_name !== id);
         console.log('User deleted successfully');
       },
       error: (err) => {

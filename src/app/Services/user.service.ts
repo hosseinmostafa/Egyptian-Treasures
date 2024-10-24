@@ -8,10 +8,10 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 })
 export class UserService {
   private baseURL: string = 'https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users.json';
-  public currentUser: USERModul | null = null; // Holds the current logged-in user's details
+  public currentUser: USERModul | null = null;
   public currentUserSubject: BehaviorSubject<USERModul | null> = new BehaviorSubject<USERModul | null>(null);
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     // Load the current user from localStorage when the service is instantiated
     const storedUser = localStorage.getItem('currentUser');
     if (storedUser) {
@@ -28,18 +28,21 @@ export class UserService {
   // Fetch all users
   getUsers(): Observable<USERModul[]> {
     return this.http.get<{ [key: string]: USERModul }>(this.baseURL).pipe(
-      map(response => Object.values(response)) // Convert object of objects to array
+      map(response => Object.values(response))
     );
   }
-  
+
+  // Fetch a single user by ID from Firebase
+  getUserById(userId: string): Observable<USERModul> {
+    const userUrl = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/${userId}.json`;
+    return this.http.get<USERModul>(userUrl);
+  }
 
   // Check if an email already exists
   checkIfEmailExists(email: string): Observable<boolean> {
     return this.getUsers().pipe(
       map((users: USERModul[]) => {
-        const emailExists = users
-          ? users.some((user: USERModul) => user.email === email)
-          : false;
+        const emailExists = users ? users.some((user: USERModul) => user.email === email) : false;
         return emailExists;
       })
     );
@@ -57,20 +60,31 @@ export class UserService {
     return this.http.put<USERModul>(updateURL, userData);
   }
 
-  // Fetch the current user from localStorage
-  getCurrentUser(): USERModul | null {
-    const storedUser = localStorage.getItem('currentUser');
-    return storedUser ? JSON.parse(storedUser) : null;
-  }
-
+  // Set the current user in localStorage and in-app state
   setCurrentUser(user: USERModul): void {
     this.currentUser = user;
     localStorage.setItem('currentUser', JSON.stringify(user)); // Store user in localStorage
     this.currentUserSubject.next(user); // Emit new user state
   }
 
+  // Clear the current user from localStorage and in-app state
   clearCurrentUser(): void {
     localStorage.removeItem('currentUser'); // Remove user from localStorage
-    this.currentUserSubject.next(null); // Emit null when logging out
+    this.currentUserSubject.next(null); // Clear the current user
+  }
+
+  // Fetch the current user from localStorage
+  getCurrentUser(): USERModul | null {
+    const storedUser = localStorage.getItem('currentUser');
+    return storedUser ? JSON.parse(storedUser) : null;
+  }
+
+  // Call this function after login to refresh the user data from Firebase
+  refreshUserData(userId: string): void {
+    this.getUserById(userId).subscribe(userData => {
+      if (userData) {
+        this.setCurrentUser(userData); // Update local storage and current user state
+      }
+    });
   }
 }

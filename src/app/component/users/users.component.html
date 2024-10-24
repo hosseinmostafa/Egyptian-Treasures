@@ -1,43 +1,70 @@
 <div class="imgis">
+  <div class="container">
+    <div class="row py-5 px-4">
+      <div class="col-md-12 mb-3 col-lg-12 mx-auto">
+        <div class="bg-white shadow rounded overflow-hidden">
 
-    <div class="container">
-        <div class="row py-5 px-4">
+          <!-- Header Section with Edit Profile and Home Icons -->
+          <div class="px-4 pt-0 pb-4 cover">
+            <div class="d-flex justify-content-end text-center pt-3">
+              <a [routerLink]="['/edit-profile']" class="btn me-4 btn-sm p-2">Edit Profile</a>
+              <a routerLink="/" class="icon-home text-center ho">
+                <i class="fa-solid fa-house"></i>
+              </a>
+            </div>
 
-            <div class="col-md-12 mb-3 col-lg-12 mx-auto">
+            <!-- User Info Section -->
+            <div class="d-flex align-items-end profile-head">
+              <div class="media-body mb-5 text-dark">
+                <h4 class="mt-0 mb-0">{{ user?.first_name }} {{ user?.last_name }}</h4>
+                <p class="small fw-bold mb-4">{{ user?.email }}</p>
+              </div>
+            </div>
+          </div>
 
-                <div class="bg-white shadow rounded overflow-hidden">
-                    <div class="px-4 pt-0 pb-4 cover">
-                        <div class="d-flex justify-content-end text-center pt-3">
-                            <a  [routerLink]="['/edit-profile']" class="btn me-4 btn-sm p-2">Edit profile</a>
-                            <a routerLink="/" class="icon-home text-center ho"><i class="fa-solid fa-house"></i></a>
-                        </div>
-                        <div class="d-flex align-items-end profile-head">
-                            <!-- <div class="profile me-3">
-                                <img src="https://img.freepik.com/free-photo/woman-posing-park-winter_23-2148820447.jpg"
-                                    alt="..." width="230" class="rounded-4 mb-2 img-thumbnail">
-                            </div> -->
-                            <div class="media-body mb-5 text-dark">
-                                <h4 class="mt-0 mb-0">Sarah Williams</h4>
-                                <p class="small fw-bold mb-4"> <i class="fas fa-map-marker-alt me-2 "></i>Cairo Egyp</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-4 py-3 mt-5">
-                        <h5 class="mb-0">About</h5>
-                        <div class="p-4 rounded shadow-sm bg-light">
-                            <p class="font-italic mb-0">Hello, I'm Sarah Williams, a passionate artisan dedicated to
-                                creating
-                                high-quality  Herfa. Whether it's intricate
-                                threadwork or detailed drawings, each piece is crafted with care and precision. I use
-                                only the finest materials to
-                                ensure that every creation not only looks beautiful but is also durable and functional.
-                                If you're looking for unique,
-                                artisanal products, feel free to contact me for more information or to learn more about
-                                my work. I would love to share
-                                my passion for craftsmanship with yo
-                            </p>
-                        </div>
-                    </div>
+          <!-- About Section with Edit Functionality -->
+          <div class="px-4 py-3 mt-5">
+            <h5 class="mb-0">About</h5>
+            <div class="p-4 rounded shadow-sm bg-light">
+              <p *ngIf="!isEditingAbout" class="font-italic mb-0">
+                {{ user?.about || 'Click "Edit" to add a description...' }}
+              </p>
+
+              <textarea
+                *ngIf="isEditingAbout"
+                [(ngModel)]="userAbout"
+                class="form-control mb-2"
+                rows="4"
+                placeholder="Write something about yourself...">
+              </textarea>
+
+              <div class="button-group mt-2">
+                <button
+                  *ngIf="!isEditingAbout"
+                  (click)="toggleEditAbout()"
+                  class="btn btn-primary">
+                  Edit
+                </button>
+
+                <button
+                  *ngIf="isEditingAbout"
+                  (click)="saveAbout()"
+                  class="btn btn-success me-2">
+                  Save
+                </button>
+
+                <button
+                  *ngIf="isEditingAbout"
+                  (click)="toggleEditAbout()"
+                  class="btn btn-danger">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+
                     <div class="py-4 px-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h5 class="mb-0">Recent photos</h5>

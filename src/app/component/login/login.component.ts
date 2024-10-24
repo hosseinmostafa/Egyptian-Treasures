@@ -15,7 +15,8 @@ export class LoginComponent implements OnDestroy {
   password: string = '';
   loginError: boolean = false;
 
-  userModul = new USERModul('', '', '', '', '', false);
+  userModul = new USERModul('', '', '', '', '',  false);
+
   constructor(
     private router: Router,
     private userService: UserService,
@@ -26,18 +27,19 @@ export class LoginComponent implements OnDestroy {
     this.footerServes.displayFooter();
   }
 
+  // Handle user login
   onLogin() {
     this.userService.getUsers().subscribe({
       next: (users: USERModul[]) => {
         // Find user by email and password
-        const user = Object.values(users).find(
-          (u: USERModul) =>
-            u.email === this.email && u.password === this.password
+        const user = users.find(
+          (u: USERModul) => u.email === this.email && u.password === this.password
         );
 
         if (user) {
           // Successful login
           console.log('Login successful!');
+
           // Set the current user
           this.userService.setCurrentUser(user);
 

@@ -181,3 +181,33 @@ body {
         margin: 20px 0px;
     }
 }
+.imgis {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+}
+
+.cover {
+  background-color: #5a5a5a;
+  color: white;
+}
+
+.profile-head {
+  margin-top: -50px;
+}
+
+.media-body h4 {
+  font-weight: 600;
+}
+
+button-group button {
+  margin-right: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-content h4, .card-content h5 {
+  margin: 0;
+}

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <div class="container">
   <div class="container text-center text-dark my-5">
     <h1>Users</h1>
@@ -18,7 +18,7 @@
           <td>{{ user.first_name }}</td>
           <td>{{ user.last_name }}</td>
           <td>{{ user.email }}</td>
-          
+
           <td>
             <a [href]="'mailto:' + user.email" class="btn btn-primary me-2">Contact</a>
             <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
@@ -45,13 +45,13 @@
       </thead>
       <tbody >
         <tr  *ngFor="let user of users">
-          <td class="mt-4">{{ user.id }}</td>
+          <td class="mt-4">{{ user.first_name }}</td>
           <td class="mt-4">{{ user.first_name }}</td>
           <td>{{ user.last_name }}</td>
           <td>{{ user.email }}</td>
           <td>
             <a [href]="'mailto:' + user.email" class="btn btn-primary me-2">Contact</a>
-            <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+            <button class="btn btn-danger" (click)="deleteUser(user.first_name)">Delete</button>
           </td>
         </tr>
       </tbody>

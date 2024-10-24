@@ -11,7 +11,7 @@ import { USERModul } from '../signup/UserModule';
 })
 export class EditProfileComponent implements OnInit, OnDestroy {
   currentUser: USERModul | null = null; // The current user's data
-  newPassword: string = '';  
+  newPassword: string = '';
   confirmPassword: string = '';
 
   constructor(
@@ -21,15 +21,15 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.footerService.hideFooter();  
-    const user = this.userService.getCurrentUser();  
+    this.footerService.hideFooter();
+    const user = this.userService.getCurrentUser();
     if (user) {
       this.currentUser = user;
     } else {
       console.error('Error: User data not found.');
     }
   }
-  
+
   ngOnDestroy(): void {
     this.footerService.displayFooter();
   }
@@ -40,15 +40,15 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       if (this.newPassword && this.newPassword === this.confirmPassword) {
         this.currentUser.password = this.newPassword; // Update password
       }
-  
-      const userId = this.currentUser.id; // Get user ID
-  
+
+      const userId = this.currentUser.first_name; // Get user ID
+
       if (userId) {
         // Step 1: Delete the old user
         this.userService.deleteUser(userId).subscribe(
           () => {
             console.log('Old user deleted successfully.');
-  
+
             // Step 2: Add the updated user data
             this.userService.addUser(this.currentUser!).subscribe(
               (response) => {
@@ -56,10 +56,10 @@ export class EditProfileComponent implements OnInit, OnDestroy {
                 // Refresh the current user data
                 this.currentUser = { ...response } as USERModul; // Update the current user with new data
                 this.userService.setCurrentUser(this.currentUser); // Update user in UserService
-                
+
                 // Step 3: Set the new user in localStorage
                 localStorage.setItem('currentUser', JSON.stringify(this.currentUser)); // Store new user in localStorage
-  
+
                 this.router.navigate(['/users']); // Redirect to users page after update
               },
               (error) => {
@@ -78,5 +78,5 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       console.error('Error: Cannot update user because currentUser is null.');
     }
   }
-  
+
 }
