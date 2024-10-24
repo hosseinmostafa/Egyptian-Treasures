@@ -17,6 +17,7 @@
   import { ProductsComponent } from './component/products/products.component';
   import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
   import { ProductHomeComponent } from './component/product-home/product-home.component';
+import { authGuardGuard } from './guards/auth-guard.service';
 
 
 
@@ -29,6 +30,7 @@
     { path: "payment", component: PaymentComponent },
     { path: "products", component: ProductsComponent },
     // canActivate: [authGuardGuard]
+    // , canActivate: [authGuardGuard] 
     { path: "add-product", component: AddProductComponent},
     { path: "product/:id", component: ProductDetailsComponent },
     {path:"home/:id",component:ProductHomeComponent},
