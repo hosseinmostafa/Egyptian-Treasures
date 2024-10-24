@@ -52,6 +52,10 @@
      }
    };
 ## 🖼️ Screenshots  
+##**Video**
+
+![video](https://github.com/user-attachments/assets/d485341d-1377-4779-9f43-7cba1b9f4aea)
+
 1. **Home Page**  
    ![Screenshot (339)](https://github.com/user-attachments/assets/6b187cea-1a68-47cc-be41-915e0ba130f4)
    
