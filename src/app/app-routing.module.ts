@@ -31,7 +31,6 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   { path: "payment", component: PaymentComponent, canActivate: [guardsGuard] },
   { path: "products", component: ProductsComponent },
-  // , canActivate: [authGuardGuard] 
   { path: "add-product", component: AddProductComponent, canActivate: [guardsGuard] },
   { path: "product/:id", component: ProductDetailsComponent },
   { path: "home/:id", component: ProductHomeComponent },
