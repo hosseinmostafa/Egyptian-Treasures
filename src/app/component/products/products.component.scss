@@ -13,17 +13,19 @@
 }
 
 
-.btn-flt{
+.btn-flt {
   background-color: #e9c78a;
   color: black;
   font-size: 17px;
   transition: .4s;
 }
-.btn-flt:hover{
+
+.btn-flt:hover {
   background-color: #dbb671;
   color: white;
   font-size: 17px;
 }
+
 .container,
 .container[_ngcontent-ng-c2708429709] {
   margin: auto;
@@ -38,9 +40,11 @@
   margin: 0 auto;
   min-width: 100%;
 }
-.section{
+
+.section {
   min-width: 100%;
 }
+
 .btn-shoping-card,
 .filtering {
   color: black;
@@ -123,6 +127,7 @@ img:hover {
   display: inline-block;
   // background-color: #e6cea2;
 }
+
 #viewDetails:hover {
   background-color: #e0bd7a;
   color: white;
@@ -149,8 +154,11 @@ img:hover {
 }
 
 .icon-cart {
-  position: relative;
-  display: inline-block
+  // position: relative;
+  display: inline-block;
+  position: fixed !important;
+  z-index: 10000;
+  right: 80px;
 }
 
 .container[_ngcontent-ng-c2708429709] {
@@ -194,7 +202,7 @@ img:hover {
 
 #search-input {
   display: inline-block !important;
-  width: 95% !important
+  width: 70% !important
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -205,52 +213,66 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media (max-width:968px) {
   .icon-cart {
-      margin-top: 20px
+    margin-top: 20px
   }
 }
+
 .message {
-background-color: #4caf50;
-color: white;
-padding: 10px;
-margin: 10px 0;
-text-align: center;
-border-radius: 5px;
-animation: fade-in-out 3s forwards;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+  animation: fade-in-out 3s forwards;
 }
 
 @keyframes fade-in-out {
-0% { opacity: 0; }
-10% { opacity: 1; }
-90% { opacity: 1; }
-100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 
 .alert {
-position: fixed;
-top: 50%;
-left: 50%;
-z-index: 1050; /* Ensure it appears above other content */
-background-color: #d4a95a; /* Green background for success */
-color: white;
-padding: 15px;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-opacity: 0; /* Initially hidden */
-transition: opacity 0.5s ease-in-out;
-min-width: 250px;
-display: inline-block;
-transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1050;
+  /* Ensure it appears above other content */
+  background-color: #d4a95a;
+  /* Green background for success */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.5s ease-in-out;
+  min-width: 250px;
+  display: inline-block;
+  transform: translate(-50%, -50%);
 
 }
 
 .alert.show {
-opacity: 1; /* Fade in when the message is visible */
+  opacity: 1;
+  /* Fade in when the message is visible */
 }
 
 .alert.hide {
-opacity: 0; /* Fade out to hide the message */
+  opacity: 0;
+  /* Fade out to hide the message */
 }
-
-
-
