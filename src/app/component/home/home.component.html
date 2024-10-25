@@ -309,7 +309,10 @@
                     <div class="form-group col-lg-12">
                         <textarea [(ngModel)]="userData.message" name="message" class="form-control" placeholder="Enter your message" cols="30" rows="4" required></textarea>
                     </div>
-                    <div class="star-rating form-group col-lg-12">
+                    <div class="form-group col-lg-6 mt-4">
+                        <button type="submit" class="btn btn-brand">Submit Review</button>
+                    </div>
+                    <div class="star-rating form-group col-lg-6">
                         <input type="radio" id="star5" name="rating" [(ngModel)]="userData.rating" [value]="5" />
                         <label for="star5" title="5 stars">&#9733;</label>
                       
@@ -324,12 +327,10 @@
                       
                         <input type="radio" id="star1" name="rating" [(ngModel)]="userData.rating" [value]="1" />
                         <label for="star1" title="1 star">&#9733;</label>
-                      </div>
-                      
-                      
-                    <div class="form-group col-lg-6">
-                        <button type="submit" class="btn btn-brand">Submit Review</button>
                     </div>
+                  
+                      
+                      
                 </form>
             </div>
         </div>

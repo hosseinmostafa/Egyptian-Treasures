@@ -378,14 +378,17 @@ img {
     color: lightgray;
     cursor: pointer;
     padding: 0 5px;
+    transition: .4s;
   }
   
   .star-rating input:checked ~ label {
     color: gold;
+    transition: .4s;
   }
   
   .star-rating label:hover,
   .star-rating label:hover ~ label {
     color: gold;
+    transition: .4s;
   }
   
