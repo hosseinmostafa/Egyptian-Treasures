@@ -36,4 +36,23 @@ export class ReviewService {
       })
     );
   }
+  deleteReview(id: string): Observable<void> {
+    const deleteURL = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Review/${id}.json`;
+    return this.http.delete<void>(deleteURL);
+  }
+  getacceptedReviews(): Observable<Review[]> {
+    const url = 'https://egyption-treasure-89099-default-rtdb.firebaseio.com/reviewafteracepted.json';
+    return this.http.get<{ [key: string]: Review }>(url).pipe(
+      map((responseData) => {
+        const acceptedReviewsArray: Review[] = [];
+        for (const key in responseData) {
+          if (responseData.hasOwnProperty(key)) {
+            acceptedReviewsArray.push({ ...responseData[key] });
+          }
+        }
+        return acceptedReviewsArray;
+      })
+    );
+  }
+  
 }

@@ -1,10 +1,18 @@
 <div class="container cont">
-  <h1 class="text-center">Edit Product</h1>
+  <h1 class="text-center">
+    Edit Product
+
+    <div class="d-flex justify-content-end text-center ">
+      <a routerLink="/dash-home" class="icon-share-from-square text-center ho">
+        <i class="fa-regular fa-share-from-square"></i>
+      </a>
+    </div>
+  </h1>
 
   <div class="table-responsive">
     <table class="table table-bordered custom-table">
       <thead>
-        <tr >
+        <tr>
           <th class="th-nm">Id</th>
           <th class="th-nm">Image</th>
           <th class="th-nm">Name</th>
@@ -13,8 +21,8 @@
           <th class="th-nm">Action</th>
         </tr>
       </thead>
-      <tbody >
-        <tr  *ngFor="let product of products">
+      <tbody>
+        <tr *ngFor="let product of products">
           <td class="mt-4">{{ product.id }}</td>
           <td>
             <img [src]="product.image || 'assets/default-image.jpg'" alt="{{ product.name }}"

@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getacceptedReviews();
     AOS.init({
       offset: 120, // offset (in px) from the original trigger point
       delay: 0, // values from 0 to 3000, with step 50ms
@@ -51,6 +52,7 @@ export class HomeComponent implements OnInit {
         this.errMsg = err;
       },
     });
+    
   }
 
   async openSpinner(): Promise<void> {
@@ -62,7 +64,7 @@ export class HomeComponent implements OnInit {
         resolve(); // ننهي الـ Promise بعد إخفاء الـ spinner
       }, 2000); // مدة عرض الـ spinner هي 5 ثواني
     });
-    this.getReviews(); // Fetch reviews on component load
+    
   }
 
   // دالة للذهاب إلى تفاصيل المنتج
@@ -107,7 +109,7 @@ export class HomeComponent implements OnInit {
         (response) => {
           console.log('Review added successfully', response);
           form.reset(); // Reset form after submission
-          this.getReviews(); // Fetch updated reviews
+          
         },
         (error) => {
           console.error('Error submitting review', error);
@@ -119,8 +121,8 @@ export class HomeComponent implements OnInit {
   
 
   // Fetch reviews from Firebase
-  getReviews(): void {
-    this.reviewService.getReviews().subscribe(
+  getacceptedReviews(): void {
+    this.reviewService.getacceptedReviews().subscribe(
       (data: Review[]) => {
         this.reviews = data;
       },

@@ -19,6 +19,7 @@ import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-polic
 import { ProductHomeComponent } from './component/product-home/product-home.component';
 import { authGuardGuard } from './guards/auth-guard.service';
 import { guardsGuard } from './guards/guards.guard';
+import { ReviewsComponent } from './component/dashboard/reviews/reviews.component';
 
 
 
@@ -30,14 +31,15 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   { path: "payment", component: PaymentComponent, canActivate: [guardsGuard] },
   { path: "products", component: ProductsComponent },
-  // , canActivate: [authGuardGuard] 
   { path: "add-product", component: AddProductComponent, canActivate: [guardsGuard] },
   { path: "product/:id", component: ProductDetailsComponent },
   { path: "home/:id", component: ProductHomeComponent },
   { path: "users", component: UsersComponent },
-  { path: "dash-bode", component: DashHomeComponent },
+  { path: "dash-bode", component: DashHomeComponent},
+  { path: "dash-home", component: DashHomeComponent},
   { path: "user-add", component: UserAddComponent },
   { path: "edit-product", component: EditProductComponent },
+  { path: "reviews", component: ReviewsComponent },
   { path: "edit-profile", component: EditProfileComponent },
   { path: "about-us", component: AboutUsComponent },
   { path: "privacy-policy", component: PrivacyPolicyComponent },

@@ -1,32 +1,34 @@
 <div class="container cont">
-  <h1 class="text-center">Users
+  <h1 class="text-center">
+    reviews
     <div class="d-flex justify-content-end text-center ">
       <a routerLink="/dash-home" class="icon-share-from-square text-center ho">
         <i class="fa-regular fa-share-from-square"></i>
       </a>
     </div>
-  </h1>
 
+  </h1>
+  
   <div class="table-responsive">
     <table class="table table-bordered custom-table">
       <thead>
         <tr>
-          <th>Id</th>
-          <th>First_name</th>
-          <th>Last_name</th>
+          <th>Name</th>
           <th>Email</th>
+          <th>Message</th>
+          <th>rating</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users">
-          <td class="mt-4">{{ user.first_name }}</td>
-          <td class="mt-4">{{ user.first_name }}</td>
-          <td>{{ user.last_name }}</td>
-          <td>{{ user.email }}</td>
+        <tr *ngFor="let review of reviews">
+          <td class="mt-4">{{ review.name }}</td>
+          <td class="mt-4">{{ review.email }}</td>
+          <td>{{ review.message }}</td>
+          <td>{{review.rating}}</td>
           <td>
-            <a [href]="'mailto:' + user.email" class="btn btn-cont me-2">Contact</a>
-            <button class="btn btn-del" (click)="deleteUser(user.first_name)">Delete</button>
+            <a (click)="acceptReview(review)" class="btn btn-cont pe-4 ps-4">✔</a>
+            <a (click)="rejectReview(review)" class="btn btn-del">❌</a>
           </td>
         </tr>
       </tbody>
