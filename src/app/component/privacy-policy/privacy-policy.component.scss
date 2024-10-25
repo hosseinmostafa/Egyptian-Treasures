@@ -52,6 +52,35 @@ textarea.form-control {
     
 }
 
+
+.star-rating {
+    display: inline-block;
+    direction: rtl;
+    font-size: 2rem;
+    position: relative;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: lightgray;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: .4s;
+}
+
+.star-rating input:checked~label {
+    color: gold;
+    transition: .4s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: gold;
+    transition: .4s;
+}
 /* Responsive */
 @media (max-width: 768px) {
     #privacy-policy h2 {
