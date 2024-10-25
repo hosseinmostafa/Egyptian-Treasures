@@ -1,6 +1,14 @@
 <div class="container cont">
-  <h1 class="text-center">reviews</h1>
+  <h1 class="text-center">
+    reviews
+    <div class="d-flex justify-content-end text-center ">
+      <a routerLink="/dash-home" class="icon-share-from-square text-center ho">
+        <i class="fa-regular fa-share-from-square"></i>
+      </a>
+    </div>
 
+  </h1>
+  
   <div class="table-responsive">
     <table class="table table-bordered custom-table">
       <thead>
@@ -19,8 +27,8 @@
           <td>{{ review.message }}</td>
           <td>{{review.rating}}</td>
           <td>
-            <a (click)="acceptReview(review)" class="btn btn-success">✔</a>
-            <a (click)="rejectReview(review)" class="btn btn-danger">❌</a>
+            <a (click)="acceptReview(review)" class="btn btn-cont pe-4 ps-4">✔</a>
+            <a (click)="rejectReview(review)" class="btn btn-del">❌</a>
           </td>
         </tr>
       </tbody>

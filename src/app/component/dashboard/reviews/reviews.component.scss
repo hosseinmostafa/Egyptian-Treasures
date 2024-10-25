@@ -1,47 +1,75 @@
 .cont {
-                    padding: 20px;
-                    border-radius: 15px;
-                  }
-                  
-                  h1 {
-                    color: black;
-                    font-size: 1.5rem;
-                    background: #EBCA95;
-                    // margin-bottom: 30px;
-                    padding: 31px;
-                  }
-                  
-                  .custom-table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    border-radius: 12px;
-                    overflow: hidden;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                  }
-                  
-                  th,
-                  td {
-                    text-align: center;
-                    padding: 8px;
-                    font-size: 0.9rem;
-                  }
-                  
-                  img {
-                    width: 100px;
-                    height: 100px;
-                    object-fit: cover;
-                  }
-                  
-                  .btn {
-                    width: 100%;
-                    margin-bottom: 5px;
-                  }
-                  
-                  h2 {
-                    color: #000;
-                  }
-                  
-                  label {
-                    color: #000;
-                  }
-                  
+  padding: 20px;
+  border-radius: 15px;
+}
+
+h1 {
+  color: black;
+  font-size: 1.5rem;
+  background: #EBCA95;
+  // margin-bottom: 30px;
+  padding: 31px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+  text-align: center;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.btn {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: #000;
+}
+
+label {
+  color: #000;
+}
+
+.btn-del {
+  background-color: #ebdfcb;
+
+}
+
+.btn-del:hover {
+  background-color: #d4b272;
+}
+
+.btn-cont {
+  background-color: #d4b272;
+
+}
+
+.btn-cont:hover {
+  background-color: #e6d2af;
+}
+
+.ho {
+  background-color: #716652;
+  padding: 10px;
+  border-radius: 50%;
+  color: #d7a74e;
+  font-size: 30px;
+  transition: .4s;
+  position: relative;
+  top: -45px;
+}

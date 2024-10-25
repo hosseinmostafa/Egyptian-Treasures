@@ -36,6 +36,7 @@ const routes: Routes = [
   { path: "home/:id", component: ProductHomeComponent },
   { path: "users", component: UsersComponent },
   { path: "dash-bode", component: DashHomeComponent},
+  { path: "dash-home", component: DashHomeComponent},
   { path: "user-add", component: UserAddComponent },
   { path: "edit-product", component: EditProductComponent },
   { path: "reviews", component: ReviewsComponent },
