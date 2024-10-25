@@ -62,7 +62,7 @@ export class AuthService {
 
   // Method to get role from localStorage
   getRoleFromLocalStorage(): string {
-    return localStorage.getItem('role') || ''; 
+    return localStorage.getItem('role') || '';
   }
 
   // Observable to get the role

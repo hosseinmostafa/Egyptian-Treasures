@@ -18,9 +18,9 @@ export class UsersComponent implements OnInit {
     // Fetch the current user from localStorage
     this.user = this.userService.getCurrentUser();
 
-    if (this.user && this.user.first_name) {
+    if (this.user && this.user.phone) {
       // Ensure that we fetch fresh user data from Firebase when the component initializes
-      this.userService.refreshUserData(this.user.first_name);
+      this.userService.refreshUserData(this.user.phone);
     }
 
     this.userAbout = this.user?.about || ''; // Initialize userAbout with existing data
@@ -31,11 +31,11 @@ export class UsersComponent implements OnInit {
   }
 
   saveAbout(): void {
-    if (this.user && this.user.first_name) {
+    if (this.user && this.user.phone) {
       const updatedUserData = { ...this.user, about: this.userAbout };
 
       // Call the updateUser method from UserService to save changes in Firebase
-      this.userService.updateUser(this.user.first_name, updatedUserData).subscribe({
+      this.userService.updateUser(this.user.phone, updatedUserData).subscribe({
         next: () => {
           this.user = updatedUserData; // Update local user data
           this.userService.setCurrentUser(this.user); // Update the current user in localStorage

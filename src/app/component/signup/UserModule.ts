@@ -8,6 +8,7 @@ export class USERModul {
         public password: string,
         public about: string,
         public isChecked: boolean,
+        public phone: string,
         public role: string = 'user' // Default role is user
     ) { }
 }

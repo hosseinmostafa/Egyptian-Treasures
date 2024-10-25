@@ -49,14 +49,14 @@ export class UserService {
   }
 
   // Delete a user by ID
-  deleteUser(id: string): Observable<void> {
-    const deleteURL = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/${id}.json`;
+  deleteUser(phone: string): Observable<void> {
+    const deleteURL = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/${phone}.json`;
     return this.http.delete<void>(deleteURL);
   }
 
   // Update a user by ID
-  updateUser(userId: string, userData: Partial<USERModul>): Observable<USERModul> {
-    const updateURL = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/${userId}.json`;
+  updateUser(phone: string, userData: Partial<USERModul>): Observable<USERModul> {
+    const updateURL = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/${phone}.json`;
     return this.http.put<USERModul>(updateURL, userData);
   }
 
