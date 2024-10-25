@@ -87,4 +87,9 @@ export class UserService {
       }
     });
   }
+  updateUserRole(userId: string, role: string): Observable<any> {
+    const updatePayload = { role };
+    const updateURL = `https://egyption-treasure-89099-default-rtdb.firebaseio.com/Users/${userId}.json`;
+    return this.http.patch(updateURL, updatePayload);
+  }
 }

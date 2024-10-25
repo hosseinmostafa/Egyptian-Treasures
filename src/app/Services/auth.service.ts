@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +58,29 @@ export class AuthService {
     this.loggedIn = false;
     this.router.navigate(['/login']);
   }
+  private roleSubject = new BehaviorSubject<string>(this.getRoleFromLocalStorage());
 
+  // Method to get role from localStorage
+  getRoleFromLocalStorage(): string {
+    return localStorage.getItem('role') || ''; 
+  }
+
+  // Observable to get the role
+  getRole() {
+    return this.roleSubject.asObservable();
+  }
+
+  // Method to set role
+  setRole(role: string): void {
+    localStorage.setItem('role', role);
+    this.roleSubject.next(role); // Emit the new role
+  }
+
+  // Method to clear role
+  clearRole(): void {
+    localStorage.removeItem('role');
+    this.roleSubject.next(''); // Emit an empty role on logout
+  }
 
 }
 

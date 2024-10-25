@@ -21,6 +21,19 @@
                     <button class="nav-link active rounded-3 p-2 p-lg-3" id="home-tab2" data-bs-toggle="tab"
                         type="button" role="tab" aria-selected="true">Home</button>
                 </li>
+                <li class="nav-item" routerLink="/dash-bode" role="presentation">
+                    <button
+                      class="nav-link rounded-3 p-2 p-lg-3"
+                      id="home-tab2"
+                      data-bs-toggle="tab"
+                      type="button"
+                      role="tab"
+                      aria-selected="false"
+                      *ngIf="role === 'admin'"
+                    >
+                      Admin
+                    </button>
+                  </li>
                 <li class="nav-item" routerLink="/products" role="presentation">
                     <button class="nav-link rounded-3 p-2 p-lg-3" id="profile-tab2" data-bs-toggle="tab" type="button"
                         role="tab" aria-selected="false" (click)="openSpinner1()">Products</button>
@@ -34,19 +47,36 @@
                         type="button" role="tab" aria-selected="false" (click)="openSpinner1()">Cart</button>
                 </li>
             </ul>
-            <a (click)="openSpinner1()" routerLink="/users" class="btn btn-outline-secondary ms-2 icont" *ngIf="currentUser">
-                <i class="fas fa-user"></i>
-            </a>
+            <a
+        (click)="openSpinner1()"
+        routerLink="/users"
+        class="btn btn-outline-secondary ms-2 icont"
+        *ngIf="currentUser && role !== 'admin'"
+      >
+        <i class="fas fa-user"></i>
+      </a>
             <a (click)="openSpinner1()" class="btn btn-outline-secondary ms-2 icont" (mouseover)="showLoginText()" (mouseout)="hideLoginText()"
                 routerLink="/signup" *ngIf="!currentUser">
                 <i class="fa-solid fa-arrow-right-to-bracket login-icon" [style.opacity]="loginIconOpacity"></i>
                 <span class="ms-2 login-text" [style.display]="loginTextVisible ? 'inline' : 'none'">Login</span>
             </a>
-            <a (click)="logout()" class="btn btn-outline-secondary ms-2 icont" (mouseover)="showLoginText()" (mouseout)="hideLoginText()"
-                *ngIf="currentUser">
-                <i class="fa-solid fa-arrow-right-to-bracket login-icon" [style.opacity]="loginIconOpacity"></i>
-                <span class="ms-2 login-text" [style.display]="loginTextVisible ? 'inline' : 'none'">Logout</span>
-            </a>
+            <a
+        (click)="logout()"
+        class="btn btn-outline-secondary ms-2 icont"
+        (mouseover)="showLoginText()"
+        (mouseout)="hideLoginText()"
+        *ngIf="currentUser"
+      >
+        <i
+          class="fa-solid fa-arrow-right-to-bracket login-icon"
+          [style.opacity]="loginIconOpacity"
+        ></i>
+        <span
+          class="ms-2 login-text"
+          [style.display]="loginTextVisible ? 'inline' : 'none'"
+          >Logout</span
+        >
+      </a>
         </div>
     </div>
 </nav>
