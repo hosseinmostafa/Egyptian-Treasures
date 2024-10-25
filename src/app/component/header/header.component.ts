@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 import { USERModul } from '../signup/UserModule';
 import { AuthService } from '../../Services/auth.service';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -26,7 +27,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private spinner: NgxSpinnerService,
     private userService: UserService, 
     private router: Router,
-    private authService:AuthService
+    private authService:AuthService,
+    private cartService:CartService
   ) {
     this.subscription = this.navbarService.showNavbar.subscribe((value) => {
       this.showNavbar = value;
@@ -81,5 +83,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       // Optionally, you can show the spinner here again if needed
       this.openSpinner1();
     });
+    this.cartService.clearCart();
   }
 }
