@@ -5,6 +5,7 @@ import { USERModul } from '../signup/UserModule';
 import Swal from 'sweetalert2';
 import { FooterService } from '../../Services/footer.service';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,14 +18,15 @@ export class LoginComponent implements OnDestroy {
   loginError: boolean = false;
   loginObj: Login;
 
-  userModul = new USERModul('', '', '', '', '', false);
+  userModul = new USERModul('', '','', '', '', '', false);
   constructor(
     private router: Router,
     private userService: UserService,
     private footerServes: FooterService,
     private http: HttpClient,
+    private authservice:AuthService
   ) { this.loginObj = new Login()}
-
+  role = 'user';  // define role
   ngOnDestroy(): void {
     this.footerServes.displayFooter();
   }
@@ -34,26 +36,51 @@ export class LoginComponent implements OnDestroy {
       next: (users: USERModul[]) => {
         // Find user by email and password
         const user = Object.values(users).find(
-          (u: USERModul) =>
-            u.email === this.email && u.password === this.password
+          (u: USERModul) => u.email === this.email && u.password === this.password
         );
-
+  
         if (user) {
           // Successful login
           console.log('Login successful!');
+  
           // Set the current user
           this.userService.setCurrentUser(user);
-
+  
+          // Check if the user is admin
+         
+          if (this.email === 'adminEx@gmail.com' && this.password === 'admin123') {
+            this.role = 'admin';
+            this.authservice.setRole(this.role); // Store role in the AuthService and localStorage
+          } else {
+            this.role = 'user';
+            this.authservice.setRole(this.role);
+          }
+          
+          
+  
           // Generate fake token and set expiration
           const token = this.generateFakeToken();
           const expiration = this.generateTokenExpiration(1); // Token expires in 1 hour
-
-          // Save the token and expiration in localStorage
+  
+          // Save the token, expiration, and role in localStorage
           localStorage.setItem('authToken', token);
           localStorage.setItem('tokenExpiration', expiration);
-
-          // Navigate to home
-          this.router.navigate(['/home']);
+          localStorage.setItem('role', this.role); // Save the role
+  
+          // Store the role in the database (optional)
+          this.userService.updateUserRole(user.id, this.role).subscribe({
+            next: (data) => console.log('User role updated successfully:', data),
+            error: (error) => console.log('Error updating user role:', error),
+          });
+  
+          // Navigate to the appropriate page based on role
+          // if (this.role === 'admin') {
+          //   this.router.navigate(['/dash-bode']);
+          // } else {
+          //   this.router.navigate(['/home']);
+          // }
+          this.
+          router.navigate(['/home']);
         } else {
           // Login failed, show error message
           this.loginError = true;
@@ -77,6 +104,8 @@ export class LoginComponent implements OnDestroy {
       },
     });
   }
+  
+  
 
   // Generate a random fake token
   generateFakeToken(): string {

@@ -14,7 +14,7 @@ import { ConfirmPasswordValidator } from '../../CostmorFormSigin/costemFormPassw
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnDestroy {
-  userModel = new USERModul('', '', '', '', '', false);
+  userModel = new USERModul('', '', '', '', '','', false);
   regsetForm: FormGroup;
   constructor(
     private userSarvies: UserService,
