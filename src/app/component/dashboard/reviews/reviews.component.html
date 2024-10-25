@@ -28,7 +28,7 @@
           <td>{{review.rating}}</td>
           <td>
             <a (click)="acceptReview(review)" class="btn btn-cont pe-4 ps-4">✔</a>
-            <a (click)="rejectReview(review)" class="btn btn-del">❌</a>
+            <a (click)="rejectReview(review.email)" class="btn btn-del">❌</a>
           </td>
         </tr>
       </tbody>
