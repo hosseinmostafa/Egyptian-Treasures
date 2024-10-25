@@ -67,6 +67,27 @@
             </small>
           </div>
 
+
+          <!-- Phone Number Field -->
+<div class="mb-3">
+  <label for="exampleInputPhone" class="form-label">Phone Number</label>
+  <input
+        [(ngModel)]="userModel.phone"
+        name="phone"
+        #phone="ngModel"
+        type="tel"
+        class="form-control"
+        id="exampleInputPhone"
+        required
+        pattern="^(00201|\+201|01)[0-2,5]{1}[0-9]{8}$"
+            [class.is-invalid]="phone.invalid && phone.touched"
+  />
+  <small *ngIf="phone.invalid && phone.touched" class="text-danger">
+    Phone number is required and must be valid.
+  </small>
+</div>
+
+
           <!-- Password Field -->
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
