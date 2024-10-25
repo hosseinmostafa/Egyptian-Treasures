@@ -1,0 +1,29 @@
+<div class="container cont">
+                    <h1 class="text-center">reviews</h1>
+                  
+                    <div class="table-responsive">
+                      <table class="table table-bordered custom-table">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>rating</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr  *ngFor="let review of reviews">
+                            <td class="mt-4">{{ review.name }}</td>
+                            <td class="mt-4">{{ review.email }}</td>
+                            <td>{{ review.message }}</td>
+                            <td>{{review.rating}}</td>
+                            <td>
+                              <a (click)="acceptReview(review)" class="btn btn-success">✔</a>
+                              <a (click)="rejectReview(review)" class="btn btn-danger">❌</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  

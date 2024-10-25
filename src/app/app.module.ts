@@ -28,6 +28,7 @@ import { ProductHomeComponent } from './component/product-home/product-home.comp
 import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ReviewsComponent } from './component/dashboard/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AboutUsComponent,
     ProductHomeComponent,
     PrivacyPolicyComponent,
+    ReviewsComponent,
 
   ],
   imports: [
