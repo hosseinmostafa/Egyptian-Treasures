@@ -68,7 +68,7 @@
 4. **Add Items**  
    ![Screenshot (342)](https://github.com/user-attachments/assets/47b5386e-ecf6-4b6f-95ad-b675ab751be8)
 
-##**Video**
+5. **Video**
 
    ![vidoe](https://github.com/user-attachments/assets/74a9d2c2-2ed6-4d59-91cc-84050d68ddf9)
   
