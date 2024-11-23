@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center cont-text">
         <h2>Hello, Friend 👋</h2>
-        <p>Welcome to your journey to discover the beauty of Herfa! Sign up to join our community and explore authentic, Herfa masterpieces.</p>
+        <p>Welcome to your journey to discover the beauty of Herfa! Sign up to join our community and explore authentic,
+          Herfa masterpieces.</p>
         <a class="btn btn-warning mt-4" routerLink="/login">I already have an account</a>
         <a class="mt-4" routerLink="/home"><i class="fa fa-home"></i></a>
       </div>
@@ -11,21 +12,14 @@
         <div class="text-center my-3">
           <h1 class="ts">Sign Up</h1>
         </div>
+        
         <form #registerForm="ngForm" novalidate (ngSubmit)="onSubmit()">
           <!-- First Name Field -->
           <div class="mb-3">
             <label for="exampleInputFirstName" class="form-label">First Name</label>
-            <input
-              [(ngModel)]="userModel.first_name"
-              name="first_name"
-              #firstName="ngModel"
-              type="text"
-              class="form-control"
-              id="exampleInputFirstName"
-              required
-              pattern="[a-zA-Z ]*"
-              [class.is-invalid]="firstName.invalid && firstName.touched"
-            />
+            <input [(ngModel)]="userModel.first_name" name="first_name" #firstName="ngModel" type="text"
+              class="form-control" id="exampleInputFirstName" required pattern="[a-zA-Z ]*"
+              [class.is-invalid]="firstName.invalid && firstName.touched" />
             <small *ngIf="firstName.invalid && firstName.touched" class="text-danger">
               First name is required
             </small>
@@ -34,16 +28,9 @@
           <!-- Last Name Field -->
           <div class="mb-3">
             <label for="exampleInputLastName" class="form-label">Last Name</label>
-            <input
-              [class.is-invalid]="lastName.invalid && lastName.touched"
-              name="last_name"
-              [(ngModel)]="userModel.last_name"
-              #lastName="ngModel"
-              type="text"
-              class="form-control"
-              id="exampleInputLastName"
-              required
-            />
+            <input [class.is-invalid]="lastName.invalid && lastName.touched" name="last_name"
+              [(ngModel)]="userModel.last_name" #lastName="ngModel" type="text" class="form-control"
+              id="exampleInputLastName" required />
             <div *ngIf="lastName.errors && lastName.touched">
               <small *ngIf="lastName.errors['required']" class="text-danger">Last name is required.</small>
             </div>
@@ -52,16 +39,8 @@
           <!-- Email Field -->
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input
-              [(ngModel)]="userModel.email"
-              required
-              [class.is-invalid]="email.invalid && email.touched"
-              name="email"
-              #email="ngModel"
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-            />
+            <input [(ngModel)]="userModel.email" required [class.is-invalid]="email.invalid && email.touched"
+              name="email" #email="ngModel" type="email" class="form-control" id="exampleInputEmail1" />
             <small *ngIf="email.invalid && email.touched" class="text-danger">
               Email is required and must be valid.
             </small>
@@ -69,76 +48,50 @@
 
 
           <!-- Phone Number Field -->
-<div class="mb-3">
-  <label for="exampleInputPhone" class="form-label">Phone Number</label>
-  <input
-        [(ngModel)]="userModel.phone"
-        name="phone"
-        #phone="ngModel"
-        type="tel"
-        class="form-control"
-        id="exampleInputPhone"
-        required
-        pattern="^(00201|\+201|01)[0-2,5]{1}[0-9]{8}$"
-            [class.is-invalid]="phone.invalid && phone.touched"
-  />
-  <small *ngIf="phone.invalid && phone.touched" class="text-danger">
-    Phone number is required and must be valid.
-  </small>
-</div>
+          <div class="mb-3">
+            <label for="exampleInputPhone" class="form-label">Phone Number</label>
+            <input [(ngModel)]="userModel.phone" name="phone" #phone="ngModel" type="tel" class="form-control"
+              id="exampleInputPhone" required pattern="^(00201|\+201|01)[0-2,5]{1}[0-9]{8}$"
+              [class.is-invalid]="phone.invalid && phone.touched" />
+            <small *ngIf="phone.invalid && phone.touched" class="text-danger">
+              Phone number is required and must be valid.
+            </small>
+          </div>
 
 
           <!-- Password Field -->
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input
-              [(ngModel)]="userModel.password"
-              name="password"
-              #password="ngModel"
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              required
-              [class.is-invalid]="password.invalid && password.touched"
-            />
+            <input [(ngModel)]="userModel.password" name="password" #password="ngModel" type="password"
+              class="form-control" id="exampleInputPassword1" required
+              [class.is-invalid]="password.invalid && password.touched" />
             <small *ngIf="password.invalid && password.touched" class="text-danger">
               Password is required
             </small>
           </div>
 
           <!-- Confirm Password Field -->
-         <!-- Confirm Password Field -->
-<div class="mb-3">
-  <label for="confirmPassword" class="form-label">Confirm Password</label>
-  <input
-    type="password"
-    class="form-control"
-    placeholder="Confirm Password"
-    required
-    [(ngModel)]="userModel.confirmPassword"
-    name="confirmPassword"
-    #confirmPassword="ngModel"
-    [class.is-invalid]="(confirmPassword.invalid && confirmPassword.touched) || (userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword)"
-  />
-  <small *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger">
-    Confirm password is required.
-  </small>
-  <small *ngIf="userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword && confirmPassword.touched" class="text-danger">
-    Passwords do not match.
-  </small>
-</div>
+          <!-- Confirm Password Field -->
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Confirm Password" required
+              [(ngModel)]="userModel.confirmPassword" name="confirmPassword" #confirmPassword="ngModel"
+              [class.is-invalid]="(confirmPassword.invalid && confirmPassword.touched) || (userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword)" />
+            <small *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger">
+              Confirm password is required.
+            </small>
+            <small
+              *ngIf="userModel.password && userModel.confirmPassword && userModel.password !== userModel.confirmPassword && confirmPassword.touched"
+              class="text-danger">
+              Passwords do not match.
+            </small>
+          </div>
 
 
           <!-- Remember Me Checkbox -->
           <div class="mb-3 form-check">
-            <input
-              [(ngModel)]="userModel.isChecked"
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-              name="checked"
-              #isChecked="ngModel"
-            />
+            <input [(ngModel)]="userModel.isChecked" type="checkbox" class="form-check-input" id="exampleCheck1"
+              name="checked" #isChecked="ngModel" />
             <label class="form-check-label" for="exampleCheck1">Remember me</label>
           </div>
 
